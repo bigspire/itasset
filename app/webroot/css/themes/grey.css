@@ -1,0 +1,82 @@
+/* background*/
+.login{ background:  #9B9999   url(../../img/pdca_ss.png) no-repeat 15% 10% fixed; }
+
+/* header styles */
+.navbar-default,#navigation{background: #9B9999 !important }
+li.light-blue{background:#A069C3 !important}
+.ace-nav > li.light-blue > a {background:#8C8888 !important}
+.ace-nav > li.open.light-blue > a {background:#8C8888 !important}
+.ace-nav > li.purple > a {background:#8C8888 !important}
+.ace-nav > li.open.purple > a {background:#8C8888 !important}
+
+/* footer */
+#footer{background:#DBD6D6;color:#9B9999}
+#footer span, #footer span a{color:#222A2D}
+#footer  a{color:#222A2D}
+
+/* alerts */
+.alert-block{background:#F9F9F9;border:1px solid #E0DBDB;color:#555555; }
+.page-header h1 {color: #C6487E;}
+.breadcrumb > li > a { color: #222A2D; }
+.blue { color: #8C8888 !important;}
+
+/* contents */
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {border-top:2px solid #8C8888 !important;}
+.transparent .widget-toolbar > .nav-tabs > li.active > a {    border-top-color: #8C8888 !important; }
+
+/* buttons */
+.btn-info, .btn-info:focus {    background-color: #8C8888 !important;    border-color: #8C8888 !important;}
+.btn-info, .btn-info[disabled]:focus{    background-color: #8C8888 !important;    border-color: #8C8888 !important;}
+.btn-info.disabled,.btn-info[disabled],fieldset[disabled] .btn-info,.btn-info.disabled:hover,.btn-info[disabled]:hover,fieldset[disabled] .btn-info:hover,.btn-info.disabled:focus,.btn-info[disabled]:focus,fieldset[disabled] .btn-info:focus,.btn-info.disabled:active,.btn-info[disabled]:active,fieldset[disabled] .btn-info:active,.btn-info.disabled.active,.btn-info[disabled].active,fieldset[disabled] .btn-info.active{background-color:#8C8888!important;border-color:#8C8888}
+.btn-info, .btn-info:hover {    background-color: #8C8888 !important;    border-color: #8C8888 !important;}
+.close{color:#8C8888; opacity:.7}
+.btn.btn-primary{background: #827F7F !important;}
+.btn-primary, .btn-primary:focus,.btn-primary:hover{border-color:#827F7F}
+.open .btn-info.dropdown-toggle{background:#8C8888 !important}
+.btndrop, .btndrop:hover{border-left:1px solid #fff !important;}
+/* headers */
+h4{color:#222A2D}
+h5{color:#222A2D}
+/* links */
+.name a{ color: #8C8888;}
+
+
+/* boxes */
+.box.box-bordered .box-title{border:2px solid #E0E2E2}
+.box.box-bordered .slimScrollDiv{border-bottom:2px solid #E0E2E2}
+.box.box-bordered.box-color .box-title,.box.box-bordered.box-color .box-content,.box.box-bordered .box-content{border-color:#E0E2E2 !important; }
+.slimScrollBar {background:#efefef !important;width:4px !important; height:125px !important;}
+.box.box-color .box-title{background:#5D6060}
+
+/* menus */
+#navigation .main-nav > li > a:hover {  text-decoration: none;  background: #827F7F;}
+#navigation .dropdown-menu > li > a:hover {  background: #827F7F;  color: #fff;  filter: none;}
+#navigation .dropdown-menu {  border-top: 0;  border-color: #E0E2E2;}
+#navigation .user .icon-nav > li > a:hover {  background: #827F7F;  text-decoration: none;}
+
+.dropdown-navbar.navbar-pink>li.dropdown-header {background-color:#F4F4F4!important;color: #000000;border-bottom-color: #E0E2E2;}
+.dropdown-navbar.navbar-pink {border-color:#E0E2E2 !important;}
+
+/* search */
+.ac_over {background-color: #9B9999;color: #ffffff;}
+/* confirm */
+.ui-widget-header{background:#9B9999}
+/* profile box */
+.label-info, .badge-info{background:#9B9999}
+.label-info.arrowed-in:before,.label-info.arrowed-in:after{border-color:#9B9999}
+/* share screen 
+.itemdiv.dialogdiv>.body{border-left:2px solid #9B9999}*/
+
+/* dasboard cont
+.box .box-title h3{color:#9B9999 !important;} */
+.slimScrollBar{background:#9B9999 !important;}
+
+/* in and out time */
+.btn-time, .btn-time:focus{background-color:#9B9999 !important;border-color: #BABCBC !important; border:1px solid #BABCBC !important}
+.btn-time:hover{background:#808182 !important;border-color: #BABCBC !important; border:1px solid #BABCBC !important}
+/* alert and profile tab */
+.ui-dialog .ui-dialog-titlebar{background-color:#9B9999 !important;}
+.nav-tabs.tab-color-blue>li>a, .nav-tabs.tab-color-blue>li>a:focus{background:  #9B9999 }
+/* for loading */
+.loading{color:#98A320;background:#FBFFD1;border:1px solid #ECF490}
+.transparent .widget-toolbar>.nav-tabs>li>a:hover{border-bottom:2px solid #9B9999 }

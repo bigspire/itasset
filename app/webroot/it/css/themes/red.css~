@@ -1,0 +1,84 @@
+/* background*/
+.login{ background:  #e2755f   url(../../img/pdca_ss.png) no-repeat 15% 10% fixed; }
+
+/* header styles */
+.navbar-default,#navigation{background: #e2755f !important }
+li.light-blue{background:#A069C3 !important}
+.ace-nav > li.light-blue > a {background:#e78a77 !important}
+.ace-nav > li.open.light-blue > a {background:#e78a77 !important}
+.ace-nav > li.purple > a {background:#e78a77 !important}
+.ace-nav > li.open.purple > a {background:#e78a77 !important}
+/* footer */
+#footer{background:#e2755f;color:#fff}
+#footer span, #footer span a{color:#fff}
+#footer  a{color:#fff}
+
+/* alerts */
+.alert-block{background:#f0dad6;border:1px solid #efcdc7;color:#555555; }
+.page-header h1 {color: #e2755f;}
+.breadcrumb > li > a { color: #e2755f; }
+.blue { color: #e2755f !important;}
+
+/* contents */
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {border-top:2px solid #e2755f !important;}
+.transparent .widget-toolbar > .nav-tabs > li.active > a {    border-top-color: #e2755f !important; }
+
+/* buttons */
+.btn-info, .btn-info:focus {    background-color: #e2755f !important;    border-color: #e2755f !important;}
+.btn-info, .btn-info[disabled]:focus{    background-color: #e2755f !important;    border-color: #e2755f !important;}
+.btn-info.disabled,.btn-info[disabled],fieldset[disabled] .btn-info,.btn-info.disabled:hover,.btn-info[disabled]:hover,fieldset[disabled] .btn-info:hover,.btn-info.disabled:focus,.btn-info[disabled]:focus,fieldset[disabled] .btn-info:focus,.btn-info.disabled:active,.btn-info[disabled]:active,fieldset[disabled] .btn-info:active,.btn-info.disabled.active,.btn-info[disabled].active,fieldset[disabled] .btn-info.active{background-color:#e2755f!important;border-color:#e2755f}
+.btn-info, .btn-info:hover {    background-color: #e2755f !important;    border-color: #e2755f !important;}
+.close{color:#e2755f; opacity:.7}
+.btn.btn-primary{background: #e2755f !important;}
+.btn-primary, .btn-primary:focus,.btn-primary:hover{border-color:#e2755f}
+
+.open .btn-info.dropdown-toggle{background:#e2755f !important}
+.btndrop, .btndrop:hover{border-left:1px solid #fff !important;}
+/* headers */
+h4{color:#e2755f}
+h5{color:#e2755f}
+/* links */
+.name a{ color: #e2755f;}
+
+/* boxes */
+.box.box-bordered .box-title{border:2px solid #f2dcd7}
+.box.box-bordered .slimScrollDiv{border-bottom:2px solid #f2dcd7;}
+.box.box-bordered.box-color .box-title{background:#e2755f}
+.box.box-bordered.box-color .box-title,.box.box-bordered.box-color .box-content,.box.box-bordered .box-content{border-color:#f2dcd7 !important; }
+.slimScrollBar {background:#DBD6D6 !important;width:4px !important}
+
+/* menus */
+#navigation .main-nav > li > a:hover {  text-decoration: none;  background: #e2755f;}
+#navigation .dropdown-menu > li > a:hover {  background: #e2755f;  color: #fff;  filter: none;}
+#navigation .dropdown-menu {  border-top: 0;  border-color: #f2dcd7;}
+#navigation .user .icon-nav > li > a:hover {  background: #e2755f;  text-decoration: none;}
+
+/* search */
+.ac_over {background-color: #e2755f;color: #ffffff;}
+/* confirm */
+.ui-widget-header{background:#e2755f}
+/* profile box */
+.label-info, .badge-info{background:#e2755f  !important}
+.label-info.arrowed-in:before,.label-info.arrowed-in:after{border-color:#e2755f}
+
+/* share screen 
+.itemdiv.dialogdiv>.body{border-left:2px solid #e2755f}
+
+.box .box-title h3{color:#e2755f !important;}*/
+.slimScrollBar{background:#e2755f !important;}
+
+/* in and out time */
+.btn-time, .btn-time:focus{background-color:#e78a77 !important;border-color: #EDA495 !important; border:1px solid #EDA495 !important}
+.btn-time:hover{background:#e2755f !important;border-color: #EDA495 !important; border:1px solid #EDA495 !important}
+/* alert and profile tab */
+.ui-dialog .ui-dialog-titlebar{background-color:#e2755f !important;}
+.nav-tabs.tab-color-blue>li>a, .nav-tabs.tab-color-blue>li>a:focus{background:  #e2755f }
+/* for loading */
+.loading{color:#98A320;background:#FBFFD1;border:1px solid #ECF490}
+.transparent .widget-toolbar>.nav-tabs>li>a:hover{border-bottom:2px solid #e2755f }
+/* for ticket status */
+.label-satgreen_ticket {		background: #56af45 !important;	}
+.label-blue_ticket {	  background: #368ee0 !important;	}
+.label-lightred_ticket {	  background: #e63a3a !important;	}
+.label-yellow_ticket {	  background: #faec0f !important;	}
+.label-red_ticket {	  background: #faec0f !important;	}

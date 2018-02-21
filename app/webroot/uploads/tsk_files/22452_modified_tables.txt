@@ -1,0 +1,14 @@
+task manager:
+
+1) event theme in app users
+2) fin_adv_status - remarks 200 char.
+3) news image field width
+4) new table created - hr_leave_encash
+5) error log.
+6) modules table modified (reports)
+7) datepicker js and css
+8) del_status in expense list and temp table for expense list
+9) is_permission in hr_Attendance
+
+
+

@@ -1,0 +1,86 @@
+/* background*/
+.login{ background:  #82af6f   url(../../img/pdca_ss.png) no-repeat 15% 10% fixed; }
+
+
+/* header styles */
+.navbar-default,#navigation{background: #82af6f !important }
+li.light-blue{background:#A069C3 !important}
+.ace-nav > li.light-blue > a {background:#a2d08f !important}
+.ace-nav > li.open.light-blue > a {background:#a2d08f !important}
+.ace-nav > li.purple > a {background:#a2d08f !important}
+.ace-nav > li.open.purple > a {background:#a2d08f !important}
+
+/* footer */
+#footer{background:#a1d28d;color:#fff}
+#footer span, #footer span a{color:#fff}
+#footer  a{color:#fff}
+
+/* alerts */
+.alert-block{background:#e6f1e2;border:1px solid #d7efcd;color:#555555; }
+.page-header h1 {color: #82af6f;}
+.breadcrumb > li > a { color: #82af6f; }
+.blue { color: #82af6f !important;}
+
+/* contents */
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {border-top:2px solid #82af6f !important;}
+.transparent .widget-toolbar > .nav-tabs > li.active > a {    border-top-color: #82af6f !important; }
+
+/* buttons */
+.btn-info, .btn-info:focus {    background-color: #82af6f !important;    border-color: #82af6f !important;}
+.btn-info, .btn-info[disabled]:focus{    background-color: #82af6f !important;    border-color: #82af6f !important;}
+.btn-info.disabled,.btn-info[disabled],fieldset[disabled] .btn-info,.btn-info.disabled:hover,.btn-info[disabled]:hover,fieldset[disabled] .btn-info:hover,.btn-info.disabled:focus,.btn-info[disabled]:focus,fieldset[disabled] .btn-info:focus,.btn-info.disabled:active,.btn-info[disabled]:active,fieldset[disabled] .btn-info:active,.btn-info.disabled.active,.btn-info[disabled].active,fieldset[disabled] .btn-info.active{background-color:#82af6f!important;border-color:#82af6f}
+.btn-info, .btn-info:hover {    background-color: #82af6f !important;    border-color: #82af6f !important;}
+.close{color:#82af6f; opacity:.7}
+.btn.btn-primary{background: #82af6f !important;}
+.btn-primary, .btn-primary:focus,.btn-primary:hover{border-color:#82af6f}
+.open .btn-info.dropdown-toggle{background:#82af6f !important}
+.btndrop, .btndrop:hover{border-left:1px solid #fff !important;}
+/* headers */
+h4{color:#82af6f}
+h5{color:#82af6f}
+/* links */
+.name a{ color: #82af6f;}
+
+/* boxes */
+.box.box-bordered .box-title{border:2px solid #d3ecc9}
+.box.box-bordered .slimScrollDiv{border-bottom:2px solid #d3ecc9;}
+.box.box-bordered.box-color .box-title{background:#82af6f}
+.box.box-bordered.box-color .box-title,.box.box-bordered.box-color .box-content,.box.box-bordered .box-content{border-color:#d3ecc9 !important; }
+.slimScrollBar {background:#DBD6D6 !important;width:4px !important}
+
+/* menus */
+#navigation .main-nav > li > a:hover {  text-decoration: none;  background: #82af6f;}
+#navigation .dropdown-menu > li > a:hover {  background: #82af6f;  color: #fff;  filter: none;}
+#navigation .dropdown-menu {  border-top: 0;  border-color: #d3ecc9;}
+#navigation .user .icon-nav > li > a:hover {  background: #82af6f;  text-decoration: none;}
+
+/* search */
+.ac_over {background-color: #82af6f;color: #ffffff;}
+/* confirm */
+.ui-widget-header{background:#82af6f}
+/* profile box */
+.label-info, .badge-info{background:#82af6f  !important}
+.label-info.arrowed-in:before,.label-info.arrowed-in:after{border-color:#82af6f}
+/* share screen 
+.itemdiv.dialogdiv>.body{border-left:2px solid #82af6f}*/
+
+/* dasboard cont 
+.box .box-title h3{color:#82af6f !important;}*/
+.slimScrollBar{background:#82af6f !important;}
+
+/* in and out time */
+.btn-time, .btn-time:focus{background-color:#a2d08f !important;border-color: #8EC974 !important; border:1px solid #8EC974 !important}
+.btn-time:hover{background:#78AF60 !important;border-color: #8EC974 !important; border:1px solid #8EC974 !important}
+/* alert and profile tab */
+.ui-dialog .ui-dialog-titlebar{background-color:#82af6f !important;}
+.nav-tabs.tab-color-blue>li>a, .nav-tabs.tab-color-blue>li>a:focus{background:  #82af6f }
+
+/* for loading */
+.loading{color:#98A320;background:#FBFFD1;border:1px solid #ECF490}
+.transparent .widget-toolbar>.nav-tabs>li>a:hover{border-bottom:2px solid #82af6f }
+/* for ticket status */
+.label-satgreen_ticket {		background: #56af45 !important;	}
+.label-blue_ticket {	  background: #368ee0 !important;	}
+.label-lightred_ticket {	  background: #e63a3a !important;	}
+.label-yellow_ticket {	  background: #faec0f !important;	}
+.label-red_ticket {	  background: #faec0f !important;	}

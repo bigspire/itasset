@@ -1,0 +1,5 @@
+1) unique contact in autocomplete
+2) MIS incharge - refresh reset
+3) gender issue in send sms
+
+

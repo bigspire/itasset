@@ -1,0 +1,84 @@
+/* background*/
+.login{ background:  #FF99CD   url(../../img/pdca_ss.png) no-repeat 15% 10% fixed; }
+
+/* header styles */
+.navbar-default,#navigation{background: #FF99CD !important }
+li.light-blue{background:#A069C3 !important}
+.ace-nav > li.light-blue > a {background:#FCBADA !important}
+.ace-nav > li.open.light-blue > a {background:#FCBADA !important}
+.ace-nav > li.purple > a {background:#FCBADA !important}
+.ace-nav > li.open.purple > a {background:#FCBADA !important}
+/* footer */
+#footer{background:#FCBADA;color:#fff;border-top:1px solid #FCE3EF;}
+#footer span, #footer span a{color:#fff}
+#footer  a{color:#fff}
+
+/* alerts */
+.alert-block{background:#F9F9F9;border:1px solid #E0DBDB;color:#555555; }
+.page-header h1 {color: #C6487E;}
+.breadcrumb > li > a { color: #FF99CD; }
+.blue { color: #FF99CD !important;}
+
+/* contents */
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {border-top:2px solid #FF99CD !important;}
+.transparent .widget-toolbar > .nav-tabs > li.active > a {    border-top-color: #FF99CD !important; }
+
+/* buttons */
+.btn-info, .btn-info:focus {    background-color: #FCBADA !important;    border-color: #FCBADA !important;}
+.btn-info, .btn-info[disabled]:focus{    background-color: #FCBADA !important;    border-color: #FCBADA !important;}
+.btn-info.disabled,.btn-info[disabled],fieldset[disabled] .btn-info,.btn-info.disabled:hover,.btn-info[disabled]:hover,fieldset[disabled] .btn-info:hover,.btn-info.disabled:focus,.btn-info[disabled]:focus,fieldset[disabled] .btn-info:focus,.btn-info.disabled:active,.btn-info[disabled]:active,fieldset[disabled] .btn-info:active,.btn-info.disabled.active,.btn-info[disabled].active,fieldset[disabled] .btn-info.active{background-color:#FCBADA!important;border-color:#FCBADA}
+.btn-info, .btn-info:hover {    background-color: #FCBADA !important;    border-color: #FCBADA !important;}
+.close{color:#FCBADA; opacity:.7}
+.btn.btn-primary{background: #FCBADA !important;}
+.btn-primary, .btn-primary:focus,.btn-primary:hover{border-color:#FCBADA}
+.open .btn-info.dropdown-toggle{background:#FCBADA !important}
+.btndrop, .btndrop:hover{border-left:1px solid #fff !important;}
+/* headers */
+h4{color:#FF99CD}
+h5{color:#FF99CD}
+/* links */
+.name a{ color: #8C8888;}
+.breadcrumbs {border-bottom: 1px solid #e5e5e5;background-color: #F4F4F4;}
+
+/* boxes */
+.box.box-bordered .box-title{border:2px solid #FFEDF6}
+.box.box-bordered .slimScrollDiv{border-bottom:2px solid #FFEDF6}
+.box.box-bordered.box-color .box-title,.box.box-bordered.box-color .box-content,.box.box-bordered .box-content{border-color:#FFEDF6 !important; }
+.slimScrollBar {background:#efefef !important;width:4px !important; height:125px !important;}
+.box.box-color .box-title{background:#FCBADA}
+
+/* menus */
+#navigation .main-nav > li > a:hover {  text-decoration: none;  background: #FCBADA;}
+#navigation .dropdown-menu > li > a:hover {  background: #FCBADA;  color: #fff;  filter: none;}
+#navigation .dropdown-menu {  border-top: 0;  border-color: #FFEDF6;}
+#navigation .user .icon-nav > li > a:hover {  background: #FCBADA;  text-decoration: none;}
+
+.dropdown-navbar.navbar-pink>li.dropdown-header {background-color:#F4F4F4!important;color: #000000;border-bottom-color: #FFEDF6;}
+.dropdown-navbar.navbar-pink {border-color:#FFEDF6 !important;}
+
+/* search */
+.ac_over {background-color: #FF99CD;color: #ffffff;}
+
+/* confirm */
+.ui-widget-header{background:#FF99CD}
+.label-info, .badge-info{background:#FF99CD !important}
+/* profile box */
+.label-info, .badge-info{background:#FF99CD  !important}
+.label-info.arrowed-in:before,.label-info.arrowed-in:after{border-color:#FF99CD}
+
+/* share screen
+.itemdiv.dialogdiv>.body{border-left:2px solid #FF99CD} */
+
+/* dasboard cont 
+.box .box-title h3{color:#F4F4F4 !important;}*/
+.slimScrollBar{background:#FF99CD !important;}
+
+/* in and out time */
+.btn-time, .btn-time:focus{background-color:#F984BF !important;border-color: #F7AAD1 !important; border:1px solid #F7AAD1 !important}
+.btn-time:hover{background:#F95CAB !important;border-color: #F7AAD1 !important; border:1px solid #F7AAD1 !important}
+/* alert and profile tab */
+.ui-dialog .ui-dialog-titlebar{background-color:#FF99CD !important;}
+.nav-tabs.tab-color-blue>li>a, .nav-tabs.tab-color-blue>li>a:focus{background:  #FF99CD }
+/* for loading */
+.loading{color:#98A320;background:#FBFFD1;border:1px solid #ECF490}
+.transparent .widget-toolbar>.nav-tabs>li>a:hover{border-bottom:2px solid #FF99CD }

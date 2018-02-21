@@ -1,0 +1,25 @@
+1) Ask for expenses statement date at the time of advance request. Lock the advance raising within this date.
+
+2) We should put the following conditions in Maternity / Paternity Leave Application form.
+Date of Child Birth (Actual or Expected) = Date Calendar
+Your New Born Baby = 1st Child, 2nd Child (drop box) 
+Also, today Maternity and Paternity Leave are made applicable for all employees
+irrespective of whether they are married or not. We must link this to the “Marital Status”.
+
+3) No reply/dialogue option in Finance Module and all approve modules
+
+4) Comment to be optional in task update for executed status
+
+5) Options to L1 for allowing or disallowing late hrs in approve attendance
+
+6) Task Status Update (Executed / Partial) should not be done  before the end time 
+
+7) Need to add no. of children in hr form
+
+8) Option to confirm data accuration in profile - Data Validated
+
+9) Applause / Greetings - Postings to be shown separately
+
+10) Show ip address in the attendance table.
+
+11) Make advance no. mandatory in expense submission

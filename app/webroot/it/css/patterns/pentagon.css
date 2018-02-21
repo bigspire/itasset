@@ -1,0 +1,5 @@
+#main,#page_wrapper{background:url(../../img/patterns/pentagon2.png) !important;}
+.page-content{background:url(../../img/patterns/pentagon2.png) !important;}
+.profile-info-value,.profile-user-info-striped{border:0 !important}
+.widget-main.no-padding .table, .widget-main.padding-0 .table,.itemdiv>.body,.nav-stacked,.Calendar,.timeline-item .widget-main,
+.profile-info-row,.itemdiv.dialogdiv>.body,.nav-stacked,.Calendar{background:#fff  !important}

@@ -1,0 +1,83 @@
+/* background*/
+.login{ background:  #f4b12f   url(../../img/pdca_ss.png) no-repeat 15% 10% fixed; }
+
+/* header styles */
+.navbar-default,#navigation{background: #f4b12f !important }
+li.light-blue{background:#A069C3 !important}
+.ace-nav > li.light-blue > a {background:#ffc657 !important}
+.ace-nav > li.open.light-blue > a {background:#ffc657 !important}
+.ace-nav > li.purple > a {background:#ffc657 !important}
+.ace-nav > li.open.purple > a {background:#ffc657 !important}
+/* footer */
+#footer{background:#f4b12f;color:#fff}
+#footer span, #footer span a{color:#fff}
+#footer  a{color:#fff}
+
+/* alerts */
+.alert-block{background:#f9edd7;border:1px solid #f9e3b8;color:#555555; }
+.page-header h1 {color: #f4b12f;}
+.breadcrumb > li > a { color: #f4b12f; }
+.blue { color: #f4b12f !important;}
+
+/* contents */
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {border-top:2px solid #f4b12f !important;}
+.transparent .widget-toolbar > .nav-tabs > li.active > a {    border-top-color: #f4b12f !important; }
+
+/* buttons */
+.btn-info, .btn-info:focus {    background-color: #f4b12f !important;    border-color: #f4b12f !important;}
+.btn-info, .btn-info[disabled]:focus{    background-color: #f4b12f !important;    border-color: #f4b12f !important;}
+.btn-info.disabled,.btn-info[disabled],fieldset[disabled] .btn-info,.btn-info.disabled:hover,.btn-info[disabled]:hover,fieldset[disabled] .btn-info:hover,.btn-info.disabled:focus,.btn-info[disabled]:focus,fieldset[disabled] .btn-info:focus,.btn-info.disabled:active,.btn-info[disabled]:active,fieldset[disabled] .btn-info:active,.btn-info.disabled.active,.btn-info[disabled].active,fieldset[disabled] .btn-info.active{background-color:#f4b12f!important;border-color:#f4b12f}
+.btn-info, .btn-info:hover {    background-color: #f4b12f !important;    border-color: #f4b12f !important;}
+.close{color:#f4b12f; opacity:.7}
+.btn.btn-primary{background: #f4b12f !important;}
+.btn-primary, .btn-primary:focus,.btn-primary:hover{border-color:#f4b12f}
+.open .btn-info.dropdown-toggle{background:#f4b12f !important}
+.btndrop, .btndrop:hover{border-left:1px solid #fff !important;}
+
+/* headers */
+h4{color:#f4b12f}
+h5{color:#f4b12f}
+/* links */
+.name a{ color: #f4b12f;}
+
+/* boxes */
+.box.box-bordered .box-title{border:2px solid #f5e4c4}
+.box.box-bordered .slimScrollDiv{border-bottom:2px solid #f5e4c4;}
+.box.box-bordered.box-color .box-title{background:#f4b12f}
+.box.box-bordered.box-color .box-title,.box.box-bordered.box-color .box-content,.box.box-bordered .box-content{border-color:#f5e4c4 !important; }
+.slimScrollBar {background:#DBD6D6 !important;width:4px !important}
+
+/* menus */
+#navigation .main-nav > li > a:hover {  text-decoration: none;  background: #f4b12f;}
+#navigation .dropdown-menu > li > a:hover {  background: #f4b12f;  color: #fff;  filter: none;}
+#navigation .dropdown-menu {  border-top: 0;  border-color: #f5e4c4;}
+#navigation .user .icon-nav > li > a:hover {  background: #f4b12f;  text-decoration: none;}
+
+/* search */
+.ac_over {background-color: #f4b12f;color: #ffffff;}
+/* confirm */
+.ui-widget-header{background:#f4b12f}
+/* profile box */
+.label-info, .badge-info{background:#f4b12f  !important}
+.label-info.arrowed-in:before,.label-info.arrowed-in:after{border-color:#f4b12f}
+/* share screen
+.itemdiv.dialogdiv>.body{border-left:2px solid #f4b12f} 
+.box .box-title h3{color:#f4b12f !important;}*/
+
+.slimScrollBar{background:#f4b12f !important;}
+
+/* in and out time */
+.btn-time, .btn-time:focus{background-color:#ffc657 !important;border-color: #efefef !important; border:1px solid #efefef !important}
+.btn-time:hover{background:#f4b12f !important;border-color: #efefef !important; border:1px solid #efefef !important}
+/* alert and profile tab */
+.ui-dialog .ui-dialog-titlebar{background-color:#f4b12f !important;}
+.nav-tabs.tab-color-blue>li>a, .nav-tabs.tab-color-blue>li>a:focus{background:  #f4b12f }
+/* for loading */
+.loading{color:#98A320;background:#FBFFD1;border:1px solid #ECF490}
+.transparent .widget-toolbar>.nav-tabs>li>a:hover{border-bottom:2px solid #f4b12f }
+/* for ticket status */
+.label-satgreen_ticket {		background: #56af45 !important;	}
+.label-blue_ticket {	  background: #368ee0 !important;	}
+.label-lightred_ticket {	  background: #e63a3a !important;	}
+.label-yellow_ticket {	  background: #faec0f !important;	}
+.label-red_ticket {	  background: #faec0f !important;	}
