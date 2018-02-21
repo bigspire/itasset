@@ -7,8 +7,8 @@ Date : 02-06-2016
 
 // db config
 define('Host' , 'localhost');
-define('Username' , 'pdca');
-define('Password' , 'pdca918');
-define('Database' , 'ceo_apps_db');
+define('Username' , 'root');
+define('Password' , '');
+define('Database' , 'ceo_apps_it');
 
 ?>

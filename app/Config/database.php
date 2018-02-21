@@ -59,9 +59,9 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'pdca',
-		'password' => 'pdca918',
-		'database' => 'ceo_apps_db',
+		'login' => 'root',
+		'password' => '',
+		'database' => 'ceo_apps_it',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
