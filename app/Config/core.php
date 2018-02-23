@@ -230,7 +230,7 @@
 	Configure::write('Security.cipherSeed', '8924098234778994302929829029830239');
 	
 	
-	Configure::write('Security.key', '33YhGkfiFk39Fk029O9g9o32i774');
+	Configure::write('Security.key', '33YhGkf983ilkasjdf4GSD01');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).

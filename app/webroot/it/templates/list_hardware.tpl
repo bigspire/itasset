@@ -110,17 +110,21 @@
 		                      <td>{ucfirst($item.vendor_name)}</td> 
 		                      <td>{$item.created_date}</td>
 		                      <td>{$item.modified_date}</td>
-									 <td style="text-align:center"><span class='label label-{$item.status_cls}'><a href='#' rel='tooltip' data-original-title = {$item.status}>{$item.status}</a></span></td>
+									 <td style="text-align:center"><span class='label label-{$item.status_cls}'>
+									 <a href='#' rel='tooltip' data-original-title = {$item.status}>{$item.status}
+									 <br>{$item.scrap_hw_type}</a></span></td>
 									 <td class='hidden-480'>
 										<a href="view_hardware.php?id={$item.id}" class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
-									   <a href="edit_hardware_details.php?id={$item.id}&inv_id={$item.invid}" class="btn" rel="tooltip" title="Edit"><i class="icon-edit"></i></a>
-							<a href="delete_hardware.php?id={$item.invid}&page={$smarty.get.page}" name="21" onclick="return deletefunction()" class="btn delRec" rel="tooltip" title="Delete"><i class="icon-remove"></i></a>
-                           {if $item.status == 'Active'}										
+											{if $item.scrap_status neq 'W'}
+									  <a href="edit_hardware_details.php?id={$item.id}&inv_id={$item.invid}" class="btn" rel="tooltip" title="Edit"><i class="icon-edit"></i></a>
+							<a href="delete_hardware.php?id={$item.invid}&page={$smarty.get.page}" name="21" onclick="return deletefunction()" class="btn delRec" rel="tooltip" title="Delete"><i class="icon-remove"></i></a>                          
+						  {if $item.status == 'Active'}										
 								{if $item.is_deleted != 'N'}	
-									 <a href="add_scrap.php?id={$item.invid}&page={$smarty.get.page}&scrap_type=Scrap/Lost" rel="tooltip" title="Scrap/Lost" class="iframeBox btn" val="40_60"><i class="icon-trash"></i></a>						
-									 <a href="add_scrap.php?id={$item.invid}&page={$smarty.get.page}&scrap_type=Resale/Exchange" rel="tooltip" title="Resale/Exchange" class="iframeBox btn" val="40_60"><i class="icon-trash"></i></a>						
+									 <a href="add_scrap.php?id={$item.invid}&page={$smarty.get.page}&scrap_type=S" rel="tooltip" title="Scrap/Lost" class="iframeBox btn" val="40_67"><i class="icon-trash"></i></a>						
+									 <a href="add_scrap.php?id={$item.invid}&page={$smarty.get.page}&scrap_type=R" rel="tooltip" title="Resale/Exchange" class="iframeBox btn" val="40_67"><i class="icon-trash"></i></a>						
 									 {/if}	
-								{/if}										 
+								{/if}	
+						  {/if}									 
 									 </td>
 								</tr>
 							  {/if}
