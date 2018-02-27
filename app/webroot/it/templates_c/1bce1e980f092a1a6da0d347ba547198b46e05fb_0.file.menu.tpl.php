@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-22 16:58:19
+/* Smarty version 3.1.29, created on 2018-02-26 17:10:30
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\include\menu.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a8ea953cdcc06_33666744',
+  'unifunc' => 'content_5a93f22e807c70_84205446',
   'file_dependency' => 
   array (
     '1bce1e980f092a1a6da0d347ba547198b46e05fb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\include\\menu.tpl',
-      1 => 1519292829,
+      1 => 1519645228,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5a8ea953cdcc06_33666744 ($_smarty_tpl) {
+function content_5a93f22e807c70_84205446 ($_smarty_tpl) {
 ?>
 
 
@@ -99,12 +99,12 @@ bdhome/?type=N" class="">BD</a></li>
 					</ul>
 				</li>
 				<?php }?>
-				<?php if (!empty($_smarty_tpl->tpl_vars['AssignAssset']->value) || !empty($_smarty_tpl->tpl_vars['ChangeAssetInfo']->value) || !empty($_smarty_tpl->tpl_vars['ScrapHardware']->value)) {?>
+				<?php if (!empty($_smarty_tpl->tpl_vars['AssignAssset']->value) || !empty($_smarty_tpl->tpl_vars['ChangeAssetInfo']->value) || !empty($_smarty_tpl->tpl_vars['ScrapHardware']->value) || !empty($_smarty_tpl->tpl_vars['ApproveScrapHardware']->value)) {?>
 				<li class="<?php echo $_smarty_tpl->tpl_vars['assign_asset_active']->value;?>
  dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Assign Asset</span>
-						<span class="label label-lightred bubble"><?php if ($_smarty_tpl->tpl_vars['change_asset_count']->value) {
+						<span class="label label-lightred bubble"><?php if ($_smarty_tpl->tpl_vars['change_asset_count']->value && $_smarty_tpl->tpl_vars['ChangeAssetInfo']->value) {
 echo $_smarty_tpl->tpl_vars['change_asset_count']->value;
 }?></span>
 						<span class="caret"></span>				

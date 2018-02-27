@@ -21,9 +21,9 @@ include 'include/menu_count.php';
 include 'include/get_modules.php';
 
 // redirect to error page if the user is not it admin
-if($roleid != '21'){
+/*if($roleid != '21'){
 	header('Location:'.IT_DIR.'home/');
-}
+}*/
 // redirecting to dashboard if the user don't have the permission to this module
 if(empty($_SESSION['ScrapHardware'])){
 	//start session 
@@ -36,6 +36,7 @@ unset($_SESSION['h']);
 	
 $keyword = $_POST['keyword'] ? $_POST['keyword'] : $_GET['keyword'];
 $hw_type = $_POST['hw_type'] ? $_POST['hw_type'] : $_GET['hw_type'];
+$type = $_POST['type'] ? $_POST['type'] : $_GET['type'];
 $t_date = $_POST['t_date'] ? $_POST['t_date'] : $_GET['t_date'];
 $f_date = $_POST['f_date'] ? $_POST['f_date'] : $_GET['f_date'];    
 $from_date = $fun->convert_date($f_date);
@@ -46,11 +47,12 @@ $hw_type = $hw_type == '' ? '0' : $hw_type;
 if($_POST){
 	$post_url .= '&keyword='.$keyword;
 	$post_url .= '&hw_type='.$hw_type;
+	$post_url .= '&type='.$type;
 	$post_url .= '&f_date='.$f_date;
 	$post_url .= '&t_date='.$t_date;
 }
 // count the total no. of records
-$query = "CALL it_list_scrap_hardware('".$keyword."','".$hw_type."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
+$query = "CALL it_list_scrap_hardware('".$keyword."','".$hw_type."','".$type."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
 try{
 	if(!$result = $mysql->execute_query($query)){
 		throw new Exception('Problem in executing list scrap hardware page');
@@ -124,7 +126,7 @@ try{
 }
 
 // fetch all records
-$query = "CALL it_list_scrap_hardware('".$keyword."','".$hw_type."','".$from_date."','".$to_date."','$start','$limit',
+$query = "CALL it_list_scrap_hardware('".$keyword."','".$hw_type."','".$type."','".$from_date."','".$to_date."','$start','$limit',
 '".$field."','".$order."','".$_GET['action']."')";
 try{
 	if(!$result = $mysql->execute_query($query)){
@@ -171,9 +173,12 @@ $c_c = $mysql->close_connection();
 
 $paging->posturl($post_url);
 
+// smarty dropdown array for type
+$smarty->assign('type_data', array('' => 'Type', 'S' => 'Scrap', 'RS' => 'Resale','EX' => 'Exchange', 'L' => 'Lost'));
 // assign smarty variables here
 $smarty->assign('page_links',$paging->print_link_frontend());
 $smarty->assign('hw_type', $hw_type);
+$smarty->assign('type', $type);
 $smarty->assign('data', $data);
 $smarty->assign('hw_type_data', $hw_type_data);
 $smarty->assign('page' , $page); 

@@ -69,11 +69,11 @@
 					</ul>
 				</li>
 				{/if}
-				{if !empty($AssignAssset) || !empty($ChangeAssetInfo) || !empty($ScrapHardware)}
+				{if !empty($AssignAssset) || !empty($ChangeAssetInfo) || !empty($ScrapHardware) || !empty($ApproveScrapHardware)}
 				<li class="{$assign_asset_active} dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Assign Asset</span>
-						<span class="label label-lightred bubble">{if $change_asset_count}{$change_asset_count}{/if}</span>
+						<span class="label label-lightred bubble">{if $change_asset_count && $ChangeAssetInfo}{$change_asset_count}{/if}</span>
 						<span class="caret"></span>				
 					</a>
 					<ul class="dropdown-menu">

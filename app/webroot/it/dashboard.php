@@ -22,7 +22,7 @@ include 'include/get_modules.php';
 
 // redirect to error page if the user is not it admin
 if($roleid != '21'){
-	header('Location:'.IT_DIR.'home/');
+//	header('Location:'.IT_DIR.'home/');
 }
 // getting the url variable to check access denied or not
 $access_permission = $_GET['access'];

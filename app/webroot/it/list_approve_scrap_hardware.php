@@ -2,7 +2,7 @@
 /* 
 Purpose : To list and search approve Scrap Hardware.
 Created : Nikitasa
-Date : 22-02-2018
+Date : 27-02-2018
 */
 
 //include smarty congig file
@@ -20,10 +20,13 @@ include 'include/menu_count.php';
 // include permission file
 include 'include/get_modules.php';
 
+
 // redirect to error page if the user is not it admin
-if($roleid != '18'){
+/*if(!in_array('119', $assigned)){ 
 	header('Location:'.IT_DIR.'home/');
-}
+}else{
+	echo 'success';die;
+}*/
 // redirecting to dashboard if the user don't have the permission to this module
 if(empty($_SESSION['ApproveScrapHardware'])){
 	//start session 
@@ -36,6 +39,7 @@ unset($_SESSION['h']);
 	
 $keyword = $_POST['keyword'] ? $_POST['keyword'] : $_GET['keyword'];
 $hw_type = $_POST['hw_type'] ? $_POST['hw_type'] : $_GET['hw_type'];
+$type = $_POST['type'] ? $_POST['type'] : $_GET['type'];
 $t_date = $_POST['t_date'] ? $_POST['t_date'] : $_GET['t_date'];
 $f_date = $_POST['f_date'] ? $_POST['f_date'] : $_GET['f_date'];    
 $from_date = $fun->convert_date($f_date);
@@ -46,11 +50,12 @@ $hw_type = $hw_type == '' ? '0' : $hw_type;
 if($_POST){
 	$post_url .= '&keyword='.$keyword;
 	$post_url .= '&hw_type='.$hw_type;
+	$post_url .= '&type='.$type;
 	$post_url .= '&f_date='.$f_date;
 	$post_url .= '&t_date='.$t_date;
 }
 // count the total no. of records
-$query = "CALL it_list_scrap_hardware('".$keyword."','".$hw_type."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
+$query = "CALL it_list_approve_scrap_hardware('".$keyword."','".$hw_type."','".$type."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
 try{
 	if(!$result = $mysql->execute_query($query)){
 		throw new Exception('Problem in executing list scrap hardware page');
@@ -81,7 +86,7 @@ try{
 // set the condition to check ascending or descending order		
 $order = ($_GET['order'] == 'desc') ? 'asc' :  'desc';	
 $sort_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','created_date');
-$org_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','created_date');
+$org_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','scrap_created');
 
 // to set the sorting image
 foreach($sort_fields as $key => $h_field){
@@ -95,7 +100,7 @@ foreach($sort_fields as $key => $h_field){
 // if no fields are set, set default sort image
 if(empty($_GET['field']) && empty($keyword)){			
 	$order = 'desc';			
-	$field = 'created_date';			
+	$field = 'iau.created_date';			
 	$smarty->assign('sort_field_created', 'sorting desc');
 }	
 $smarty->assign('order', $order);
@@ -124,7 +129,7 @@ try{
 }
 
 // fetch all records
-$query = "CALL it_list_scrap_hardware('".$keyword."','".$hw_type."','".$from_date."','".$to_date."','$start','$limit',
+$query = "CALL it_list_approve_scrap_hardware('".$keyword."','".$hw_type."','".$type."','".$from_date."','".$to_date."','$start','$limit',
 '".$field."','".$order."','".$_GET['action']."')";
 try{
 	if(!$result = $mysql->execute_query($query)){
@@ -135,7 +140,7 @@ try{
 	while($obj = $mysql->display_result($result))
 	{
  		$data[] = $obj;
- 		$data[$i]['created_date'] = $fun->it_software_created_date($obj['created_date']);
+ 		$data[$i]['scrap_created'] = $fun->it_software_created_date($obj['scrap_created']);
  		$i++;
  		$pno[]=$paging->print_no();
  		$smarty->assign('pno',$pno);
@@ -149,7 +154,7 @@ try{
 		// function to print the excel header
       $excelObj->printHeader($header = array('Title','Brand','Model Id','Inventory No','Location','Asset Description','Created Date') ,$col = array('A','B','C','D','E','F','G'));  
 		// function to print the excel data
-		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','created_date'),'Scrap Hardware_'.$current_date);
+		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','scrap_created'),'Approve Scrap Hardware_'.$current_date);
 		die;
 	}
 
@@ -170,11 +175,13 @@ try{
 $c_c = $mysql->close_connection();
 
 $paging->posturl($post_url);
-
+// smarty dropdown array for type
+$smarty->assign('type_data', array('' => 'Type', 'S' => 'Scrap', 'RS' => 'Resale','EX' => 'Exchange', 'L' => 'Lost'));
 // assign smarty variables here
 $smarty->assign('page_links',$paging->print_link_frontend());
 $smarty->assign('hw_type', $hw_type);
 $smarty->assign('data', $data);
+$smarty->assign('type', $type);
 $smarty->assign('hw_type_data', $hw_type_data);
 $smarty->assign('page' , $page); 
 $smarty->assign('total_pages' , $total_pages); 	

@@ -17,13 +17,14 @@ $query = "call it_get_user_role('".$id."')";
 			throw new Exception('Problem in executing get user role');
 		}
 		$row = $mysql->display_result($result);
-		$roleid = $row['app_roles_id']; 
+		 $roleid = $row['app_roles_id']; 
 		$mysql->clear_result($result);
 		// call the next result
 		$mysql->next_query();
 	}catch(Exception $e){
 		echo 'Caught exception: ',  $e->getMessage(), "\n";
 	}
+	
 // get user modules
 $query = "call it_get_user_modules('".$roleid."')";
 	try{
