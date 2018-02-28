@@ -34,7 +34,7 @@ if(($fun->isnumeric($id)) || ($fun->is_empty($id)) || ($id == 0)){
 }
 
 // select and execute query and fetch the result
-$query = "CALL it_view_scrap_hardware('".$id."')"; 
+$query = "CALL it_view_scrap_hardware('".$id."','A')"; 
 try{
 	if(!$result = $mysql->execute_query($query)){
 		throw new Exception('Problem in executing view page');

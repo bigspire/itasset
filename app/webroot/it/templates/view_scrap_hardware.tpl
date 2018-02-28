@@ -21,11 +21,11 @@
 							<i class="icon-angle-right"></i>
 						</li>
 						<li>
-							<a href="list_approve_scrap_hardware.php">Approve Scrap Hardware</a>
+							<a href="list_approve_scrap_hardware.php">Scrap Hardware</a>
 								<i class="icon-angle-right"></i>
 						</li>
 						<li>
-							<a href="view_scrap_hardware.php?id={$id}">View Approve Scrap Hardware</a>
+							<a href="view_scrap_hardware.php?id={$id}">View Scrap Hardware</a>
 						</li>
 					</ul>
 				</div>
