@@ -159,8 +159,8 @@ try{
 	}
 
 	// create,update,delete message validation
-	if($_GET['status'] == 'deleted' || $_GET['status'] == 'created' || $_GET['status'] == 'updated'){
-  	 $success_msg = 'Scrap Hardware ' . $_GET['status'] . ' successfully';
+	if($_GET['status'] == 'Approved' || $_GET['status'] == 'Rejected'){
+		$success_msg = 'Scrap Hardware ' . $_GET['status'] . ' successfully';
 	}
 
 	// validating pagination

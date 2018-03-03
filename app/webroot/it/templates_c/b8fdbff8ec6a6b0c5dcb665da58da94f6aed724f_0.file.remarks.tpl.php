@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-28 17:52:02
+/* Smarty version 3.1.29, created on 2018-03-02 17:58:50
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\remarks.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a969eea2e1ac2_57903547',
+  'unifunc' => 'content_5a994382ef9077_74344256',
   'file_dependency' => 
   array (
     'b8fdbff8ec6a6b0c5dcb665da58da94f6aed724f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\remarks.tpl',
-      1 => 1519820518,
+      1 => 1519993725,
       2 => 'file',
     ),
   ),
@@ -19,12 +19,11 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5a969eea2e1ac2_57903547 ($_smarty_tpl) {
+function content_5a994382ef9077_74344256 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/font-awesome.min.css">		
@@ -62,7 +61,6 @@ function content_5a969eea2e1ac2_57903547 ($_smarty_tpl) {
  src="js/main.js"><?php echo '</script'; ?>
 >
 </head>
-
 <body>
 <div class="">
 	<div class="modal-dialog">
@@ -93,12 +91,12 @@ function content_5a969eea2e1ac2_57903547 ($_smarty_tpl) {
 </p>								
 										</div>
 										<?php }?>
-		
 <div class="chgReqFrm" align="center">
 <div class="" ><div class="" style="display: block;">
 		<div class="no-padding">
-			<form action="remarks.php?id=<?php echo $_GET['id'];?>
+			<form action="remarks.php?scrap_id=<?php echo $_GET['scrap_id'];?>
 &page=<?php echo $_GET['page'];?>
+&action=<?php echo $_GET['action'];?>
 " id="formID"  method="post" accept-charset="utf-8">
 									<div class="space-4"></div>
 									<div class="form-group" style="text-align:left">
@@ -112,14 +110,14 @@ function content_5a969eea2e1ac2_57903547 ($_smarty_tpl) {
 									</div>												
 <div class="clearfix form-actions">
 <div class="col-md-9">
-<input class="btn btn-info btn-sm" name="submit" value="Submit" id="btnReq" type="submit"/>
+<input class="btn btn-info btn-sm" name="Submit" value="Submit" id="btnReq" type="submit"/>
 </div>
 </div>
 					
-<input type="hidden" value="view_approve_hardware.php?page=<?php echo $_GET['page'];?>
-&status=moved" class="redirect_url">
-<input type="hidden" value="view_approve_hardware.php?page=<?php echo $_GET['page'];?>
-&status=not_deleted_scrap" class="redirect_url1">
+<input type="hidden" value="list_approve_scrap_hardware.php?page=<?php echo $_GET['page'];?>
+&status=Approved" class="redirect_url">
+<input type="hidden" value="list_approve_scrap_hardware.php?page=<?php echo $_GET['page'];?>
+&status=Rejected" class="redirect_url1">
 								</form>
 						
 </div></div>

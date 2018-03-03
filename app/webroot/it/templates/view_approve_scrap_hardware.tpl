@@ -288,14 +288,14 @@
 											</div>
 										</div>
 									</div>	
-									{/foreach}	
+									
 									
 							<div class="span12">
 										<div class="form-actions">
 										{if $item.scrap_status eq 'W'}
-<a class="iframeBox unreadLink" rel="tooltip" title="Approve Billing" href="remarks.php?action=approve" val="40_50"><input type="button" value="Approve" class="btn btn btn-success"/></a>
-<a class="iframeBox unreadLink" rel="tooltip" title="Reject Billing" href="remarks.php?action=reject" val="40_50"><input type="button" value="Reject" class="btn btn btn-danger"/></a>
-				{/if}
+<a class="iframeBox unreadLink" rel="tooltip" title="Approve Billing" href="remarks.php?scrap_id={$item.scrap_id}&action=approve" val="40_50"><input type="button" value="Approve" class="btn btn btn-success"/></a>
+<a class="iframeBox unreadLink" rel="tooltip" title="Reject Billing" href="remarks.php?scrap_id={$item.scrap_id}&action=reject" val="40_50"><input type="button" value="Reject" class="btn btn btn-danger"/></a>
+				{/if}{/foreach}	
 										<a href="list_approve_scrap_hardware.php"><input type="button" val="list_approve_scrap_hardware.php" value="Back" class="jsRedirect btn btn-primary"></a>	
 										</div>
 							</div>		

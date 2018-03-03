@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-28 13:29:58
+/* Smarty version 3.1.29, created on 2018-03-02 14:02:46
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\view_scrap_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a96617e7fa220_12886598',
+  'unifunc' => 'content_5a990c2e7ab5c3_70740915',
   'file_dependency' => 
   array (
     '172e073c18514d4987e4e8058c4d8ea26b428c90' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\view_scrap_hardware.tpl',
-      1 => 1519804793,
+      1 => 1519805222,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a96617e7fa220_12886598 ($_smarty_tpl) {
+function content_5a990c2e7ab5c3_70740915 ($_smarty_tpl) {
 ?>
 
 <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:include/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -50,12 +50,12 @@ function content_5a96617e7fa220_12886598 ($_smarty_tpl) {
 							<i class="icon-angle-right"></i>
 						</li>
 						<li>
-							<a href="list_approve_scrap_hardware.php">Approve Scrap Hardware</a>
+							<a href="list_approve_scrap_hardware.php">Scrap Hardware</a>
 								<i class="icon-angle-right"></i>
 						</li>
 						<li>
 							<a href="view_scrap_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
-">View Approve Scrap Hardware</a>
+">View Scrap Hardware</a>
 						</li>
 					</ul>
 				</div>

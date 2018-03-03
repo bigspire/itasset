@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/font-awesome.min.css">		
@@ -21,7 +20,6 @@
 	<script src="js/validation.js"></script>
 	<script src="js/main.js"></script>
 </head>
-
 <body>
 <div class="">
 	<div class="modal-dialog">
@@ -50,11 +48,10 @@
 											<p>{$ALERT_MSG}</p>								
 										</div>
 										{/if}
-		
 <div class="chgReqFrm" align="center">
 <div class="" ><div class="" style="display: block;">
 		<div class="no-padding">
-			<form action="remarks.php?id={$smarty.get.id}&page={$smarty.get.page}" id="formID"  method="post" accept-charset="utf-8">
+			<form action="remarks.php?scrap_id={$smarty.get.scrap_id}&page={$smarty.get.page}&action={$smarty.get.action}" id="formID"  method="post" accept-charset="utf-8">
 									<div class="space-4"></div>
 									<div class="form-group" style="text-align:left">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Remarks <span class="red"> *</span> </label>
@@ -65,12 +62,12 @@
 									</div>												
 <div class="clearfix form-actions">
 <div class="col-md-9">
-<input class="btn btn-info btn-sm" name="submit" value="Submit" id="btnReq" type="submit"/>
+<input class="btn btn-info btn-sm" name="Submit" value="Submit" id="btnReq" type="submit"/>
 </div>
 </div>
 					
-<input type="hidden" value="view_approve_hardware.php?page={$smarty.get.page}&status=moved" class="redirect_url">
-<input type="hidden" value="view_approve_hardware.php?page={$smarty.get.page}&status=not_deleted_scrap" class="redirect_url1">
+<input type="hidden" value="list_approve_scrap_hardware.php?page={$smarty.get.page}&status=Approved" class="redirect_url">
+<input type="hidden" value="list_approve_scrap_hardware.php?page={$smarty.get.page}&status=Rejected" class="redirect_url1">
 								</form>
 						
 </div></div>
