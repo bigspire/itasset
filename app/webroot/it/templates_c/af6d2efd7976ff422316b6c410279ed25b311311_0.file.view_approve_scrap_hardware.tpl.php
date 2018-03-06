@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-03-02 12:01:54
+/* Smarty version 3.1.29, created on 2018-03-06 12:11:57
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\view_approve_scrap_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a98efda2287a3_39016970',
+  'unifunc' => 'content_5a9e3835a6f440_90824082',
   'file_dependency' => 
   array (
     'af6d2efd7976ff422316b6c410279ed25b311311' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\view_approve_scrap_hardware.tpl',
-      1 => 1519972308,
+      1 => 1520318168,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a98efda2287a3_39016970 ($_smarty_tpl) {
+function content_5a9e3835a6f440_90824082 ($_smarty_tpl) {
 ?>
 
 <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:include/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -183,7 +183,7 @@ echo $_smarty_tpl->tpl_vars['item']->value['validity_from'];?>
 										<div class="control-group">
 											<label for="textfield" class="control-label">Location </label>
 											<div class="controls">
-												<?php echo $_smarty_tpl->tpl_vars['item']->value['district_name'];?>
+												<?php echo $_smarty_tpl->tpl_vars['item']->value['location'];?>
  ( <?php echo $_smarty_tpl->tpl_vars['item']->value['state_name'];?>
  )
 													</div>
@@ -365,9 +365,11 @@ echo $_smarty_tpl->tpl_vars['item']->value['validity_from'];?>
 							<div class="span12">
 										<div class="form-actions">
 										<?php if ($_smarty_tpl->tpl_vars['item']->value['scrap_status'] == 'W') {?>
-<a class="iframeBox unreadLink" rel="tooltip" title="Approve Billing" href="remarks.php?scrap_id=<?php echo $_smarty_tpl->tpl_vars['item']->value['scrap_id'];?>
+<a class="iframeBox unreadLink" rel="tooltip" title="Approve Scrap" href="remarks.php?scrap_id=<?php echo $_smarty_tpl->tpl_vars['item']->value['scrap_id'];?>
+&user_id=<?php echo $_SESSION['user_id'];?>
 &action=approve" val="40_50"><input type="button" value="Approve" class="btn btn btn-success"/></a>
-<a class="iframeBox unreadLink" rel="tooltip" title="Reject Billing" href="remarks.php?scrap_id=<?php echo $_smarty_tpl->tpl_vars['item']->value['scrap_id'];?>
+<a class="iframeBox unreadLink" rel="tooltip" title="Reject Scrap" href="remarks.php?scrap_id=<?php echo $_smarty_tpl->tpl_vars['item']->value['scrap_id'];?>
+&user_id=<?php echo $_SESSION['user_id'];?>
 &action=reject" val="40_50"><input type="button" value="Reject" class="btn btn btn-danger"/></a>
 				<?php }
 $_smarty_tpl->tpl_vars['item'] = $__foreach_item_0_saved_local_item;

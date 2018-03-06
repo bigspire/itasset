@@ -51,12 +51,16 @@
 <div class="chgReqFrm" align="center">
 <div class="" ><div class="" style="display: block;">
 		<div class="no-padding">
-			<form action="remarks.php?scrap_id={$smarty.get.scrap_id}&page={$smarty.get.page}&action={$smarty.get.action}" id="formID"  method="post" accept-charset="utf-8">
+			<form action="remarks.php?scrap_id={$smarty.get.scrap_id}&user_id={$smarty.session.user_id}&page={$smarty.get.page}&action={$smarty.get.action}" id="formID"  method="post" accept-charset="utf-8">
 									<div class="space-4"></div>
 									<div class="form-group" style="text-align:left">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Remarks <span class="red"> *</span> </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Remarks 
+										{if $smarty.get.action eq 'reject'}
+										<span class="red"> *</span> </label>
+										{/if}
+										
 										<div class="col-sm-3">
-											<textarea id="remarks" rows="5" cols="45" name="remarks">{$smarty.post.remarks}</textarea>
+											<textarea id="remarks" rows="5" cols="45" name="remarks">{if $smarty.post.remarks}{$smarty.post.remarks}{/if}</textarea>
 											<div class="errorMsg error">{$remarksErr}</div>	
 										</div>
 									</div>												
@@ -68,6 +72,7 @@
 					
 <input type="hidden" value="list_approve_scrap_hardware.php?page={$smarty.get.page}&status=Approved" class="redirect_url">
 <input type="hidden" value="list_approve_scrap_hardware.php?page={$smarty.get.page}&status=Rejected" class="redirect_url1">
+<input type="hidden" value="{$user_id}" name="user_id" class="redirect_url1">
 								</form>
 						
 </div></div>

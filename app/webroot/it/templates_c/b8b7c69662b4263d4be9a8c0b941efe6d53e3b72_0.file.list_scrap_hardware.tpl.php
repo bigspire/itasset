@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-27 18:27:44
+/* Smarty version 3.1.29, created on 2018-03-06 10:45:23
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_scrap_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a9555c84438a0_88215526',
+  'unifunc' => 'content_5a9e23eba10933_37897930',
   'file_dependency' => 
   array (
     'b8b7c69662b4263d4be9a8c0b941efe6d53e3b72' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_scrap_hardware.tpl',
-      1 => 1519736237,
+      1 => 1520313317,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a9555c84438a0_88215526 ($_smarty_tpl) {
+function content_5a9e23eba10933_37897930 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -166,6 +166,16 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_created_date']->value;?>
 ">Scrap Date</a></th>
+							<th width="200">
+								<a href="list_scrap_hardware.php?field=approve_date&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+&page=<?php echo $_GET['page'];?>
+&keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
+&f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
+&t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_approve_date']->value;?>
+">Approved Date</a></th>
+							
 							<th width="100">Options</th>
 				      </tr>
 				  </thead>
@@ -199,6 +209,8 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['asset_desc'];?>
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['created_date'];?>
+</td>
+						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['approve_date'];?>
 </td>
 					   <td class='hidden-480'>
 						<a href="view_scrap_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>

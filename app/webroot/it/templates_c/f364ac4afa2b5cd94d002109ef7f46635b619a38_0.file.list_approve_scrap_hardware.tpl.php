@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-27 18:27:50
+/* Smarty version 3.1.29, created on 2018-03-06 10:58:27
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_approve_scrap_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a9555ce05e8f7_85242025',
+  'unifunc' => 'content_5a9e26fb266b80_57717966',
   'file_dependency' => 
   array (
     'f364ac4afa2b5cd94d002109ef7f46635b619a38' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_approve_scrap_hardware.tpl',
-      1 => 1519736234,
+      1 => 1520314105,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a9555ce05e8f7_85242025 ($_smarty_tpl) {
+function content_5a9e26fb266b80_57717966 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -200,10 +200,15 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['scrap_created'];?>
 </td>
-					   <td class='hidden-480'>
+					   <!-- td class='hidden-480'>
 						<a href="view_approve_scrap_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 " class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
-                  </td>
+					   </td-->
+							<td style="text-align:center">
+								<a href="view_approve_scrap_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+" rel="tooltip" class="btn  btn-mini" title="Approve Scrap"><i class="icon-edit"></i></a>
+							</td>
+
 					</tr>
 					<?php }?>
 				<?php

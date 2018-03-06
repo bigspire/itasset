@@ -82,8 +82,8 @@ try{
 }
 // set the condition to check ascending or descending order		
 $order = ($_GET['order'] == 'desc') ? 'asc' :  'desc';	
-$sort_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','created_date');
-$org_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','created_date');
+$sort_fields = array('1' => 'type','brand','approve_date','model_id','inventory_no','location','asset_desc','created_date');
+$org_fields = array('1' => 'type','brand','approve_date','model_id','inventory_no','location','asset_desc','created_date');
 
 // to set the sorting image
 foreach($sort_fields as $key => $h_field){
@@ -138,6 +138,7 @@ try{
 	{
  		$data[] = $obj;
  		$data[$i]['created_date'] = $fun->it_software_created_date($obj['created_date']);
+		$data[$i]['approve_date'] = $fun->it_software_created_date($obj['approve_date']);
  		$i++;
  		$pno[]=$paging->print_no();
  		$smarty->assign('pno',$pno);
@@ -149,9 +150,9 @@ try{
 		include('classes/class.excel.php');
 		$excelObj = new libExcel();
 		// function to print the excel header
-      $excelObj->printHeader($header = array('Title','Brand','Model Id','Inventory No','Location','Asset Description','Created Date') ,$col = array('A','B','C','D','E','F','G'));  
+      $excelObj->printHeader($header = array('Title','Brand','Model Id','Inventory No','Location','Asset Description','Created Date','Approved Date') ,$col = array('A','B','C','D','E','F','G'));  
 		// function to print the excel data
-		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','created_date'),'Scrap Hardware_'.$current_date);
+		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','created_date','approve_date'),'Scrap Hardware_'.$current_date);
 		die;
 	}
 

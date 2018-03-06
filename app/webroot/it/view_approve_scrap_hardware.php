@@ -4,7 +4,6 @@ Purpose : To view approve scrap hardware.
 Created : Nikitasa
 Date : 28-02-2018
 */
-session_start();
 include 'configs/smartyconfig.php';
 // include mysql class
 include('classes/class.mysql.php');

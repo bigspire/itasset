@@ -86,9 +86,13 @@
 						<td>{$item.location}</td>
 						<td>{$item.asset_desc}</td>
 						<td>{$item.scrap_created}</td>
-					   <td class='hidden-480'>
+					   <!-- td class='hidden-480'>
 						<a href="view_approve_scrap_hardware.php?id={$item.id}" class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
-                  </td>
+					   </td-->
+							<td style="text-align:center">
+								<a href="view_approve_scrap_hardware.php?id={$item.id}" rel="tooltip" class="btn  btn-mini" title="Approve Scrap"><i class="icon-edit"></i></a>
+							</td>
+
 					</tr>
 					{/if}
 				{/foreach}

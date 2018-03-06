@@ -21,7 +21,7 @@
 							<i class="icon-angle-right"></i>
 						</li>
 						<li>
-							<a href="list_approve_scrap_hardware.php">Scrap Hardware</a>
+							<a href="list_scrap_hardware.php">Scrap Hardware</a>
 								<i class="icon-angle-right"></i>
 						</li>
 						<li>
@@ -131,7 +131,7 @@
 										<div class="control-group">
 											<label for="textfield" class="control-label">Location </label>
 											<div class="controls">
-												{$item.district_name} ( {$item.state_name} )
+												{$item.location} ( {$item.state_name} )
 													</div>
 										</div>   
 				<div class="control-group"></div>
@@ -271,20 +271,33 @@
 											<div class="controls">
 												{$item.scrap_status}
 											</div>
-										</div>			</div>
+										</div>		
+
+ <div class="control-group">
+											<label for="textfield" class="control-label">Message </label>
+											<div class="controls">
+												{$item.message}	
+											</div>
+										</div>										</div>
 																
 									<div class="span6">									
 	
    <div class="control-group">
-											<label for="textfield" class="control-label">Message </label>
+											<label for="textfield" class="control-label">Remarks </label>
 											<div class="controls">
-												{$item.message}	
+												{$item.remarks}	
 											</div>
 										</div>
 										<div class="control-group">
 											<label for="textfield" class="control-label">Scrap Date </label>
 											<div class="controls">
 												{$item.scrap_date}	
+											</div>
+										</div>
+										<div class="control-group">
+											<label for="textfield" class="control-label">Approved Scrap Date </label>
+											<div class="controls">
+												{$item.approve_date}	
 											</div>
 										</div>
 									</div>	

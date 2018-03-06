@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-03-02 14:02:46
+/* Smarty version 3.1.29, created on 2018-03-06 11:35:30
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\view_scrap_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a990c2e7ab5c3_70740915',
+  'unifunc' => 'content_5a9e2faad55e05_07224562',
   'file_dependency' => 
   array (
     '172e073c18514d4987e4e8058c4d8ea26b428c90' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\view_scrap_hardware.tpl',
-      1 => 1519805222,
+      1 => 1520316082,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a990c2e7ab5c3_70740915 ($_smarty_tpl) {
+function content_5a9e2faad55e05_07224562 ($_smarty_tpl) {
 ?>
 
 <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:include/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -50,7 +50,7 @@ function content_5a990c2e7ab5c3_70740915 ($_smarty_tpl) {
 							<i class="icon-angle-right"></i>
 						</li>
 						<li>
-							<a href="list_approve_scrap_hardware.php">Scrap Hardware</a>
+							<a href="list_scrap_hardware.php">Scrap Hardware</a>
 								<i class="icon-angle-right"></i>
 						</li>
 						<li>
@@ -183,7 +183,7 @@ echo $_smarty_tpl->tpl_vars['item']->value['validity_from'];?>
 										<div class="control-group">
 											<label for="textfield" class="control-label">Location </label>
 											<div class="controls">
-												<?php echo $_smarty_tpl->tpl_vars['item']->value['district_name'];?>
+												<?php echo $_smarty_tpl->tpl_vars['item']->value['location'];?>
  ( <?php echo $_smarty_tpl->tpl_vars['item']->value['state_name'];?>
  )
 													</div>
@@ -341,14 +341,22 @@ echo $_smarty_tpl->tpl_vars['item']->value['validity_from'];?>
 												<?php echo $_smarty_tpl->tpl_vars['item']->value['scrap_status'];?>
 
 											</div>
-										</div>			</div>
+										</div>		
+
+ <div class="control-group">
+											<label for="textfield" class="control-label">Message </label>
+											<div class="controls">
+												<?php echo $_smarty_tpl->tpl_vars['item']->value['message'];?>
+	
+											</div>
+										</div>										</div>
 																
 									<div class="span6">									
 	
    <div class="control-group">
-											<label for="textfield" class="control-label">Message </label>
+											<label for="textfield" class="control-label">Remarks </label>
 											<div class="controls">
-												<?php echo $_smarty_tpl->tpl_vars['item']->value['message'];?>
+												<?php echo $_smarty_tpl->tpl_vars['item']->value['remarks'];?>
 	
 											</div>
 										</div>
@@ -356,6 +364,13 @@ echo $_smarty_tpl->tpl_vars['item']->value['validity_from'];?>
 											<label for="textfield" class="control-label">Scrap Date </label>
 											<div class="controls">
 												<?php echo $_smarty_tpl->tpl_vars['item']->value['scrap_date'];?>
+	
+											</div>
+										</div>
+										<div class="control-group">
+											<label for="textfield" class="control-label">Approved Scrap Date </label>
+											<div class="controls">
+												<?php echo $_smarty_tpl->tpl_vars['item']->value['approve_date'];?>
 	
 											</div>
 										</div>

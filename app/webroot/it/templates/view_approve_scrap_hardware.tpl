@@ -131,7 +131,7 @@
 										<div class="control-group">
 											<label for="textfield" class="control-label">Location </label>
 											<div class="controls">
-												{$item.district_name} ( {$item.state_name} )
+												{$item.location} ( {$item.state_name} )
 													</div>
 										</div>   
 				<div class="control-group"></div>
@@ -293,8 +293,8 @@
 							<div class="span12">
 										<div class="form-actions">
 										{if $item.scrap_status eq 'W'}
-<a class="iframeBox unreadLink" rel="tooltip" title="Approve Billing" href="remarks.php?scrap_id={$item.scrap_id}&action=approve" val="40_50"><input type="button" value="Approve" class="btn btn btn-success"/></a>
-<a class="iframeBox unreadLink" rel="tooltip" title="Reject Billing" href="remarks.php?scrap_id={$item.scrap_id}&action=reject" val="40_50"><input type="button" value="Reject" class="btn btn btn-danger"/></a>
+<a class="iframeBox unreadLink" rel="tooltip" title="Approve Scrap" href="remarks.php?scrap_id={$item.scrap_id}&user_id={$smarty.session.user_id}&action=approve" val="40_50"><input type="button" value="Approve" class="btn btn btn-success"/></a>
+<a class="iframeBox unreadLink" rel="tooltip" title="Reject Scrap" href="remarks.php?scrap_id={$item.scrap_id}&user_id={$smarty.session.user_id}&action=reject" val="40_50"><input type="button" value="Reject" class="btn btn btn-danger"/></a>
 				{/if}{/foreach}	
 										<a href="list_approve_scrap_hardware.php"><input type="button" val="list_approve_scrap_hardware.php" value="Back" class="jsRedirect btn btn-primary"></a>	
 										</div>

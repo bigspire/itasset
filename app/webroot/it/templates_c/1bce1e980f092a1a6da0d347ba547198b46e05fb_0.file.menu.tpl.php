@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-26 17:10:30
+/* Smarty version 3.1.29, created on 2018-03-06 12:13:59
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\include\menu.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a93f22e807c70_84205446',
+  'unifunc' => 'content_5a9e38afa6f2e2_34557111',
   'file_dependency' => 
   array (
     '1bce1e980f092a1a6da0d347ba547198b46e05fb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\include\\menu.tpl',
-      1 => 1519645228,
+      1 => 1520318601,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5a93f22e807c70_84205446 ($_smarty_tpl) {
+function content_5a9e38afa6f2e2_34557111 ($_smarty_tpl) {
 ?>
 
 
@@ -57,24 +57,15 @@ bdhome/?type=N" class="">BD</a></li>
  dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Software</span>
-						<span class="caret"></span> 
-							
+						<span class="caret"></span> 	
 					</a>
 					<ul class="dropdown-menu">
-					
 					<li>
 					<a href="list_software.php">Software</a>
 					</li>			
-						
-					
-										<li>
+					<li>
 					<a href="add_software_details.php">Add Software</a>
 					</li>
-						
-					
-												
-						
-					
 					</ul>
 				</li>
 				<?php }?>
@@ -83,9 +74,7 @@ bdhome/?type=N" class="">BD</a></li>
  dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Hardware</span>
-						<span class="caret"></span>
-							
-							
+						<span class="caret"></span>	
 					</a>
 					<ul class="<?php echo $_smarty_tpl->tpl_vars['active']->value;?>
  dropdown-menu">
@@ -93,9 +82,8 @@ bdhome/?type=N" class="">BD</a></li>
 					<a href="list_hardware.php">Hardware</a>
 					</li>
 					<li>
-							<a href="add_hardware_details.php">Add Hardware</a>
-						</li>
-					
+					<a href="add_hardware_details.php">Add Hardware</a>
+					</li>
 					</ul>
 				</li>
 				<?php }?>
@@ -137,11 +125,7 @@ echo $_smarty_tpl->tpl_vars['change_asset_count']->value;
 						<?php }?>
 					</ul>
 				</li>
-        
-				
            <?php }?>
-		   
-		  
 				<?php if (isset($_smarty_tpl->tpl_vars['HelpDesk']->value)) {?>					
 				<li class="<?php echo $_smarty_tpl->tpl_vars['help_desk_active']->value;?>
  dropdown">
@@ -158,8 +142,6 @@ echo $_smarty_tpl->tpl_vars['ticket_count']->value;
 echo $_smarty_tpl->tpl_vars['ticket_count']->value;
 }?></span></a>
 					</li>
-					
-					
 					</ul>
 				</li>
 				<?php }?>
@@ -168,9 +150,7 @@ echo $_smarty_tpl->tpl_vars['ticket_count']->value;
  dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Logins</span>
-						<span class="caret"></span>
-							
-							
+						<span class="caret"></span>	
 					</a>
 					<ul class="dropdown-menu">
 					<li>
@@ -179,8 +159,6 @@ echo $_smarty_tpl->tpl_vars['ticket_count']->value;
 					<li>
 					<a href="add_login.php">Add Login</a>
 					</li>
-					
-					
 					</ul>
 				</li>
 				<?php }?>
@@ -189,9 +167,7 @@ echo $_smarty_tpl->tpl_vars['ticket_count']->value;
  dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Settings</span>
-						<span class="caret"></span>
-							
-							
+						<span class="caret"></span>		
 					</a>
 					<ul class="dropdown-menu">
 					<?php if (isset($_smarty_tpl->tpl_vars['SettingsRoles']->value)) {?>	
@@ -233,8 +209,7 @@ echo $_smarty_tpl->tpl_vars['ticket_count']->value;
 			
 			<div class="user" style="">
 				<ul class="icon-nav">
-					
-				
+
 			<li class="<?php echo $_smarty_tpl->tpl_vars['switch_module_active']->value;?>
  dropdown language-select">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-reply"></i><span>Switch Module 

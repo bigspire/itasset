@@ -51,6 +51,7 @@ try{
 			$data[$i]['validity_from'] = $fun->it_software_created_date($obj['validity_from']);
 			$data[$i]['validity_to'] = $fun->it_software_created_date($obj['validity_to']);
 			$data[$i]['scrap_date'] = $fun->it_software_created_date($obj['scrap_date']);
+			$data[$i]['approve_date'] = $fun->it_software_created_date($obj['approve_date']);
 			$data[$i]['hw_type'] = $fun->it_scrap_hw_type($obj['hw_type']);
 			$data[$i]['scrap_status'] = $fun->it_scrap_hw_status($obj['scrap_status']);
 			$i++;	

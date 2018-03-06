@@ -72,6 +72,9 @@
 								<a href="list_scrap_hardware.php?field=asset_desc&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Asset Description</a></th>
 							<th width="200">
 								<a href="list_scrap_hardware.php?field=created_date&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created_date}">Scrap Date</a></th>
+							<th width="200">
+								<a href="list_scrap_hardware.php?field=approve_date&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_approve_date}">Approved Date</a></th>
+							
 							<th width="100">Options</th>
 				      </tr>
 				  </thead>
@@ -86,6 +89,7 @@
 						<td>{$item.location}</td>
 						<td>{$item.asset_desc}</td>
 						<td>{$item.created_date}</td>
+						<td>{$item.approve_date}</td>
 					   <td class='hidden-480'>
 						<a href="view_scrap_hardware.php?id={$item.id}" class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
                   </td>

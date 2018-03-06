@@ -5,7 +5,9 @@
 	Date : 28-02-2018
 */
 
-session_start();
+//session_destroy();
+// session_start();
+
 //include smarty congig file
 include 'configs/smartyconfig.php';
 // include mysql class
@@ -23,17 +25,22 @@ include('classes/class.mailer.php');
 // content class
 include('classes/class.content.php');
 
+// get and assign app user id
+$_GET['user_id'];
+$smarty->assign('user_id' , $_GET['user_id']);
+
 if(!empty($_POST)){
-	$submit = true;
-	// remarks Field Validation
-	if(!empty($_POST['remarks'])){
-		$smarty->assign('remarks' , $_POST['remarks']);
-		$submit = true;
-	}else{
-		$smarty->assign('remarksErr' , 'Please select the remarks');
-		$submit = false;
-	}
 	
+	$error = true;
+	// validate for reject option
+	if(!empty($_POST) && $_GET['action'] == 'reject'){
+		// remarks Field Validation
+	   if($_POST['remarks'] == ''){     
+		  $smarty->assign('remarksErr' , 'Please enter the remarks');  
+		  $error = false;  
+	   }
+	}
+
 	// details created date and time 
 	$created_date = $fun->current_date($date);   
 
@@ -50,9 +57,9 @@ if(!empty($_POST)){
 		$mail_status = 'Approved by';
 	}			
 	
-	if($submit == true){ 
+	if($error){
 			// query to insert into database. 
-			$query = "CALL edit_scrap_hardware('".$_GET['scrap_id']."','".$_POST['remarks']."','".$created_date."','".$_SESSION['user_id']."','".$status."')";
+			$query = "CALL edit_scrap_hardware('".$_GET['scrap_id']."','".$_POST['remarks']."','".$created_date."','".$_POST['user_id']."','".$status."')";
 			// Calling the function that makes the insert
 			try{
 				// calling mysql exe_query function
@@ -88,7 +95,7 @@ if(!empty($_POST)){
 			}		
 					
 			// get the employee details
-			$query = "CALL it_get_app_user('".$_SESSION['user_id']."')";
+			$query = "CALL it_get_app_user('".$_POST['user_id']."')";
 			try{
 				if(!$result = $mysql->execute_query($query)){
 					throw new Exception('Problem in getting employee details');
@@ -130,7 +137,7 @@ if(!empty($_POST)){
 			if(($scrap_id != '0') || ($inv_id != '0')){
 				foreach($row_account as  $assigned_user){ 					
 					$sub = "Scrap Hardware ".$fun->it_scrap_hw_status($status). " by -  ".$user_name;
-					$msg = $content->get_scrap_hw_mail_details($_POST,$approval_user['approval_name'],$user_name);
+					$msg = $content->get_scrap_hw_mail_details($_POST,$assigned_user['user_name'],$user_name);
 					$mailer->send_mail($sub,$msg,$assigned_user['user_name'],$assigned_user['email_address'],$user_name,$user_email,'','');	
 				}
 				$smarty->assign('form_sent' , $form_sent);	
@@ -138,7 +145,6 @@ if(!empty($_POST)){
 				$smarty->assign('redirect_url',$url);
 			}		
 	}							
-	$smarty->assign('alert_msg',$alert_msg);
 	// closing mysql
 	$mysql->close_connection();
 }
