@@ -121,7 +121,7 @@
 						  {if $item.status == 'Active'}										
 								{if $item.is_deleted != 'N'}	
 									 <a href="add_scrap.php?id={$item.invid}&page={$smarty.get.page}&scrap_type=S" rel="tooltip" title="Scrap/Lost" class="iframeBox btn" val="40_67"><i class="icon-trash"></i></a>						
-									 <a href="add_scrap.php?id={$item.invid}&page={$smarty.get.page}&scrap_type=R" rel="tooltip" title="Resale/Exchange" class="iframeBox btn" val="40_67"><i class="icon-trash"></i></a>						
+									 <a href="add_exchange_hw.php?id={$item.invid}&page={$smarty.get.page}&scrap_type=R" rel="tooltip" title="Resale/Exchange" class="iframeBox btn" val="40_67"><i class="icon-trash"></i></a>						
 									 {/if}	
 								{/if}	
 						  {/if}									 

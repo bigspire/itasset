@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-23 17:03:04
+/* Smarty version 3.1.29, created on 2018-03-07 16:13:32
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a8ffbf0281222_85424521',
+  'unifunc' => 'content_5a9fc254999438_77469098',
   'file_dependency' => 
   array (
     '368d71be8341817b155ac32d10bab46c9d264be9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_hardware.tpl',
-      1 => 1519384565,
+      1 => 1520419402,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a8ffbf0281222_85424521 ($_smarty_tpl) {
+function content_5a9fc254999438_77469098 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -283,7 +283,7 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 									 <a href="add_scrap.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['invid'];?>
 &page=<?php echo $_GET['page'];?>
 &scrap_type=S" rel="tooltip" title="Scrap/Lost" class="iframeBox btn" val="40_67"><i class="icon-trash"></i></a>						
-									 <a href="add_scrap.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['invid'];?>
+									 <a href="add_exchange_hw.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['invid'];?>
 &page=<?php echo $_GET['page'];?>
 &scrap_type=R" rel="tooltip" title="Resale/Exchange" class="iframeBox btn" val="40_67"><i class="icon-trash"></i></a>						
 									 <?php }?>	
