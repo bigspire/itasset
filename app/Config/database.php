@@ -61,7 +61,8 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => '',
-		'database' => 'ceo_apps_it2',
+
+		'database' => 'itasset_db',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);

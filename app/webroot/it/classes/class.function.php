@@ -6,7 +6,7 @@ Date : 02-06-2016
 */
 class fun{
 	
-	public $key = '33YhGkfiFk39Fk029O9g9o32i774';
+	public $key = '33YhGkf983ilkasjdf4GSD01';
 	
 	// letter and number validation with space
 	public function name_validation($name){
@@ -81,6 +81,47 @@ class fun{
 		}
 		return $st;
 	}	
+	
+	// function to validate database it hardware scrap status field 
+	public function it_scrap_hw($status){
+		if($status == 'S'){
+			$st = 'Scrap - Awaiting Approval';
+		}else if($status == 'L'){
+	 		$st = 'Lost - Awaiting Approval';
+		}else if($status == 'RS'){
+			$st = 'Resale - Awaiting Approval';
+		}else if($status == 'EX'){
+	 		$st = 'Exchange - Awaiting Approval';
+		}
+		return $st;
+	}	
+	
+	// function to validate database scrap type field 
+	public function it_scrap_hw_type($status){
+		if($status == 'S'){
+			$st = 'Scrap';
+		}else if($status == 'L'){
+	 		$st = 'Lost';
+		}else if($status == 'RS'){
+			$st = 'Resale';
+		}else if($status == 'EX'){
+	 		$st = 'Exchange';
+		}
+		return $st;
+	}
+	
+	// function to validate database scrap status field 
+	public function it_scrap_hw_status($status){
+		if($status == 'A'){
+			$st = 'Approved';
+		}else if($status == 'R'){
+	 		$st = 'Rejected';
+		}else if($status == 'W'){
+			$st = 'Resale - Awaiting Approval';
+		}
+		return $st;
+	}
+	
 	// function to validate database it_brand type field 
 	public function it_brand_type($type){
 		if($type == 'S'){
@@ -150,6 +191,7 @@ class fun{
 	 		$st = 'Closed';
 		}elseif($status == 'H'){	
 	 		$st = 'Hold';
+	 		$st = 'Hold';
 		}else{	
 	 		$st = 'Re-Open';
 		}
@@ -168,6 +210,8 @@ class fun{
 		}
 		return $st;
 	}
+	
+
 	// function to validate database dashboard status field 
 	public function dashboard_status($status){
 		if($status == 'O'){

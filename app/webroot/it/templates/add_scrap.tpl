@@ -24,14 +24,11 @@
 	<script src="js/main.js"></script>
 </head>
 
-
 <body>
-
 <div class="">
 	<div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-       
+        <div class="modal-header">       
           <h4 class="modal-title">Scrap Hardware</h4>
         </div><div class="container"></div>
         <div class="">
@@ -40,43 +37,39 @@
 											<button type="button" class="close" data-dismiss="alert">
 												<i class="icon-remove"></i>
 											</button>
-
 											<strong>
 												<i class="icon-remove"></i>
-												
 											</strong>
-
 											{$ALERT_MSG1}
 											<br>
 										</div>
 									{/if}	
 										{if $ALERT_MSG}
-        <div class="alert alert-block alert-success chgSuccess">
+										<div class="alert alert-block alert-success chgSuccess">
 											<button type="button" class="close" data-dismiss="alert">
 												<i class="icon-remove"></i>
 											</button>
-
-											<p>
-												{$ALERT_MSG}
-											</p>								
+											<p>{$ALERT_MSG}</p>								
 										</div>
 										{/if}
 		
-				 <div class="chgReqFrm" align="center">
-		
+<div class="chgReqFrm" align="center">
 <div class="" ><div class="" style="display: block;">
-												<div class="no-padding">
-											
-
+		<div class="no-padding">
 			<form action="add_scrap.php?id={$smarty.get.id}&page={$smarty.get.page}" id="formID"  method="post" accept-charset="utf-8">
 									<div class="space-4"></div>
 									<div class="space-4"></div>
 									<div class="form-group" style="text-align:left">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Comments <span class="red"> *</span> </label>
-
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Hardware Type <span class="red"> *</span> </label>
 										<div class="col-sm-3">
-											<input type
-											<div class="errorMsg error">{$messageErr}</div>	
+										{* if $smarty.get.scrap_type eq 'S' || $scrap_type eq 'S' *}
+										<input type="radio"  name="hw_type"    {if $smarty.post.hw_type eq 'S'} checked="checked" {/if} value="S"> Scrap
+										<input type="radio"    name="hw_type"  {if $smarty.post.hw_type eq 'L'} checked="checked" {/if}  value="L"> Lost
+										{* else *}
+										<!-- input type="radio"  name="hw_type"    {if $smarty.post.hw_type eq 'RS'} checked="checked" {/if} value="RS"> Resale -->
+										<!-- input type="radio"    name="hw_type"  {if $smarty.post.hw_type eq 'EX'} checked="checked" {/if}  value="EX"> Exchange -->
+										{* /if *}
+										<br><div class="errorMsg error">{$hw_typeErr}</div>	<br>
 										</div>
 									</div>
 									<div class="form-group" style="text-align:left">

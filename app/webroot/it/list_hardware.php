@@ -155,6 +155,9 @@ try{
  	$data[] = $obj;
  	$data[$i]['subscription'] =  $fun->it_software_subscription($obj['subscription']);
  	$data[$i]['status'] = $fun->it_software_status($obj['status']);
+	if($obj['scrap_hw_type'] != ''){
+		$data[$i]['scrap_hw_type'] = '['.$fun->it_scrap_hw($obj['scrap_hw_type']).']';
+	}
 	$data[$i]['status_cls'] = $fun->status_cls($obj['status']);
 	$data[$i]['validity_to'] = $fun->it_software_created_date($obj['validity_to']);
  	$data[$i]['created_date'] = $fun->it_software_created_date($obj['created_date']);
@@ -178,12 +181,14 @@ try{
 	$type = array('' => 'All Status', '1' => 'Active', '0' => 'Inactive');
 
 	// create,update,delete message validation
-	if($_GET['status'] == 'deleted' || $_GET['status'] == 'created' || $_GET['status'] == 'updated' || $_GET['status'] == 'moved'){
+	if($_GET['status'] == 'deleted' || $_GET['status'] == 'created' || $_GET['status'] == 'updated'){
   		$success_msg = 'Hardware details ' . $_GET['status'] . ' successfully';
 	}else if($_GET['status'] == 'not_deleted'){
 		$erro_msg = "You cannot delete unless you remove this hardware from assigned asset.";	
 	}else if($_GET['status'] == 'not_deleted_scrap'){
 		$erro_msg = "You cannot move this to scrap unless you remove this hardware from assigned asset.";	
+	}else if($_GET['status'] == 'moved'){
+		$success_msg = "Harware Details went for Director Approval";	
 	}
 
 	// validating pagination

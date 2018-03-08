@@ -29,24 +29,15 @@
 				<li class="{$software_active} dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Software</span>
-						<span class="caret"></span> 
-							
+						<span class="caret"></span> 	
 					</a>
 					<ul class="dropdown-menu">
-					
 					<li>
 					<a href="list_software.php">Software</a>
 					</li>			
-						
-					
-										<li>
+					<li>
 					<a href="add_software_details.php">Add Software</a>
 					</li>
-						
-					
-												
-						
-					
 					</ul>
 				</li>
 				{/if}
@@ -54,26 +45,23 @@
 				<li class="{$hardware_active} dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Hardware</span>
-						<span class="caret"></span>
-							
-							
+						<span class="caret"></span>	
 					</a>
 					<ul class="{$active} dropdown-menu">
 					<li>
 					<a href="list_hardware.php">Hardware</a>
 					</li>
 					<li>
-							<a href="add_hardware_details.php">Add Hardware</a>
-						</li>
-					
+					<a href="add_hardware_details.php">Add Hardware</a>
+					</li>
 					</ul>
 				</li>
 				{/if}
-				{if !empty($AssignAssset) || !empty($ChangeAssetInfo) || !empty($ScrapHardware)}
+				{if !empty($AssignAssset) || !empty($ChangeAssetInfo) || !empty($ScrapHardware) || !empty($ApproveScrapHardware)}
 				<li class="{$assign_asset_active} dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Assign Asset</span>
-						<span class="label label-lightred bubble">{if $change_asset_count}{$change_asset_count}{/if}</span>
+						<span class="label label-lightred bubble">{if $change_asset_count && $ChangeAssetInfo}{$change_asset_count}{/if}</span>
 						<span class="caret"></span>				
 					</a>
 					<ul class="dropdown-menu">
@@ -102,11 +90,7 @@
 						{/if}
 					</ul>
 				</li>
-        
-				
            {/if}
-		   
-		  
 				{if isset($HelpDesk)}					
 				<li class="{$help_desk_active} dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
@@ -118,8 +102,6 @@
 					<li>
 					<a href="list_ticket.php">Ticket <span class="label label-lightred bubble">{if $ticket_count}{$ticket_count}{/if}</span></a>
 					</li>
-					
-					
 					</ul>
 				</li>
 				{/if}
@@ -127,9 +109,7 @@
 				<li class="{$login_active} dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Logins</span>
-						<span class="caret"></span>
-							
-							
+						<span class="caret"></span>	
 					</a>
 					<ul class="dropdown-menu">
 					<li>
@@ -138,8 +118,6 @@
 					<li>
 					<a href="add_login.php">Add Login</a>
 					</li>
-					
-					
 					</ul>
 				</li>
 				{/if}
@@ -148,9 +126,7 @@
 				<li class="{$settings_active} dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Settings</span>
-						<span class="caret"></span>
-							
-							
+						<span class="caret"></span>		
 					</a>
 					<ul class="dropdown-menu">
 					{if isset($SettingsRoles)}	
@@ -192,8 +168,7 @@
 			
 			<div class="user" style="">
 				<ul class="icon-nav">
-					
-				
+
 			<li class="{$switch_module_active} dropdown language-select">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-reply"></i><span>Switch Module 
 						<span class="switchLoad"></span>
