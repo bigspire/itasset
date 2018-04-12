@@ -205,7 +205,7 @@ try{
 }
 
 // fetch all records for list assign employee for software
-$query = "CALL it_list_assign_emp('".$user_id."','S')";
+$query = "CALL it_list_assign_emp('".$user_id."','S', 'A')";
 
 try{
 	if(!$result = $mysql->execute_query($query)){
@@ -225,7 +225,7 @@ try{
 }
 
 // fetch all records for list_assign_emp hardware
-$query = "CALL it_list_assign_emp('".$user_id."','H')";
+$query = "CALL it_list_assign_emp('".$user_id."','H','A')";
 
 try{
 	if(!$result = $mysql->execute_query($query)){

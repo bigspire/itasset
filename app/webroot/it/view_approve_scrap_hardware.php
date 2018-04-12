@@ -51,6 +51,7 @@ try{
 			$data[$i]['validity_to'] = $fun->it_software_created_date($obj['validity_to']);
 			$data[$i]['scrap_date'] = $fun->it_software_created_date($obj['scrap_date']);
 			$data[$i]['hw_type'] = $fun->it_scrap_hw_type($obj['hw_type']);
+			$data[$i]['hw_type_val'] = $obj['hw_type'];
 			$data[$i]['scrap'] = $fun->it_scrap_hw_status($obj['scrap_status']);
 			$i++;	
 		}
@@ -80,7 +81,7 @@ $smarty->assign('id' , $_GET['id']);
 $smarty->assign('data', $data); 
 
 // assign page title
-$smarty->assign('page_title' , 'View Approve Scrap Hardware - IT');
+$smarty->assign('page_title' , 'View Approve Hardware - IT');
 // assigning active class status to smarty menu.tpl
 $smarty->assign('assign_asset_active' , 'active'); 	   
 // display smarty template

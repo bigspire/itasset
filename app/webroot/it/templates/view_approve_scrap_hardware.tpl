@@ -21,34 +21,157 @@
 							<i class="icon-angle-right"></i>
 						</li>
 						<li>
-							<a href="list_approve_scrap_hardware.php">Approve Scrap Hardware</a>
+							<a href="list_approve_scrap_hardware.php">Approve Hardware</a>
 								<i class="icon-angle-right"></i>
 						</li>
 						<li>
-							<a href="view_approve_scrap_hardware.php?id={$id}">View Approve Scrap Hardware</a>
+							<a href="view_approve_scrap_hardware.php?id={$id}">View Approve Hardware</a>
 						</li>
 					</ul>
 				</div>
 					<div class="row-fluid  footer_div">
 					<div class="span12">
 		
-					<form action="view_approve_scrap_hardware.php" id="formID" class="form-horizontal form-column form-bordered" enctype="multipart/form-data" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>										
-										<div class="step ui-formwizard-content" id="firstStep" style="width:99%;margin-top:20px;">
-									</div>
-								</form>
-					<form action="/ceo_apps/hremployee/create_employee/confirm/" id="formID" class="form-horizontal form-column form-bordered" enctype="multipart/form-data" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>								
+					<form action="view_approve_scrap_hardware.php" id="formID" class="form-horizontal form-column form-bordered" enctype="multipart/form-data" method="post" accept-charset="utf-8">									
+										
+						
+
+<div class="box">
+							<div class="box-title">
+								<h3><i class="icon-list"></i> Request Details</h3>
+							</div>
+							
+						 {foreach from=$data item=item key=key}	  
+							<div class="box-content nopadding">
+										
+									{if $item.hw_type_val eq 'S' || $item.hw_type_val eq 'L' }				
+									<div class="span6" style="">
+				<div class="control-group">
+											<label for="textfield" class="control-label">Type</label>
+											<div class="controls">
+											{$item.hw_type}
+													</div>
+										</div>
+										
+										<div class="control-group">
+											<label for="textfield" class="control-label">Created Date </label>
+											<div class="controls">
+												{$item.scrap_date}	
+											</div>
+										</div>
+										
+									<div class="control-group">
+											<label for="textfield" class="control-label">Status </label>
+											<div class="controls">
+												{$item.scrap}
+											</div>
+										</div>	
+										
+										
+
+										</div>
+																
+									<div class="span6">									
+	
+   <div class="control-group">
+											<label for="textfield" class="control-label">Message </label>
+											<div class="controls">
+												{$item.message}	
+											</div>
+										</div>
+										
+										 <div class="control-group">
+											<label for="textfield" class="control-label">Created By </label>
+											<div class="controls">
+												{$item.first_name}	
+											</div>
+										</div>
+										
+										
+									</div>	
+									{/if}
+									
+									{if $item.hw_type_val eq 'EX' || $item.hw_type_val eq 'RS'}				
+									<div class="span6" style="">
+				<div class="control-group">
+											<label for="textfield" class="control-label">Type</label>
+											<div class="controls">
+											{$item.hw_type}
+													</div>
+										</div>
+										
+										
+											<div class="control-group">
+											<label for="textfield" class="control-label">Amount</label>
+											<div class="controls">
+										Rs.	{$item.cost}
+													</div>
+										</div>
+										
+										
+										
+									
+										
+										<div class="control-group">
+											<label for="textfield" class="control-label">Created Date </label>
+											<div class="controls">
+												{$item.scrap_date}	
+											</div>
+										</div>
+										
+									<div class="control-group">
+											<label for="textfield" class="control-label">Status </label>
+											<div class="controls">
+												{$item.scrap}
+											</div>
+										</div>	
+										
+										
+
+										</div>
+																
+									<div class="span6">	
+
+	<div class="control-group">
+											<label for="textfield" class="control-label">New Hardware</label>
+											<div class="controls">
+											{$item.it_hardware_inventory_new}
+													</div>
+										</div>									
+	
+   <div class="control-group">
+											<label for="textfield" class="control-label">Message </label>
+											<div class="controls">
+												{$item.message}	
+											</div>
+										</div>
+										
+										 <div class="control-group">
+											<label for="textfield" class="control-label">Created By </label>
+											<div class="controls">
+												{$item.first_name}	
+											</div>
+										</div>
+										
+										
+									</div>	
+									{/if}
+									
+						</div>
+						
 						<div class="box">
 							<div class="box-title">
 								<h3><i class="icon-list"></i> Hardware Details</h3>
 								
 							</div>						
 							<div class="box-content nopadding">
+							
 									<div class="span6">
 									
 						<div class="control-group">
 											<label for="textfield" class="control-label">Type </label>
 											<div class="controls">
- {foreach from=$data item=item key=key}	                           
+                         
 							   {$item.hardware_type}
 										</div>
 										</div>
@@ -252,55 +375,27 @@
 									</div>	
 </div>										
 <div class="box">
-							<div class="box-title">
-								<h3><i class="icon-list"></i> Approve Scrap Hardware Details</h3>
-							</div>
 							
 						
 							<div class="box-content nopadding">
 												
-																<div class="span6" style="">
-				<div class="control-group">
-											<label for="textfield" class="control-label">Type</label>
-											<div class="controls">
-											{$item.hw_type}
-													</div>
-										</div>
-									<div class="control-group">
-											<label for="textfield" class="control-label">Scrap Status </label>
-											<div class="controls">
-												{$item.scrap}
-											</div>
-										</div>			</div>
+														
 																
-									<div class="span6">									
-	
-   <div class="control-group">
-											<label for="textfield" class="control-label">Message </label>
-											<div class="controls">
-												{$item.message}	
-											</div>
-										</div>
-										<div class="control-group">
-											<label for="textfield" class="control-label">Scrap Date </label>
-											<div class="controls">
-												{$item.scrap_date}	
-											</div>
-										</div>
-									</div>	
 									
 									
 							<div class="span12">
-										<div class="form-actions">
+									<div class="form-actions">
 										{if $item.scrap_status eq 'W'}
-<a class="iframeBox unreadLink" rel="tooltip" title="Approve Scrap" href="remarks.php?scrap_id={$item.scrap_id}&user_id={$smarty.session.user_id}&action=approve" val="40_50"><input type="button" value="Approve" class="btn btn btn-success"/></a>
-<a class="iframeBox unreadLink" rel="tooltip" title="Reject Scrap" href="remarks.php?scrap_id={$item.scrap_id}&user_id={$smarty.session.user_id}&action=reject" val="40_50"><input type="button" value="Reject" class="btn btn btn-danger"/></a>
+<a class="iframeBox unreadLink" rel="tooltip" title="Approve Scrap" href="remarks.php?scrap_id={$item.scrap_id}&user_id={$smarty.session.user_id}&inv_id={$item.inv_id}&action=approve" val="40_50"><input type="button" value="Approve" class="btn btn btn-success"/></a>
+<a class="iframeBox unreadLink" rel="tooltip" title="Reject Scrap" href="remarks.php?scrap_id={$item.scrap_id}&user_id={$smarty.session.user_id}&inv_id={$item.inv_id}&action=reject" val="40_50"><input type="button" value="Reject" class="btn btn btn-danger"/></a>
 				{/if}{/foreach}	
 										<a href="list_approve_scrap_hardware.php"><input type="button" val="list_approve_scrap_hardware.php" value="Back" class="jsRedirect btn btn-primary"></a>	
 										</div>
 							</div>		
 							</div>
 						</div>
+						
+						
 						</div>
 					</form>
 				 </div>

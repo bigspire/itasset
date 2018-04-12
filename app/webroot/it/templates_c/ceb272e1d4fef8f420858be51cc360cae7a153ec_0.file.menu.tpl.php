@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-21 20:31:39
+/* Smarty version 3.1.29, created on 2018-03-19 13:25:10
   from "C:\xampp\htdocs\itassetsvn\itasset\app\webroot\it\templates\include\menu.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a8d89d3120dc5_52802948',
+  'unifunc' => 'content_5aaf6cdeebacd4_83550167',
   'file_dependency' => 
   array (
     'ceb272e1d4fef8f420858be51cc360cae7a153ec' => 
     array (
       0 => 'C:\\xampp\\htdocs\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\include\\menu.tpl',
-      1 => 1519197760,
+      1 => 1521446109,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5a8d89d3120dc5_52802948 ($_smarty_tpl) {
+function content_5aaf6cdeebacd4_83550167 ($_smarty_tpl) {
 ?>
 
 
@@ -57,24 +57,15 @@ bdhome/?type=N" class="">BD</a></li>
  dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Software</span>
-						<span class="caret"></span> 
-							
+						<span class="caret"></span> 	
 					</a>
 					<ul class="dropdown-menu">
-					
 					<li>
 					<a href="list_software.php">Software</a>
 					</li>			
-						
-					
-										<li>
+					<li>
 					<a href="add_software_details.php">Add Software</a>
 					</li>
-						
-					
-												
-						
-					
 					</ul>
 				</li>
 				<?php }?>
@@ -83,9 +74,7 @@ bdhome/?type=N" class="">BD</a></li>
  dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Hardware</span>
-						<span class="caret"></span>
-							
-							
+						<span class="caret"></span>	
 					</a>
 					<ul class="<?php echo $_smarty_tpl->tpl_vars['active']->value;?>
  dropdown-menu">
@@ -93,18 +82,17 @@ bdhome/?type=N" class="">BD</a></li>
 					<a href="list_hardware.php">Hardware</a>
 					</li>
 					<li>
-							<a href="add_hardware_details.php">Add Hardware</a>
-						</li>
-					
+					<a href="add_hardware_details.php">Add Hardware</a>
+					</li>
 					</ul>
 				</li>
 				<?php }?>
-				<?php if (!empty($_smarty_tpl->tpl_vars['AssignAssset']->value) || !empty($_smarty_tpl->tpl_vars['ChangeAssetInfo']->value) || !empty($_smarty_tpl->tpl_vars['ScrapHardware']->value)) {?>
+				<?php if (!empty($_smarty_tpl->tpl_vars['AssignAssset']->value) || !empty($_smarty_tpl->tpl_vars['ChangeAssetInfo']->value)) {?>
 				<li class="<?php echo $_smarty_tpl->tpl_vars['assign_asset_active']->value;?>
  dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Assign Asset</span>
-						<span class="label label-lightred bubble"><?php if ($_smarty_tpl->tpl_vars['change_asset_count']->value) {
+						<span class="label label-lightred bubble"><?php if ($_smarty_tpl->tpl_vars['change_asset_count']->value && $_smarty_tpl->tpl_vars['ChangeAssetInfo']->value) {
 echo $_smarty_tpl->tpl_vars['change_asset_count']->value;
 }?></span>
 						<span class="caret"></span>				
@@ -124,24 +112,38 @@ echo $_smarty_tpl->tpl_vars['change_asset_count']->value;
 							</a>
 						</li>
 						<?php }?>
+				
+					</ul>
+				</li>
+           <?php }?>
+		   
+		   	<?php if (!empty($_smarty_tpl->tpl_vars['ScrapHardware']->value) || !empty($_smarty_tpl->tpl_vars['ApproveScrapHardware']->value)) {?>
+				<li class="<?php echo $_smarty_tpl->tpl_vars['scrap_hardware_active']->value;?>
+ dropdown">
+					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
+						<span>Approve Hardware</span>
+						<span class="label label-lightred bubble"><?php echo $_smarty_tpl->tpl_vars['approve_hw_count']->value;?>
+</span>
+						<span class="caret"></span>				
+					</a>
+					<ul class="dropdown-menu">
+				
 					<?php if (isset($_smarty_tpl->tpl_vars['ScrapHardware']->value)) {?>							
-					<li>
-							<a href="list_scrap_hardware.php">Scrap Hardware</a>
-						</li>
+					<!--li>
+							<a href="list_scrap_hardware.php">Hardware (Scrap, Lost, Resale & Exchange)</a>
+						</li-->
 						<?php }?>
 						
 						 <?php if (isset($_smarty_tpl->tpl_vars['ApproveScrapHardware']->value)) {?>							
 						<li>
-							<a href="list_approve_scrap_hardware.php">Approve Scrap Hardware</a>
+							<a href="list_approve_scrap_hardware.php">Approve Hardware</a>
 						</li>
 						<?php }?>
 					</ul>
 				</li>
-        
-				
            <?php }?>
 		   
-		  
+		   
 				<?php if (isset($_smarty_tpl->tpl_vars['HelpDesk']->value)) {?>					
 				<li class="<?php echo $_smarty_tpl->tpl_vars['help_desk_active']->value;?>
  dropdown">
@@ -158,8 +160,6 @@ echo $_smarty_tpl->tpl_vars['ticket_count']->value;
 echo $_smarty_tpl->tpl_vars['ticket_count']->value;
 }?></span></a>
 					</li>
-					
-					
 					</ul>
 				</li>
 				<?php }?>
@@ -168,9 +168,7 @@ echo $_smarty_tpl->tpl_vars['ticket_count']->value;
  dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Logins</span>
-						<span class="caret"></span>
-							
-							
+						<span class="caret"></span>	
 					</a>
 					<ul class="dropdown-menu">
 					<li>
@@ -179,8 +177,6 @@ echo $_smarty_tpl->tpl_vars['ticket_count']->value;
 					<li>
 					<a href="add_login.php">Add Login</a>
 					</li>
-					
-					
 					</ul>
 				</li>
 				<?php }?>
@@ -189,9 +185,7 @@ echo $_smarty_tpl->tpl_vars['ticket_count']->value;
  dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Settings</span>
-						<span class="caret"></span>
-							
-							
+						<span class="caret"></span>		
 					</a>
 					<ul class="dropdown-menu">
 					<?php if (isset($_smarty_tpl->tpl_vars['SettingsRoles']->value)) {?>	
@@ -233,8 +227,7 @@ echo $_smarty_tpl->tpl_vars['ticket_count']->value;
 			
 			<div class="user" style="">
 				<ul class="icon-nav">
-					
-				
+
 			<li class="<?php echo $_smarty_tpl->tpl_vars['switch_module_active']->value;?>
  dropdown language-select">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-reply"></i><span>Switch Module 

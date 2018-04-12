@@ -1,0 +1,217 @@
+2018-03-08 18:53:40 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1049] Unknown database \'itasset_db\'',
+  'enabled' => true,
+)
+Request URL: /itassetsvn/itasset/
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\Model.php(1108): Model->setDataSource('default')
+#4 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\Model.php(3243): Model->setSource('app_users')
+#5 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\Model.php(1319): Model->getDataSource()
+#6 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\View\Helper\FormHelper.php(456): FormHelper->_introspectModel('Login', 'fields')
+#8 C:\xampp\htdocs\itassetsvn\itasset\app\View\Logins\index.ctp(11): FormHelper->create('Login', Array)
+#9 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\View\View.php(947): include('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\View\View.php(909): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#11 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(LoginsController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2018-03-08 18:53:57 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1049] Unknown database \'itasset_db\'',
+  'enabled' => true,
+)
+Request URL: /itassetsvn/itasset/
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\Model.php(1108): Model->setDataSource('default')
+#4 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\Model.php(3243): Model->setSource('app_users')
+#5 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Model\Model.php(1319): Model->getDataSource()
+#6 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\View\Helper\FormHelper.php(456): FormHelper->_introspectModel('Login', 'fields')
+#8 C:\xampp\htdocs\itassetsvn\itasset\app\View\Logins\index.ctp(11): FormHelper->create('Login', Array)
+#9 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\View\View.php(947): include('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\View\View.php(909): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#11 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\View\View.php(471): View->_render('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(LoginsController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2018-03-26 13:42:55 Error: [MissingActionException] Action HomeController::itasset() could not be found.
+Exception Attributes: array (
+  'controller' => 'HomeController',
+  'action' => 'itasset',
+)
+Request URL: /itassetsvn/itasset/home/itasset/it/fr_it_home.php
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(HomeController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-03-26 13:43:10 Error: [MissingControllerException] Controller class ItassetController could not be found.
+Exception Attributes: array (
+  'class' => 'ItassetController',
+  'plugin' => NULL,
+)
+Request URL: /itassetsvn/itasset/itasset/it/fr_it_home.php
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-03-26 21:28:09 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /itassetsvn/itasset/it/bootstrap/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-03-26 21:28:09 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /itassetsvn/itasset/it/bootstrap/css/bootstrap-responsive.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-03-26 21:28:10 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /itassetsvn/itasset/it/css/blue.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-03-26 21:28:14 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /itassetsvn/itasset/it/bootstrap/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-03-26 21:28:14 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /itassetsvn/itasset/it/bootstrap/css/bootstrap-responsive.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-03-26 21:28:14 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /itassetsvn/itasset/it/css/blue.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-03-26 21:28:17 Error: [MissingActionException] Action AppController::webroot() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'webroot',
+)
+Request URL: /itassetsvn/itasset/app/webroot/it/bootstrap/css/bootstrap-responsive.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-03-26 21:28:17 Error: [MissingActionException] Action AppController::webroot() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'webroot',
+)
+Request URL: /itassetsvn/itasset/app/webroot/it/css/blue.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-03-26 21:28:17 Error: [MissingActionException] Action AppController::webroot() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'webroot',
+)
+Request URL: /itassetsvn/itasset/app/webroot/it/bootstrap/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-03-26 21:28:18 Error: [MissingActionException] Action AppController::webroot() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'webroot',
+)
+Request URL: /itassetsvn/itasset/app/webroot/it/css/blue.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-03-26 21:28:18 Error: [MissingActionException] Action AppController::webroot() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'webroot',
+)
+Request URL: /itassetsvn/itasset/app/webroot/it/bootstrap/css/bootstrap-responsive.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-03-26 21:28:18 Error: [MissingActionException] Action AppController::webroot() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'webroot',
+)
+Request URL: /itassetsvn/itasset/app/webroot/it/bootstrap/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\itassetsvn\itasset\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2018-03-26 21:28:22 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /itassetsvn/itasset/it/bootstrap/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-03-26 21:28:22 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /itassetsvn/itasset/it/bootstrap/css/bootstrap-responsive.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-03-26 21:28:22 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /itassetsvn/itasset/it/css/blue.css
+Stack Trace:
+#0 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

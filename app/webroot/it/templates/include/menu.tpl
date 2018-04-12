@@ -57,7 +57,7 @@
 					</ul>
 				</li>
 				{/if}
-				{if !empty($AssignAssset) || !empty($ChangeAssetInfo) || !empty($ScrapHardware) || !empty($ApproveScrapHardware)}
+				{if !empty($AssignAssset) || !empty($ChangeAssetInfo)}
 				<li class="{$assign_asset_active} dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
 						<span>Assign Asset</span>
@@ -77,20 +77,36 @@
 							</a>
 						</li>
 						{/if}
+				
+					</ul>
+				</li>
+           {/if}
+		   
+		   	{if !empty($ScrapHardware) || !empty($ApproveScrapHardware)}
+				<li class="{$scrap_hardware_active} dropdown">
+					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
+						<span>Approve Hardware</span>
+						<span class="label label-lightred bubble">{$approve_hw_count}</span>
+						<span class="caret"></span>				
+					</a>
+					<ul class="dropdown-menu">
+				
 					{if isset($ScrapHardware)}							
-					<li>
-							<a href="list_scrap_hardware.php">Scrap Hardware</a>
-						</li>
+					<!--li>
+							<a href="list_scrap_hardware.php">Hardware (Scrap, Lost, Resale & Exchange)</a>
+						</li-->
 						{/if}
 						
 						 {if isset($ApproveScrapHardware)}							
 						<li>
-							<a href="list_approve_scrap_hardware.php">Approve Scrap Hardware</a>
+							<a href="list_approve_scrap_hardware.php">Approve Hardware</a>
 						</li>
 						{/if}
 					</ul>
 				</li>
            {/if}
+		   
+		   
 				{if isset($HelpDesk)}					
 				<li class="{$help_desk_active} dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>

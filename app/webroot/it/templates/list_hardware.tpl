@@ -63,7 +63,22 @@
 	          <input name="t_date" value="{$t_date}" class="input-small datepick" placeholder="Validity To" type="text" id="HrEmployeeDob"/> 
 		       <input type="submit" value="Search" class="btn btn-primary" style="margin-bottom:9px;margin-left:4px;">
              <a href="list_hardware.php"><button style="margin-bottom:9px;margin-left:4px;" type="button" val="list_hardware.php" class="jsRedirect btn btn-primary"><i class="icon-refresh"></i> Reset</button></a>
-             <a href="add_hardware_details.php"><button type="button" val="add_hardware_details.php" class="jsRedirect btn btn-primary" style="float:right"><i class="icon-plus"></i> Add Hardware</button></a>
+             <!--a href="add_hardware_details.php"><button type="button" val="add_hardware_details.php" class="jsRedirect btn btn-primary" style="float:right"><i class="icon-plus"></i> Add Hardware</button></a-->
+			 
+			 <div class="btn-group" style="margin-bottom:9px;margin-left:4px;" >
+												<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="icon-plus"></i> Add Hardware <span class="caret"></span></a>
+												<ul class="dropdown-menu dropdown-primary">
+													<li>
+														<a href="add_hardware_details.php?type=new">New Hardware</a>
+													</li>
+													<li>
+														<a href="add_hardware_details.php?type=rental">Rental Hardware</a>
+													</li>
+													
+												</ul>
+											</div>
+			 
+			 
              {if !$ALERT_MSG} 
              <a href="list_hardware.php?action=export&keyword={$smarty.post.keyword}&hw_type={$smarty.post.hw_type}&hw_status={$hw_status}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}"><button type="button" val="list_hardware.php?action=export&keyword={$smarty.post.keyword}&hw_type={$smarty.post.hw_type}&hw_status={$hw_status}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}" class="jsRedirect btn btn-primary" style="float:right;margin-right:20px;"><i class="icon-reply"></i> Export</button></a>	
             {/if}
@@ -92,15 +107,24 @@
 										<th width="60">										
 										<a href="list_hardware.php?field=modified&order={$order}&page={$smarty.get.page}&keyword={$keyword}&sw_type={$sw_type}&sw_status={$sw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_modified}">Modified</a></th>																				
 										<th style="text-align:center" width="40">Status</th>
-										<th width="150">Options</th>
+										<th width="180">Options</th>
 										</tr>
 					</thead>
 					<tbody>
 						<tr>
 						 {foreach from=$data item=item key=key}		
+						
 							 {if $item.type}		
 								<tr>
-									 <td>{ucfirst($item.type)}</td>
+									 <td>{ucfirst($item.type)} <br>
+									 {if $item.is_rental eq 'Y'}
+									  <span class='label label-orange'><a href='#' rel='tooltip'>
+									 {$item.is_rental_hw} </span>
+									 {/if}
+									 
+									 </a>
+									 
+									 </td>
 		        					 <td>{ucfirst($item.brand)}</td> 
 		                      <td>{ucfirst($item.model_id)}</td> 	
 				                <td>{ucfirst($item.inventory_no)}</td>
@@ -112,19 +136,34 @@
 		                      <td>{$item.modified_date}</td>
 									 <td style="text-align:center"><span class='label label-{$item.status_cls}'>
 									 <a href='#' rel='tooltip' data-original-title = {$item.status}>{$item.status}
-									 <br>{$item.scrap_hw_type}</a></span></td>
+									 </a></span><br><span style="color:#ff0000;font-size:11px;">{$item.scrap_hw_type}</span></td>
 									 <td class='hidden-480'>
-										<a href="view_hardware.php?id={$item.id}" class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
-											{if $item.scrap_status neq 'W'}
+								
+								{if $item.scrap_id eq '' &&  $item.is_rental neq 'Y'}
+								<div class="btn-group">
+												<a href="#" data-toggle="dropdown" class="btn dropdown-toggle"><i class="icon-cog"></i> <span class="caret"></span></a>
+												<ul class="dropdown-menu">
+													<li>
+														<a href="add_scrap.php?id={$item.invid}&page={$smarty.get.page}&scrap_type=S"  class="iframeBox" val="40_67">Move to Scrap / Lost</a>
+													</li>
+													<li>
+														<a href="add_exchange_hw.php?id={$item.invid}&page={$smarty.get.page}&scrap_type=R" class="iframeBox" val="55_80">Move to Exchange / Re-sale</a>
+													</li>
+												
+												</ul>
+											</div>
+								{/if}			
+
+											<a href="view_hardware.php?id={$item.id}" class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
+									 
+											{if $item.scrap_id eq ''}
 									  <a href="edit_hardware_details.php?id={$item.id}&inv_id={$item.invid}" class="btn" rel="tooltip" title="Edit"><i class="icon-edit"></i></a>
-							<a href="delete_hardware.php?id={$item.invid}&page={$smarty.get.page}" name="21" onclick="return deletefunction()" class="btn delRec" rel="tooltip" title="Delete"><i class="icon-remove"></i></a>                          
-						  {if $item.status == 'Active'}										
-								{if $item.is_deleted != 'N'}	
-									 <a href="add_scrap.php?id={$item.invid}&page={$smarty.get.page}&scrap_type=S" rel="tooltip" title="Scrap/Lost" class="iframeBox btn" val="40_67"><i class="icon-trash"></i></a>						
-									 <a href="add_exchange_hw.php?id={$item.invid}&page={$smarty.get.page}&scrap_type=R" rel="tooltip" title="Resale/Exchange" class="iframeBox btn" val="40_67"><i class="icon-trash"></i></a>						
-									 {/if}	
-								{/if}	
-						  {/if}									 
+							<a href="delete_hardware.php?id={$item.invid}&page={$smarty.get.page}" name="21" onclick="return deletefunction()" class="btn delRec" rel="tooltip" title="Delete"><i class="icon-remove"></i></a>  
+							{/if}
+							
+									
+											
+															 
 									 </td>
 								</tr>
 							  {/if}

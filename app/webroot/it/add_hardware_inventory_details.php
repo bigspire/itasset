@@ -19,6 +19,7 @@ include 'include/menu_count.php';
 // include permission file
 include 'include/get_modules.php';
 
+
 // redirect to error page if the user is not it admin
 if($roleid != '21'){
 	header('Location:'.IT_DIR.'home/');
@@ -114,11 +115,14 @@ if(!empty($_POST)){
 		// status field validation
   		//$_SESSION['h'][$i]['status'] = isset($_POST['status_'.$i]) ? $_POST['status_'.$i] : ($_GET['status_'.$i] != '' ? $_GET['status_'.$i] : '1');
 	}
+	
 	// redirection to next page
 	if(empty($test) && empty($msg)){
 		$_SESSION['h']['add_hardware_pricing_details'] = 'next';
-		if($_POST['next_hdn'] == '1'){
+		if($_POST['next_hdn'] == '1' && $_SESSION['h']['add_hardware_type'] == 'New'){
 			header('Location: add_hardware_pricing_details.php');			
+		}else if($_POST['next_hdn'] == '1' && $_SESSION['h']['add_hardware_type'] == 'Rental'){
+			header('Location: add_rental_hardware_pricing_details.php');			
 		}else if($_POST['confirm_hdn'] == '1'){
 			header('Location: add_hardware_confirmation.php');	
 		}

@@ -107,7 +107,9 @@ if(!empty($_POST)){
 		}else if($_POST['confirm_hdn'] == '1'){
 			header('Location: edit_hardware_confirmation.php?id='.$getid.'&inv_id='.$inv_id.'');		
 		}
-		if($_POST['previous_hdn'] == '1'){
+		if($_POST['previous_hdn'] == '1' && $_SESSION['h']['is_rental'] == 'Y'){
+			header('Location: edit_rental_hardware_pricing_details.php?id='.$getid.'&inv_id='.$inv_id.'');		
+		}else if($_POST['previous_hdn'] == '1'){
 			header('Location: edit_hardware_pricing_details.php?id='.$getid.'&inv_id='.$inv_id.'');		
 		}
 	}

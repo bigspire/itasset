@@ -657,7 +657,6 @@ $(document).ready(function() {
 	
 	
 	
-	
 	// timepicker
 	if($('.timepick').length > 0){		
 		$('.timepick').timepicker({
@@ -2030,7 +2029,16 @@ $(document).ready(function() {
 			//$.colorbox({width:"45%",height: "55%", iframe:true,overlayClose:false, href: $('#webroot').val()+'home/notify_user/'});		
 			//$('#cboxClose').hide();	
 			//return false;
-		}		
+		}	
+		
+		/* notify for IT asset assigning */
+		if($('#notifyHome').length > 0 && $('#notifyHome').val() != '1'){
+			$.colorbox({width:"45%",height: "85%", iframe:true,overlayClose:false, href: '../it/fr_it_pop_up.php'});		
+			// $('#cboxClose').hide();	
+			return false;
+		}	
+		
+	
 		
 		/* for leave policy */
 		if($(".colorboxPolicy").length > 0){

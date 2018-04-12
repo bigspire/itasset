@@ -23,6 +23,7 @@ include 'include/get_modules.php';
 if($roleid != '21'){
 	header('Location:'.IT_DIR.'home/');
 }
+
 // Access next page only after finishing previous step.
 if($_SESSION['h']['add_hardware_pricing_details'] != 'next'){
 	header('Location:page_error.php');

@@ -69,7 +69,7 @@ try{
 		if($keyword){
 			$alert_msg = 'No scrap hardware "' .$keyword. '" is found in our database';
 		}else{
-			$alert_msg = 'No scrap hardware details found in our database';
+			$alert_msg = 'No hardware details for approval found in our database';
 		}
 	}
 	$page = $_GET['page'] ?  $_GET['page'] : 1;
@@ -141,6 +141,9 @@ try{
 	{
  		$data[] = $obj;
  		$data[$i]['scrap_created'] = $fun->it_software_created_date($obj['scrap_created']);
+		$data[$i]['status'] = $fun->it_scrap_hw_status($obj['status']);
+		$data[$i]['status_cls'] = $fun->approval_status_cls($obj['status']);
+		$data[$i]['status_msg'] = $fun->it_scrap_hw($obj['hw_type']);
  		$i++;
  		$pno[]=$paging->print_no();
  		$smarty->assign('pno',$pno);
@@ -160,7 +163,7 @@ try{
 
 	// create,update,delete message validation
 	if($_GET['status'] == 'Approved' || $_GET['status'] == 'Rejected'){
-		$success_msg = 'Scrap Hardware ' . $_GET['status'] . ' successfully';
+		$success_msg = 'Hardware ' . $_GET['status'] . ' successfully';
 	}
 
 	// validating pagination
@@ -191,9 +194,9 @@ $smarty->assign('t_date', $t_date);
 $smarty->assign('ALERT_MSG', $alert_msg);
 $smarty->assign('SUCCESS_MSG', $success_msg);
 // assign page title
-$smarty->assign('page_title' , 'Approve Scrap Hardware - IT');  
+$smarty->assign('page_title' , 'Approve Hardware - IT');  
 // assigning active class status to smarty menu.tpl
-$smarty->assign('assign_asset_active' , 'active'); 	  
+$smarty->assign('scrap_hardware_active' , 'active'); 	  
 // display smarty file
 $smarty->display('list_approve_scrap_hardware.tpl');
 ?>

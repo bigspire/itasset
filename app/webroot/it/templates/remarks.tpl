@@ -51,14 +51,14 @@
 <div class="chgReqFrm" align="center">
 <div class="" ><div class="" style="display: block;">
 		<div class="no-padding">
-			<form action="remarks.php?scrap_id={$smarty.get.scrap_id}&user_id={$smarty.session.user_id}&page={$smarty.get.page}&action={$smarty.get.action}" id="formID"  method="post" accept-charset="utf-8">
+			<form action="remarks.php?scrap_id={$smarty.get.scrap_id}&user_id={$smarty.session.user_id}&page={$smarty.get.page}&action={$smarty.get.action}&inv_id={$smarty.get.inv_id}" id="formID"  method="post" accept-charset="utf-8">
 									<div class="space-4"></div>
 									<div class="form-group" style="text-align:left">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Remarks 
 										{if $smarty.get.action eq 'reject'}
-										<span class="red"> *</span> </label>
+										<span class="red"> *</span>
 										{/if}
-										
+										 </label>
 										<div class="col-sm-3">
 											<textarea id="remarks" rows="5" cols="45" name="remarks">{if $smarty.post.remarks}{$smarty.post.remarks}{/if}</textarea>
 											<div class="errorMsg error">{$remarksErr}</div>	

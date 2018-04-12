@@ -70,9 +70,13 @@ if(!empty($_POST)){
 			header('Location: add_hardware_confirmation.php');			
 		}	
 	}
-	if($_POST['previous_hdn'] == '1'){
-			header('Location: add_hardware_pricing_details.php');		
+	
+	if($_POST['previous_hdn'] == '1'  && $_SESSION['h']['add_hardware_type'] == 'Rental'){
+		header('Location: add_rental_hardware_pricing_details.php');		
+	}else if($_POST['previous_hdn'] == '1'){
+		header('Location: add_hardware_pricing_details.php');			
 	}
+	
 }
 // closing mysql
 $mysql->close_connection();

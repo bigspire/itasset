@@ -59,6 +59,7 @@ if(!empty($_POST['next_hdn'])){
 		
 	// assigning the date
 	$date = $fun->current_date();
+	$add_hw_type = $_SESSION['h']['add_hardware_type'] == 'Rental' ? 'Y' : 'N';
 	// query to insert into database. 
 	$query = "CALL it_add_hardware_details('".$mysql->real_escape_str($_SESSION['h']['model_id'])."', '".$mysql->real_escape_str($_SESSION['h']['color'])."', 
 	'".$mysql->real_escape_str($purchase_date)."', '".$mysql->real_escape_str($_SESSION['h']['description'])."', 
@@ -105,7 +106,7 @@ if(!empty($_POST['next_hdn'])){
 				$query2 = "CALL it_add_hw_inventory('".$mysql->real_escape_str($_SESSION['h'][$i]['serial_no'])."',
 		 	   '".$mysql->real_escape_str($_SESSION['h'][$i]['inventory_no'])."', '".$mysql->real_escape_str($_SESSION['h'][$i]['asset_desc'])."',
  			   '".$date."', '1', '".$mysql->real_escape_str($_SESSION['h'][$i]['district_id'])."',
- 			   '".$last_id."')";
+ 			   '".$last_id."','".$add_hw_type."','".$_SESSION['h'][$i]['rental_type']."')";
 				try{
 					if(!$result2 = $mysql->execute_query($query2)){ 
 					throw new Exception('Problem in executing add hardware inventory details');
@@ -148,6 +149,15 @@ if(!empty($_POST['next_hdn'])){
 			$_SESSION['h']['currencytype'] = $currency_type; 
 		}
 	}
+	
+	// currency types value to name conversion	
+	$rental_types = array('' => 'Select', 'D' => 'Daily', 'W' => 'Weekly', 'M' => 'Monthly', 'H' => 'Half Yearly', 'Y' => 'Yearly');
+	foreach ($rental_types as $currencytypes  => $currency_type){ 
+		if($_SESSION['h']['rental_type'] == $currencytypes){
+			$_SESSION['h']['rental_type_detail'] = $currency_type; 
+		}
+	}
+	
 	// smarty name conversion for hardware type
 	$hardwaretype = $_SESSION['h']['hardware_type_id'];
 	$query = "call it_get_hw_byname('".$hardwaretype."')";
