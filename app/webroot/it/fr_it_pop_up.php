@@ -266,7 +266,7 @@ if($_POST["hdnSubmit"] == '1'){
 			$mail_data .= '</tr>';   
 			$mail_data .= '<tr style="background:#f5f4f4;">';
 			$mail_data .= '<td width="100">Accepted?</td>';
-			$mail_data .= '<td style="color:#2a2a2a;">'.$accept'</td>';	
+			$mail_data .= '<td style="color:#2a2a2a;">'.$accept.'</td>';	
 			$mail_data .= '<td width="100"></td>';
 			$mail_data .= '<td style="color:#2a2a2a;"></td>';			
 			$mail_data .= '</tr>'; 	

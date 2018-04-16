@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-03-19 13:25:10
+/* Smarty version 3.1.29, created on 2018-04-14 14:07:53
   from "C:\xampp\htdocs\itassetsvn\itasset\app\webroot\it\templates\include\menu.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5aaf6cdeebacd4_83550167',
+  'unifunc' => 'content_5ad1bde16c6a18_80198051',
   'file_dependency' => 
   array (
     'ceb272e1d4fef8f420858be51cc360cae7a153ec' => 
     array (
       0 => 'C:\\xampp\\htdocs\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\include\\menu.tpl',
-      1 => 1521446109,
+      1 => 1523695058,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5aaf6cdeebacd4_83550167 ($_smarty_tpl) {
+function content_5ad1bde16c6a18_80198051 ($_smarty_tpl) {
 ?>
 
 
@@ -83,6 +83,16 @@ bdhome/?type=N" class="">BD</a></li>
 					</li>
 					<li>
 					<a href="add_hardware_details.php">Add Hardware</a>
+					
+					<?php if (isset($_smarty_tpl->tpl_vars['Billing']->value)) {?>	
+					<li>
+					<a href="list_billing.php">Billing</a>
+					</li>
+						<li>
+					<a href="add_billing_hardware_details.php">Add Billing</a>
+					</li>
+					<?php }?>
+					
 					</li>
 					</ul>
 				</li>

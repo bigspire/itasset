@@ -53,6 +53,16 @@
 					</li>
 					<li>
 					<a href="add_hardware_details.php">Add Hardware</a>
+					
+					{if isset($Billing)}	
+					<li>
+					<a href="list_billing.php">Billing</a>
+					</li>
+						<li>
+					<a href="add_billing_hardware_details.php">Add Billing</a>
+					</li>
+					{/if}
+					
 					</li>
 					</ul>
 				</li>
