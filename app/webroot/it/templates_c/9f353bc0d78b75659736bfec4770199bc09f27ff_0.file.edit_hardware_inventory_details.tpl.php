@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-23 16:23:46
+/* Smarty version 3.1.29, created on 2018-04-16 17:03:54
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\edit_hardware_inventory_details.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a8ff2bacf55c1_41765987',
+  'unifunc' => 'content_5ad48a227c14d5_72320469',
   'file_dependency' => 
   array (
     '9f353bc0d78b75659736bfec4770199bc09f27ff' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\edit_hardware_inventory_details.tpl',
-      1 => 1519292828,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a8ff2bacf55c1_41765987 ($_smarty_tpl) {
+function content_5ad48a227c14d5_72320469 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -113,10 +113,18 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 													<span class="circle">
 													</span>
 													<span class="description">
-													<a href="edit_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
+													<?php if ($_SESSION['h']['is_rental'] == 'Y') {?>
+													<a href="edit_rental_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
 &inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
 ">Pricing Details</a> 		
-																				</span>
+													<?php } else { ?>
+													<a href="edit_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
+&inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
+">Pricing Details</a> 
+													<?php }?>						
+
+
+																			</span>
 												</div>
 											</li>
 											

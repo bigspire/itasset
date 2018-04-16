@@ -1,9 +1,8 @@
 <?php
 /* 
-Purpose : To list and search hardware details.
+Purpose : To list and search hardware billing details.
 Created : Nikitasa
-Modified : Gayathri
-Date : 14-06-2016
+Date : 16-04-2018
 */
 
 session_start();
@@ -25,12 +24,8 @@ include 'include/menu_count.php';
 // include permission file
 include 'include/get_modules.php';
 
-// redirect to error page if the user is not it admin
-if($roleid != '21'){
-	header('Location:'.IT_DIR.'home/');
-}
 // redirecting to dashboard if the user don't have the permission to this module
-if(empty($_SESSION['Hardware'])){
+if(empty($_SESSION['Billing'])){
 	session_start();
 	header('Location:dashboard.php?access=Access denied!');
 }
@@ -224,7 +219,7 @@ $smarty->assign('ALERT_MSG', $alert_msg);
 $smarty->assign('SUCCESS_MSG', $success_msg);
 $smarty->assign('ERROR_MSG', $erro_msg);
 // assign page title
-$smarty->assign('page_title' , 'Hardware - IT');  
+$smarty->assign('page_title' , 'Billing Hardware - IT');  
 // assigning active class status to smarty menu.tpl
 $smarty->assign('hardware_active' , 'active'); 	  
 // display smarty file

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-23 17:04:56
+/* Smarty version 3.1.29, created on 2018-04-16 17:01:32
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\add_scrap.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a8ffc60113834_65556633',
+  'unifunc' => 'content_5ad489943212a8_24520865',
   'file_dependency' => 
   array (
     '9b7989bf52ea21d7d0ff93e9d12b9e9036ef0ecd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\add_scrap.tpl',
-      1 => 1519385692,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5a8ffc60113834_65556633 ($_smarty_tpl) {
+function content_5ad489943212a8_24520865 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -71,7 +71,7 @@ function content_5a8ffc60113834_65556633 ($_smarty_tpl) {
 	<div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">       
-          <h4 class="modal-title">Scrap Hardware</h4>
+          <h4 class="modal-title">Scrap / Lost Hardware</h4>
         </div><div class="container"></div>
         <div class="">
 		<?php if ($_smarty_tpl->tpl_vars['ALERT_MSG1']->value) {?>

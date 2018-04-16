@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-03-06 12:13:59
+/* Smarty version 3.1.29, created on 2018-04-16 16:36:51
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\include\menu.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a9e38afa6f2e2_34557111',
+  'unifunc' => 'content_5ad483cb3706f7_22809171',
   'file_dependency' => 
   array (
     '1bce1e980f092a1a6da0d347ba547198b46e05fb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\include\\menu.tpl',
-      1 => 1520318601,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5a9e38afa6f2e2_34557111 ($_smarty_tpl) {
+function content_5ad483cb3706f7_22809171 ($_smarty_tpl) {
 ?>
 
 
@@ -83,11 +83,21 @@ bdhome/?type=N" class="">BD</a></li>
 					</li>
 					<li>
 					<a href="add_hardware_details.php">Add Hardware</a>
+					
+					<?php if (isset($_smarty_tpl->tpl_vars['Billing']->value)) {?>	
+					<li>
+					<a href="list_billing.php">Billing</a>
+					</li>
+						<li>
+					<a href="add_billing_hardware_details.php">Add Billing</a>
+					</li>
+					<?php }?>
+					
 					</li>
 					</ul>
 				</li>
 				<?php }?>
-				<?php if (!empty($_smarty_tpl->tpl_vars['AssignAssset']->value) || !empty($_smarty_tpl->tpl_vars['ChangeAssetInfo']->value) || !empty($_smarty_tpl->tpl_vars['ScrapHardware']->value) || !empty($_smarty_tpl->tpl_vars['ApproveScrapHardware']->value)) {?>
+				<?php if (!empty($_smarty_tpl->tpl_vars['AssignAssset']->value) || !empty($_smarty_tpl->tpl_vars['ChangeAssetInfo']->value)) {?>
 				<li class="<?php echo $_smarty_tpl->tpl_vars['assign_asset_active']->value;?>
  dropdown">
 					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
@@ -112,20 +122,38 @@ echo $_smarty_tpl->tpl_vars['change_asset_count']->value;
 							</a>
 						</li>
 						<?php }?>
+				
+					</ul>
+				</li>
+           <?php }?>
+		   
+		   	<?php if (!empty($_smarty_tpl->tpl_vars['ScrapHardware']->value) || !empty($_smarty_tpl->tpl_vars['ApproveScrapHardware']->value)) {?>
+				<li class="<?php echo $_smarty_tpl->tpl_vars['scrap_hardware_active']->value;?>
+ dropdown">
+					<a href="#" data-toggle="dropdown" class='dropdown-toggle'>
+						<span>Approve Hardware</span>
+						<span class="label label-lightred bubble"><?php echo $_smarty_tpl->tpl_vars['approve_hw_count']->value;?>
+</span>
+						<span class="caret"></span>				
+					</a>
+					<ul class="dropdown-menu">
+				
 					<?php if (isset($_smarty_tpl->tpl_vars['ScrapHardware']->value)) {?>							
-					<li>
-							<a href="list_scrap_hardware.php">Scrap Hardware</a>
-						</li>
+					<!--li>
+							<a href="list_scrap_hardware.php">Hardware (Scrap, Lost, Resale & Exchange)</a>
+						</li-->
 						<?php }?>
 						
 						 <?php if (isset($_smarty_tpl->tpl_vars['ApproveScrapHardware']->value)) {?>							
 						<li>
-							<a href="list_approve_scrap_hardware.php">Approve Scrap Hardware</a>
+							<a href="list_approve_scrap_hardware.php">Approve Hardware</a>
 						</li>
 						<?php }?>
 					</ul>
 				</li>
            <?php }?>
+		   
+		   
 				<?php if (isset($_smarty_tpl->tpl_vars['HelpDesk']->value)) {?>					
 				<li class="<?php echo $_smarty_tpl->tpl_vars['help_desk_active']->value;?>
  dropdown">
