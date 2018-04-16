@@ -41,6 +41,13 @@ if($_SESSION['h']['add_hardware_type'] == ''){
 $billing_type = array('RS' => 'Resale', 'EX' => 'Exchange', 'R' => 'Rental'); 
 $smarty->assign('billingType', $billing_type);
 
+
+$pay_types = array('CQ' => 'Cheque', 'CA' => 'Cash', 'OT' => 'Online Transfer', 'CC' => 'Credit Card'); 
+$smarty->assign('pay_types', $pay_types);
+
+
+
+
 if(!empty($_POST)){
 	// from - to date validation
 	$fdate=strtotime($fun->convert_date($_POST['validity_from']));
