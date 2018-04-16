@@ -335,7 +335,7 @@
 								<?php endif; ?>
 								
 								<?php 
-								if($this->Session->read('USER.Login.app_roles_id') == '21'):?>
+								if($IT_COUNT > 0):?>
 								<li>
 									<a href="<?php echo $this->webroot;?>it/" style="color:rgb(85, 85, 85);">
 										<div class="clearfix">

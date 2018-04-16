@@ -83,8 +83,13 @@
 													<span class="circle">
 													</span>
 													<span class="description">
-													<a href="edit_hardware_pricing_details.php?id={$getid}&inv_id={$invid}">Pricing Details</a> 		
-																				</span>
+													{if $smarty.session['h'].is_rental == 'Y'}
+													<a href="edit_rental_hardware_pricing_details.php?id={$getid}&inv_id={$invid}">Pricing Details</a> 		
+													{else}
+													<a href="edit_hardware_pricing_details.php?id={$getid}&inv_id={$invid}">Pricing Details</a> 
+													{/if}						
+
+																			</span>
 												</div>
 											</li>
 											

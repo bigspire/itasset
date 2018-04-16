@@ -159,6 +159,7 @@ try{
 		$data[$i]['scrap_hw_type'] = '['.$fun->it_scrap_hw($obj['scrap_hw_type']).']';
 	}
 	$data[$i]['status_cls'] = $fun->status_cls($obj['status']);
+	$data[$i]['is_rental_hw'] = $obj['is_rental'] == 'Y' ? 'Rental' : 'New';
 	$data[$i]['validity_to'] = $fun->it_software_created_date($obj['validity_to']);
  	$data[$i]['created_date'] = $fun->it_software_created_date($obj['created_date']);
  	$data[$i]['modified_date'] = $fun->it_software_created_date($obj['modified_date']);
@@ -187,10 +188,13 @@ try{
 		$erro_msg = "You cannot delete unless you remove this hardware from assigned asset.";	
 	}else if($_GET['status'] == 'not_deleted_scrap'){
 		$erro_msg = "You cannot move this to scrap unless you remove this hardware from assigned asset.";	
+	}else if($_GET['status'] == 'not_exchange'){
+		$erro_msg = "You cannot exchange / re-sale this unless you remove this hardware from assigned asset.";	
 	}else if($_GET['status'] == 'moved'){
 		$success_msg = "Harware Details went for Director Approval";	
 	}
 
+	
 	// validating pagination
 	$total_pages = ceil($count / $limit);
 

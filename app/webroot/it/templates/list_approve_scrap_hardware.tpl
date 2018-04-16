@@ -11,7 +11,7 @@
 			<div class="container-fluid">
 				<div class="page-header">
 					<div class="pull-left">
-						<h1>Approve Scrap Hardware</h1>
+						<h1>Approve Hardware (Scrap, Lost, Resale & Exchange)</h1>
 					</div>
 				</div>
 				<div class="breadcrumbs">
@@ -21,7 +21,7 @@
 							<i class="icon-angle-right"></i>
 						</li>
 						<li>
-							<a href="list_approve_scrap_hardware.php">List Approve Scrap Hardware</a>
+							<a href="list_approve_scrap_hardware.php">Approve Hardware (Scrap, Lost, Resale & Exchange)</a>
 						</li>
 					</ul>
 				</div>
@@ -37,7 +37,7 @@
 					<div class="span12">
 						<div class="box box-bordered box-color">
 						<div class="box-title">
-								<h3><i class="icon-list"></i>Approve Scrap Hardware</h3>
+								<h3><i class="icon-list"></i>Approve Hardware</h3>
 						</div>
 				<form action="list_approve_scrap_hardware.php" name="" id="formID" class="" method="post" accept-charset="utf-8">							
 				<div class="box-content">
@@ -59,7 +59,7 @@
 					<thead>
 						<tr>	
 							<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_type}">Type</a></th>
+								<a href="list_approve_scrap_hardware.php?field=type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_type}">Hardware Type</a></th>
 							<th width="200">
 								<a href="list_approve_scrap_hardware.php?field=brand&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_brand}">Brand</a></th>		
 							<th width="200">
@@ -70,8 +70,14 @@
 								<a href="list_approve_scrap_hardware.php?field=location&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_location}">Location</a></th>
 							<th width="200">
 								<a href="list_approve_scrap_hardware.php?field=asset_desc&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Asset Description</a></th>
-							<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=created_date&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created_date}">Scrap Date</a></th>
+							
+								<th width="200">
+								<a href="list_approve_scrap_hardware.php?field=status&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Status</a></th>
+								
+								<th width="200">
+								<a href="list_approve_scrap_hardware.php?field=created_date&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created_date}">Created Date</a></th>
+									<th width="200">
+								<a href="list_approve_scrap_hardware.php?field=created_by&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created_date}">Created By</a></th>
 							<th width="100">Options</th>
 				      </tr>
 				  </thead>
@@ -85,12 +91,20 @@
 						<td>{$item.inventory_no}</td>
 						<td>{$item.location}</td>
 						<td>{$item.asset_desc}</td>
+						<td>
+						{if $item.status == 'Approved' || $item.status == 'Rejected'}
+						<span class='label label-{$item.status_cls}'><a href='#' rel='tooltip' data-original-title = {$item.status}>{$item.status}</a>
+						{else}
+						</span><span style="color:#ff0000;font-size:11px;">{$item.status_msg}</span>
+						{/if}
+						</td>
 						<td>{$item.scrap_created}</td>
+						<td>{$item.created_by}</td>
 					   <!-- td class='hidden-480'>
 						<a href="view_approve_scrap_hardware.php?id={$item.id}" class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
 					   </td-->
 							<td style="text-align:center">
-								<a href="view_approve_scrap_hardware.php?id={$item.id}" rel="tooltip" class="btn  btn-mini" title="Approve Scrap"><i class="icon-edit"></i></a>
+								<a href="view_approve_scrap_hardware.php?id={$item.id}" rel="tooltip" class="btn  btn-mini" title="Approve Hardware"><i class="icon-edit"></i></a>
 							</td>
 
 					</tr>

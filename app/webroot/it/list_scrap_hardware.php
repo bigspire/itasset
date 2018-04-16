@@ -192,7 +192,7 @@ $smarty->assign('SUCCESS_MSG', $success_msg);
 // assign page title
 $smarty->assign('page_title' , 'Scrap Hardware - IT');  
 // assigning active class status to smarty menu.tpl
-$smarty->assign('assign_asset_active' , 'active'); 	  
+$smarty->assign('scrap_hardware_active' , 'active'); 	  
 // display smarty file
 $smarty->display('list_scrap_hardware.tpl');
 ?>

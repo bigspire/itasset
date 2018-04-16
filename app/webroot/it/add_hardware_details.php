@@ -29,6 +29,16 @@ if(empty($_SESSION['Hardware'])){
 	header('Location:dashboard.php?access=Access denied!');
 }
 
+// check rental 
+if($_SESSION['h']['add_hardware_type'] == ''){
+	if($_GET['type'] == '' || $_GET['type'] == 'new'){
+		$_SESSION['h']['add_hardware_type'] = 'New';
+	}else{
+		$_SESSION['h']['add_hardware_type'] = 'Rental';
+	}
+} 
+
+
 if(!empty($_POST)){
 	// from - to date validation
 	$fdate=strtotime($fun->convert_date($_POST['validity_from']));

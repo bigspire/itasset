@@ -26,6 +26,31 @@ if($roleid != '21'){
 	// header('Location:'.IT_DIR.'home/');
 }
 
+if(isset($_GET['id'])){
+   // get record id   
+	$hw_id = $_GET['id'];	
+	// check assigned hardware
+ 	$query = "call it_check_hardware_assigned('".$hw_id."')";
+	try{
+		if(!$result = $mysql->execute_query($query)){
+			throw new Exception('Problem in checking assigned hardware');
+		}  
+		$row = $mysql->display_result($result);
+		// clear the results	    			
+		$mysql->clear_result($result);
+		// next query execution
+		$mysql->next_query();
+	}catch(Exception $e){
+		echo 'Caught exception: ',  $e->getMessage(), "\n";
+	}
+	
+	if($row['total']){
+		$smarty->assign('form_sent', 2);
+	}
+	
+}
+	
+
 // get scrap type and assign to smarty variable 
 $_SESSION['scrap_type'] = $_GET['scrap_type'];
 $smarty->assign('scrap_type', $_SESSION['scrap_type']);

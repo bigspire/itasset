@@ -79,8 +79,14 @@
 													<span class="circle">
 													</span>
 													<span class="description">
-													<a href="edit_hardware_pricing_details.php?id={$getid}&inv_id={$invid}">Pricing Details</a> 		
-																				</span>
+													
+													{if $smarty.session['h'].is_rental == 'Y'}
+													<a href="edit_rental_hardware_pricing_details.php?id={$getid}&inv_id={$invid}">Pricing Details</a> 		
+													{else}
+													<a href="edit_hardware_pricing_details.php?id={$getid}&inv_id={$invid}">Pricing Details</a> 
+													{/if}
+													
+													</span>
 												</div>
 											</li>
 											<li class="">
@@ -278,7 +284,7 @@
 													</div>
 										</div>
 										
-										
+								{if $smarty.session['h'].is_rental neq 'Y'}				
 																					
 									<div class="control-group">
 											<label for="textfield" class="control-label">Paid By </label>
@@ -293,10 +299,22 @@
 											{$smarty.session['h'].bill_no}
 												</div>
 						</div>
-									</div>
 									
+								{else}	
 								
-									<div class="span6">									
+								<div class="control-group">
+											<label for="textfield" class="control-label">Rental Type </label>
+											<div class="controls">
+											{$smarty.session['h'].rental_type_detail}
+												</div>
+										</div>	
+								
+								
+								{/if}
+							</div>	
+									<div class="span6">	
+
+	{if $smarty.session['h'].is_rental neq 'Y'}										
 
 	<div class="control-group">
 											<label for="password" class="control-label">Purchase Date</label> </label>
@@ -320,6 +338,19 @@
 											{/if}	
 											</div>
 						</div>
+						
+						{else}
+						<div class="control-group">
+											<label for="password" class="control-label">Rented Date</label> </label>
+											<div class="controls">
+											{$smarty.session['h'].purchasedate}
+											</div>
+										</div>
+						
+						
+						{/if}
+						
+						
 								
 									</div>
 					

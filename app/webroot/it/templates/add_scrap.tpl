@@ -29,7 +29,7 @@
 	<div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">       
-          <h4 class="modal-title">Scrap Hardware</h4>
+          <h4 class="modal-title">Scrap / Lost Hardware</h4>
         </div><div class="container"></div>
         <div class="">
 		{if $ALERT_MSG1}

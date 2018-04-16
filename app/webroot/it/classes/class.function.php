@@ -117,7 +117,7 @@ class fun{
 		}else if($status == 'R'){
 	 		$st = 'Rejected';
 		}else if($status == 'W'){
-			$st = 'Resale - Awaiting Approval';
+			$st = 'Awaiting Approval';
 		}
 		return $st;
 	}
@@ -183,6 +183,17 @@ class fun{
 		}
 		return $stat;
 	} 
+	
+	// tpl active color field validation
+	public function approval_status_cls($status){
+		if($status == 'A'){
+			$stat = 'satgreen';
+		}else if($status == 'R'){
+			$stat = 'lightred';	
+		}
+		return $stat;
+	} 
+	
 	// function to validate database ticket status field 
 	public function ticket_status($status){
 		if($status == 'O'){

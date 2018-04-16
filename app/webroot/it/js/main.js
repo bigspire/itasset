@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	// function to remove the success msg_div
-	 $(".close").click(function(){ n
+	 $(".close").click(function(){ 
 		var id = $(this).attr('id'); // get the dynamic value from button
 		$('.hide-'+id).hide();
      });
@@ -209,6 +209,32 @@ $(document).ready(function(){
 	
 	}
 	
+	$('.itAcceptBtn').click(function(){ 
+		$('#hdnSubmit').attr('value', 1);
+	});
+	
+	$('.reject').click(function(){
+		var id = $(this).val().split('_');
+		$('#'+id[1]).show();
+	});
+	
+	$('.accept').click(function(){
+		var id = $(this).val().split('_');		
+		$('#'+id[1]).hide();
+	});
+	
+	if($('.reject').length > 0){ 
+		 $(".reject").each(function() {
+			var id = $(this).val().split('_');
+			if($(this).is(":checked")){
+				$('#'+id[1]).show();
+			}else{
+				$('#'+id[1]).hide();
+			}
+			//alert($(this).val());
+			
+		});		
+	}
 	
 	/*	
 

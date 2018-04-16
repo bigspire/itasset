@@ -40,6 +40,7 @@ if(($fun->isnumeric($getid)) || ($fun->is_empty($getid)) || ($getid == 0)){
 	header('Location:page_error.php');
 }
 
+
 // get database values only when session has no values
 if(empty($_SESSION['h']['amount'])){
 	$query = "CALL it_get_hardware($getid,'PD')";
@@ -208,7 +209,8 @@ if($obj['total'] == '0'){*/
 						$query2 = "CALL it_edit_hw_inventory('".$_SESSION['h'][$i]['id']."','".$mysql->real_escape_str($_SESSION['h'][$i]['serial_no'])."',
 		 	   		'".$mysql->real_escape_str($_SESSION['h'][$i]['inventory_no'])."', '".$mysql->real_escape_str($_SESSION['h'][$i]['asset_desc'])."',
  		 	   		'".$date."', '1', '".$mysql->real_escape_str($_SESSION['h'][$i]['district_id'])."',
- 		 	   		'".$mysql->real_escape_str($getid)."')";
+ 		 	   		'".$mysql->real_escape_str($getid)."', '".$mysql->real_escape_str($_SESSION['h']['rental_type'])."')";
+					
 			   		try{
 							if(!$result2 = $mysql->execute_query($query2)){ 
 								throw new Exception('Problem in executing add hardware inventory details');
@@ -222,7 +224,7 @@ if($obj['total'] == '0'){*/
 						$query2 = "CALL it_add_hw_inventory('".$mysql->real_escape_str($_SESSION['h'][$i]['serial_no'])."',
 		 	   		'".$mysql->real_escape_str($_SESSION['h'][$i]['inventory_no'])."', '".$mysql->real_escape_str($_SESSION['h'][$i]['asset_desc'])."',
  		 	   		'".$date."', '1', '".$mysql->real_escape_str($_SESSION['h'][$i]['district_id'])."',
- 		 	   		'".$mysql->real_escape_str($getid)."')";
+ 		 	   		'".$mysql->real_escape_str($getid)."', '".$mysql->real_escape_str($_SESSION['h'][$i]['is_rental'])."', '".$mysql->real_escape_str($_SESSION['h'][$i]['rental_type'])."')";
 			   		try{
 							if(!$result2 = $mysql->execute_query($query2)){ 
 								throw new Exception('Problem in executing add hardware inventory details');
@@ -285,6 +287,16 @@ if($obj['total'] == '0'){*/
 				$_SESSION['h']['currencytype'] = $currency_type; 
 			}
 		}
+		
+		// currency types value to name conversion	
+		$rental_types = array('' => 'Select', 'D' => 'Daily', 'W' => 'Weekly', 'M' => 'Monthly', 'H' => 'Half Yearly', 'Y' => 'Yearly');
+		foreach ($rental_types as $currencytypes  => $currency_type){ 
+			if($_SESSION['h']['rental_type'] == $currencytypes){
+				$_SESSION['h']['rental_type_detail'] = $currency_type; 
+			}
+		}
+	
+	
 		// smarty name conversion for Software brand
 		$hardwaretype = $_SESSION['h']['hardware_type_id'];
 		$query = "call it_get_hw_byname('".$hardwaretype."')";

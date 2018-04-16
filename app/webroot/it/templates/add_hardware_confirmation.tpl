@@ -281,7 +281,7 @@
 													</div>
 										</div>
 										
-										
+								{if $smarty.session['h'].add_hardware_type eq 'New'}		
 																					
 									<div class="control-group">
 											<label for="textfield" class="control-label">Paid By </label>
@@ -296,11 +296,23 @@
 											{$smarty.session['h'].bill_no}
 												</div>
 						</div>
-										
+						
+						{else}
+						
+							<div class="control-group">
+											<label for="textfield" class="control-label">Rental Type </label>
+											<div class="controls">
+											{$smarty.session['h'].rental_type_detail}
+												</div>
+										</div>	
+							{/if}
+								
 									</div>
 									
 								
-									<div class="span6">									
+									<div class="span6">		
+
+{if $smarty.session['h'].add_hardware_type eq 'New'}									
 		<div class="control-group">
 											<label for="password" class="control-label">Purchase Date</label> </label>
 											<div class="controls">
@@ -318,7 +330,18 @@
 											<div class="controls">
 												<a href = "add_hardware_confirmation.php?{$smarty.get.id}&action=download&file={$smarty.session['h'].billfile}">{$smarty.session['h'].billfile}</a>  
 											</div>
-						</div>									
+						</div>	
+		{else}
+						
+							<div class="control-group">
+											<label for="textfield" class="control-label">Rented Date </label>
+											<div class="controls">
+											{$smarty.session['h'].purchasedate}
+												</div>
+										</div>	
+							
+
+{/if}						
 									</div>
 					
 							

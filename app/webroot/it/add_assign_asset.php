@@ -138,7 +138,6 @@ if(!empty($_POST)){
 				}
 				$j++;
 			}
-
 		}else{
 			$asset_typeData[$i] = $_POST['asset_type_'.$i];
 			$inventoryData[$i] = $_POST['inventory_'.$i];

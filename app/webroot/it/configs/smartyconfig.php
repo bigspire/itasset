@@ -13,7 +13,7 @@ date_default_timezone_set('Asia/Kolkata');
 ini_set('display_errors', '0');
 define('webroot', '');
 // define('IT_DIR', 'ceo_apps_it');
-define("IT_DIR", "/2017/itassetsvn/itasset/", true);
+define("IT_DIR", "/itassetsvn/itasset/", true);
 
 // smarty config
 include('vendor/smarty-3.1.29/libs/Smarty.class.php');

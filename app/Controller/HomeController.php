@@ -212,7 +212,11 @@ class HomeController extends AppController {
 		$data = $this->HrVoice->find('count', array('conditions' => array('end_date >=' => date('Y-m-d'),'start_date <=' => date('Y-m-d'), 'is_deleted' => 'N', 'status' => 1,'VoiceUser.hr_voice_id' => NULL),'joins' => $options));
 		$this->set('notify_voice', $data);
 		
-		
+		// get it module count
+		$this->loadModel('Permission');
+		$it_modules = $this->Permission->find('all', array('conditions' => array('app_modules_id' => array('115','103','104','105','106','107','108','109',
+		'110','111','112','118','114','119'), 'app_roles_id' => $this->Session->read('USER.Login.app_roles_id')),	'fields' => array('Module.module_name')));
+		$this->set('IT_COUNT', count($it_modules));
 		
 	}
 	

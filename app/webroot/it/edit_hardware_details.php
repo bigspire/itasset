@@ -29,6 +29,7 @@ if(empty($_SESSION['Hardware'])){
 	header('Location:dashboard.php?access=Access denied!');
 }
 
+
 // get database values only when session has no values
 $getid = $_GET['id'];
 $smarty->assign('getid',$getid);
@@ -53,9 +54,13 @@ if($getid !=''){
 }
 // next query execution
 		$mysql->next_query();
+		
+		
 // Selecting the record to edit
 if(empty($_SESSION['h']) && empty($_POST)){
   $query = "CALL it_get_hardware($getid,'HD')";
+  
+  
 	try{
 		// calling mysql exe_query function
 		if(!$result = $mysql->execute_query($query)){ 
@@ -63,13 +68,17 @@ if(empty($_SESSION['h']) && empty($_POST)){
 		}
 
 		$row = $mysql->display_result($result);
-
+		
+		
 		$smarty->assign('rows',$row);
 		// assign the db values into session
 		foreach($row as $key => $record){
 			$_SESSION['h'][$key] = $record; 
 			
 		}
+		
+		
+		
 		// Date format conversion of valid till to display
 		$val_to_date = $_SESSION['h']['validity_to'];
 		$_SESSION['h']['validity_to'] = $fun->convert_date_display($val_to_date);

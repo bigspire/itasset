@@ -77,7 +77,7 @@ if(!empty($_POST)){
 			}	
 
 			// query to insert into database. 
-			$query = "CALL it_edit_scrap_hw_inventory('".$_GET['scrap_id']."','".$is_scrap."','".$created_date."')";
+			$query = "CALL it_edit_scrap_hw_inventory('".$_GET['inv_id']."','".$is_scrap."','".$created_date."')";
 			// Calling the function that makes the insert
 			try{
 				// calling mysql exe_query function

@@ -9,6 +9,6 @@ Date : 02-06-2016
 define('Host' , 'localhost');
 define('Username' , 'root');
 define('Password' , '');
-define('Database' , 'itasset_db');
+define('Database' , 'ceo_apps_it2');
 
 ?>

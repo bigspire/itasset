@@ -696,7 +696,7 @@
 								</div>
 								
 								<div id="it-tab" class="tab-pane">
-								<iframe src="/ceo_apps_it/it/fr_it_home.php" width="900px" frameborder="0" scrolling="no" height="465px"></iframe>
+								<iframe src="/itassetsvn/itasset/it/fr_it_home.php" width="900px" frameborder="0" scrolling="no" height="465px"></iframe>
 								</div>
 								
 								
