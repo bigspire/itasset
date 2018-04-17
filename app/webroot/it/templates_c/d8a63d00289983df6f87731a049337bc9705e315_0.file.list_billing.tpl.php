@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-16 16:37:16
+/* Smarty version 3.1.29, created on 2018-04-17 11:59:39
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_billing.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad483e43c80e5_78021808',
+  'unifunc' => 'content_5ad594533d78d6_62928800',
   'file_dependency' => 
   array (
     'd8a63d00289983df6f87731a049337bc9705e315' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_billing.tpl',
-      1 => 1523876664,
+      1 => 1523946577,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad483e43c80e5_78021808 ($_smarty_tpl) {
+function content_5ad594533d78d6_62928800 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -84,7 +84,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 						<div class="box-title">
 								<h3><i class="icon-list"></i> Hardware Billings</h3>
 						</div>
-			<form action="list_hardware.php" name="" id="formID" class="" method="post" accept-charset="utf-8">							
+			<form action="list_billing.php" name="" id="formID" class="" method="post" accept-charset="utf-8">							
 			<div class="box-content">
 			<div class="dataTables_wrapper">		
 				<div class="" id="DataTables_Table_8_filter"  style="padding:15px">
@@ -93,12 +93,14 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " id="keyword" autocomplete="off" placeholder="Search here..." type="text"/>
 			    <?php echo smarty_function_html_options(array('name'=>'hw_type','class'=>"input-medium",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus",'options'=>$_smarty_tpl->tpl_vars['hw_type_data']->value,'selected'=>$_smarty_tpl->tpl_vars['hw_type']->value),$_smarty_tpl);?>
 
+				<?php echo smarty_function_html_options(array('name'=>'hw_status','class'=>"input-medium",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus1",'options'=>$_smarty_tpl->tpl_vars['type']->value,'selected'=>$_smarty_tpl->tpl_vars['hw_status']->value),$_smarty_tpl);?>
+
 	          <input name="f_date" value="<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 " class="input-small datepick" placeholder="Billing From" type="text" id="HrEmployeeDob"/> 
 	          <input name="t_date" value="<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
 " class="input-small datepick" placeholder="Billing To" type="text" id="HrEmployeeDob"/> 
 		       <input type="submit" value="Search" class="btn btn-primary" style="margin-bottom:9px;margin-left:4px;">
-             <a href="list_hardware.php"><button style="margin-bottom:9px;margin-left:4px;" type="button" val="list_hardware.php" class="jsRedirect btn btn-primary"><i class="icon-refresh"></i> Reset</button></a>
+             <a href="list_billing.php"><button style="margin-bottom:9px;margin-left:4px;" type="button" val="list_billing.php" class="jsRedirect btn btn-primary"><i class="icon-refresh"></i> Reset</button></a>
              <!--a href="add_hardware_details.php"><button type="button" val="add_hardware_details.php" class="jsRedirect btn btn-primary" style="float:right"><i class="icon-plus"></i> Add Hardware</button></a-->
 			 
 			 <div class="btn-group" style="margin-bottom:9px;margin-left:4px;" >
@@ -108,7 +110,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 			 
 			 
              <?php if (!$_smarty_tpl->tpl_vars['ALERT_MSG']->value) {?> 
-             <a href="list_hardware.php?action=export&keyword=<?php echo $_POST['keyword'];?>
+             <a href="list_billing.php?action=export&keyword=<?php echo $_POST['keyword'];?>
 &hw_type=<?php echo $_POST['hw_type'];?>
 &hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
 &f_date=<?php echo $_POST['f_date'];?>
@@ -125,7 +127,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 					<thead>
 						<tr>
 							<th width="80">
-										<a href="list_hardware.php?field=hardware_type&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+										<a href="list_billing.php?field=hardware_type&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
@@ -135,7 +137,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_hardware_type']->value;?>
 ">Type</a></th>
 										<th width="80">
-											<a href="list_hardware.php?field=brand&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+											<a href="list_billing.php?field=brand&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
@@ -145,7 +147,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_brand']->value;?>
 ">Brand</a></th>		
 										<th width="80">
-											<a href="list_hardware.php?field=model_id&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+											<a href="list_billing.php?field=model_id&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
@@ -155,7 +157,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_model_id']->value;?>
 ">Model Id</a></th>
 										<th width="80">
-											<a href="list_hardware.php?field=inventory_no&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+											<a href="list_billing.php?field=inventory_no&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
@@ -165,7 +167,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_inventory_no']->value;?>
 ">Inventory No</a></th>
 										<th width="80">
-											<a href="list_hardware.php?field=location&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+											<a href="list_billing.php?field=location&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
@@ -175,7 +177,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_location']->value;?>
 ">Location</a></th>
 										<th width="80">
-											<a href="list_hardware.php?field=asset_desc&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+											<a href="list_billing.php?field=asset_desc&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
@@ -185,7 +187,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_asset_desc']->value;?>
 ">Asset</a></th>
 										<th width="80">
-											<a href="list_hardware.php?field=validity&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+											<a href="list_billing.php?field=validity&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
@@ -195,7 +197,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_validity']->value;?>
 ">Billing Date</a></th>																				
 										<th width="80">
-											<a href="list_hardware.php?field=vendor&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+											<a href="list_billing.php?field=vendor&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
@@ -205,7 +207,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_vendor']->value;?>
 ">Vendor</a></th>																			
 										<th width="60">										
-										<a href="list_hardware.php?field=created&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+										<a href="list_billing.php?field=created&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &sw_type=<?php echo $_smarty_tpl->tpl_vars['sw_type']->value;?>
@@ -262,7 +264,7 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 </td>
 									 
 									 <td class='hidden-480'>
-											<a href="view_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+											<a href="view_billing_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 " class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
 									 </td>
 								</tr>

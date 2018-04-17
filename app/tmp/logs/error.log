@@ -353,3 +353,48 @@ Request URL: /itassetsvn/itasset/it/add_billing.php
 Stack Trace:
 #0 C:\xampp\htdocs\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2018-04-17 11:56:24 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/view_billing_harware.php?id=35
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-17 11:57:13 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/view_billing_harware.php?id=35
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-17 11:58:41 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/view_billing_harware.php?id=35
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-17 11:58:45 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/view_billing_harware.php?id=35
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-17 11:59:17 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/view_billing_harware.php?id=35
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

@@ -174,7 +174,7 @@ try{
 		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J','K'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','validity_to','vendor_name','created_date','modified_date','status'),'Hardwares_'.$current_date);
 	}
 	// assign software status into array 
-	$type = array('' => 'All Status', '1' => 'Active', '0' => 'Inactive');
+	$type = array('' => 'All Status', 'N' => 'New', 'R' => 'Rental');
 
 	// create,update,delete message validation
 	if($_GET['status'] == 'deleted' || $_GET['status'] == 'created' || $_GET['status'] == 'updated'){
