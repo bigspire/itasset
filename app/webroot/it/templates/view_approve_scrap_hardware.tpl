@@ -86,7 +86,12 @@
 												{$item.first_name}	
 											</div>
 										</div>
-										
+										<div class="control-group">
+											<label for="textfield" class="control-label">Remarks </label>
+											<div class="controls">
+												{$item.remarks}	
+											</div>
+										</div>
 										
 									</div>	
 									{/if}
@@ -152,7 +157,12 @@
 												{$item.first_name}	
 											</div>
 										</div>
-										
+										<div class="control-group">
+											<label for="textfield" class="control-label">Remarks </label>
+											<div class="controls">
+												{$item.remarks}	
+											</div>
+										</div>
 										
 									</div>	
 									{/if}

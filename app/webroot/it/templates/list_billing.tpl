@@ -1,7 +1,6 @@
-{* Purpose : To list hardware details.
+{* Purpose : To list billing hardware details.
    Created : Nikitasa
-   Modified : Gayathri
-   Date : 14-06-2016 *}
+   Date : 18-04-2018 *}
 
 	{include file='include/header.tpl'}		
 	<div id="page_wrapper">

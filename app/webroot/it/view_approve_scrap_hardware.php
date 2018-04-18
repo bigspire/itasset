@@ -81,7 +81,7 @@ $smarty->assign('roleid', $roleid);
 // assign page title
 $smarty->assign('page_title' , 'View Approve Hardware - IT');
 // assigning active class status to smarty menu.tpl
-$smarty->assign('assign_asset_active' , 'active'); 	   
+$smarty->assign('scrap_hardware_active' , 'active'); 	   
 // display smarty template
 $smarty->display('view_approve_scrap_hardware.tpl');
 ?>
