@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-03-06 12:41:23
+/* Smarty version 3.1.29, created on 2018-04-17 15:49:16
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\remarks.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a9e3f1bd78b10_66711131',
+  'unifunc' => 'content_5ad5ca24b201e4_85064896',
   'file_dependency' => 
   array (
     'b8fdbff8ec6a6b0c5dcb665da58da94f6aed724f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\remarks.tpl',
-      1 => 1520320104,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5a9e3f1bd78b10_66711131 ($_smarty_tpl) {
+function content_5ad5ca24b201e4_85064896 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -98,14 +98,15 @@ function content_5a9e3f1bd78b10_66711131 ($_smarty_tpl) {
 &user_id=<?php echo $_SESSION['user_id'];?>
 &page=<?php echo $_GET['page'];?>
 &action=<?php echo $_GET['action'];?>
+&inv_id=<?php echo $_GET['inv_id'];?>
 " id="formID"  method="post" accept-charset="utf-8">
 									<div class="space-4"></div>
 									<div class="form-group" style="text-align:left">
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Remarks 
 										<?php if ($_GET['action'] == 'reject') {?>
-										<span class="red"> *</span> </label>
+										<span class="red"> *</span>
 										<?php }?>
-										
+										 </label>
 										<div class="col-sm-3">
 											<textarea id="remarks" rows="5" cols="45" name="remarks"><?php if ($_POST['remarks']) {
 echo $_POST['remarks'];
