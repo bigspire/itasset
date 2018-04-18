@@ -71,10 +71,10 @@ if(!empty($_POST)){
 			// query to insert into database. 
 			$query = "CALL it_add_billing('".$mysql->real_escape_str($_POST['hardware_type_id'])."', '".$mysql->real_escape_str($_POST['amount'])."', 
 			'".$mysql->real_escape_str($_POST['payment_type'])."','".$mysql->real_escape_str($_POST['description'])."','".$mysql->real_escape_str($_POST['it_brand_id'])."',
-			'".$mysql->real_escape_str($_POST['bill_date'])."','".$mysql->real_escape_str($_POST['bill_copy'])."',
-			'".$mysql->real_escape_str($_POST['bill_no'])."','".$mysql->real_escape_str($_POST['company_name'])."'
+			'".$mysql->real_escape_str($fun->convert_date($_POST['bill_date']))."','".$mysql->real_escape_str($_POST['bill_copy'])."',
+			'".$mysql->real_escape_str($_POST['bill_no'])."','".$mysql->real_escape_str($_POST['company_name'])."',
 			'".$mysql->real_escape_str($_POST['email_id'])."','".$mysql->real_escape_str($_POST['company_contact'])."','".$mysql->real_escape_str($_POST['contact_per'])."',
-			'".$mysql->real_escape_str($_POST['city'])."','".$mysql->real_escape_str($_POST['address'])."','".$mysql->real_escape_str($_SESSION['user_id'])."','".$date."')";
+			'".$mysql->real_escape_str($_POST['city'])."','".$mysql->real_escape_str($_POST['address'])."','".$mysql->real_escape_str($_SESSION['user_id'])."','".$date."','N')";
 			// Calling the function that makes the insert
 			try{
 				// calling mysql exe_query function
@@ -89,13 +89,15 @@ if(!empty($_POST)){
 				}
 				// free the memory
 				$mysql->clear_result($result);
+				// call the next result
+				$mysql->next_query();
 			}catch(Exception $e){
 				echo 'Caught exception: ',  $e->getMessage(), "\n";
 			}
 		//}else{
 			// $msg = "Brand title already exists";
 			// $smarty->assign('EXIST_MSG',$msg); 
-		//}	
+		}	
 }
 // smarty dropdown for hardware type
 $query = 'call it_get_hardware_type()';

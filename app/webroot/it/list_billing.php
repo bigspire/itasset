@@ -92,8 +92,8 @@ try{
 }
 // set the condition to check ascending or descending order		
 $order = ($_GET['order'] == 'desc') ? 'asc' :  'desc';	
-$sort_fields = array('1' => 'hardware_type','brand','model_id','inventory_no','location','asset_desc','validity','vendor','modified','created');
-$org_fields = array('1' => 'ht.title', 'b.title', 'h.model_id', 'hi.inventory_no','ad.district_name','hi.asset_desc','validity_to','vendor_name','modified_date','created_date');
+$sort_fields = array('1' => 'hardware_type','billing_date','brand','model_id','inventory_no','location','asset_desc','validity','vendor','modified','created');
+$org_fields = array('1' => 'ht.title', 'billing_date','b.title', 'h.model_id', 'hi.inventory_no','ad.district_name','hi.asset_desc','validity_to','vendor_name','modified_date','created_date');
 
 // to set the sorting image
 foreach($sort_fields as $key => $h_field){
@@ -136,8 +136,8 @@ try{
 	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 // fetch all records
-$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','$start','$limit',
-'".$field."','".$order."','".$_GET['action']."')";
+echo $query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','$start','$limit',
+'".$field."','".$order."','".$_GET['action']."')";die;
 
 try{
 	if(!$result = $mysql->execute_query($query)){
@@ -156,6 +156,7 @@ try{
 	$data[$i]['status_cls'] = $fun->status_cls($obj['status']);
 	$data[$i]['is_rental_hw'] = $obj['is_rental'] == 'Y' ? 'Rental' : 'New';
  	$data[$i]['created_date'] = $fun->it_software_created_date($obj['created_date']);
+	$data[$i]['billing_date'] = $fun->it_software_created_date($obj['billing_date']);
  	$i++;
  	$pno[]=$paging->print_no();
  	$smarty->assign('pno',$pno);
@@ -167,9 +168,9 @@ try{
 		include('classes/class.excel.php');
 		$excelObj = new libExcel();
 		// function to print the excel header
-      $excelObj->printHeader($header = array('Type','Brand','Model Id','Inventory No','Location','Asset Description','Validity','Vendor','Created Date','Modified Date','Status','Description') ,$col = array('A','B','C','D','E','F','G','H','I','J','K','L'));  
+      $excelObj->printHeader($header = array('Type','Brand','Model Id','Inventory No','Location','Asset Description','Validity','Vendor','billing_date','Created Date','Modified Date','Status','Description') ,$col = array('A','B','C','D','E','F','G','H','I','J','K','L','M'));  
 		// function to print the excel data
-		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J','K','L'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','validity_to','vendor_name','created_date','modified_date','status', 'message'),'Billing_'.$current_date);
+		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J','K','L','M'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','validity_to','vendor_name','billing_date','created_date','modified_date','status', 'message'),'Billing_'.$current_date);
 	}
 	// assign software status into array 
 	$type = array('' => 'All Status', 'N' => 'New', 'Y' => 'Rental');

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-18 16:27:50
+/* Smarty version 3.1.29, created on 2018-04-18 17:12:45
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\add_billing_hardware_details.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad724ae1f3417_39017874',
+  'unifunc' => 'content_5ad72f352dbc67_16892931',
   'file_dependency' => 
   array (
     '7bf4ad4c06832db7081f27dcb6979a5baf7ec0d8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\add_billing_hardware_details.tpl',
-      1 => 1524049063,
+      1 => 1524049434,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad724ae1f3417_39017874 ($_smarty_tpl) {
+function content_5ad72f352dbc67_16892931 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -55,7 +55,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 						</li>
 						
 						<li>
-							<a href="list_billing.php">Hardware</a>
+							<a href="list_billing.php">Billing</a>
 								<i class="icon-angle-right"></i>
 						</li>
 						
@@ -120,7 +120,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 										<div class="control-group">
 											<label for="password" class="control-label">Description<span class="red_star"></span></span></label>
 											<div class="controls">
-									<textarea name="description" rows="2" class="input-xlarge" placeholder="" cols="30" id="description"><?php echo $_SESSION['h']['description'];?>
+									<textarea name="description" rows="2" class="input-xlarge" placeholder="" cols="30" id="description"><?php echo $_POST['description'];?>
 </textarea> 
 											
 											
