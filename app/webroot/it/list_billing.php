@@ -136,8 +136,8 @@ try{
 	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 // fetch all records
-echo $query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','$start','$limit',
-'".$field."','".$order."','".$_GET['action']."')";die;
+$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','$start','$limit',
+'".$field."','".$order."','".$_GET['action']."')";
 
 try{
 	if(!$result = $mysql->execute_query($query)){
