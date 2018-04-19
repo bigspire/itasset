@@ -140,6 +140,7 @@
 											
 											<div class="controls field">
 											<input name="company_name" class="input-xlarge" placeholder="" type="text" id="company_name" value="{$smarty.post.company_name}"/> 
+											<a href="company_details.php?type=H" class="iframeBox unreadLink" val="70_80">Choose Vendor</a>
 									<div class="errorMsg error">{$company_nameErr} </div>
 										</div>
 										</div>
@@ -150,14 +151,14 @@
 										<div class="control-group">
 											<label for="textfield" class="control-label">Email Id </label>
 											<div class="controls field">
-									<input name="email_id" class="input-xlarge" placeholder="" type="text" id="email_id" value="{$smarty.post.email_id}"/> 
+									<input name="email_id" class="input-xlarge" placeholder="" type="text" id="company_email" value="{$smarty.post.email_id}"/> 
 										</div>
 										</div>
 										
 										<div class="control-group">
 											<label for="password" class="control-label">Contact Number </label>
 											<div class="controls">
-	<input name="company_contact" class="input-xlarge" placeholder="" type="text" id="company_contact" value="{$smarty.post.company_contact}"/> 
+	<input name="company_contact" class="input-xlarge" placeholder="" type="text" id="contact_number" value="{$smarty.post.company_contact}"/> 
 											</div>
 										</div>
 										
@@ -174,7 +175,7 @@
 <label for="textfield" class="control-label">Contact Person
 </label>
 											<div class="controls field">
-											<input name="contact_per" class="input-xlarge" placeholder="" type="text" id="contact_per" value="{$smarty.post.contact_per}"/> 
+											<input name="contact_per" class="input-xlarge" placeholder="" type="text" id="contact_person" value="{$smarty.post.contact_per}"/> 
 											</div>
 										</div>
 	

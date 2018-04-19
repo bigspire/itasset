@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-19 17:13:02
+/* Smarty version 3.1.29, created on 2018-04-19 17:44:09
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\add_billing_hardware_details.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad880c69c3bd7_93518773',
+  'unifunc' => 'content_5ad8881186c049_63357339',
   'file_dependency' => 
   array (
     '7bf4ad4c06832db7081f27dcb6979a5baf7ec0d8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\add_billing_hardware_details.tpl',
-      1 => 1524138181,
+      1 => 1524140044,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad880c69c3bd7_93518773 ($_smarty_tpl) {
+function content_5ad8881186c049_63357339 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -187,6 +187,7 @@ echo $_smarty_tpl->tpl_vars['bill_copyErr']->value;?>
 											<div class="controls field">
 											<input name="company_name" class="input-xlarge" placeholder="" type="text" id="company_name" value="<?php echo $_POST['company_name'];?>
 "/> 
+											<a href="company_details.php?type=H" class="iframeBox unreadLink" val="70_80">Choose Vendor</a>
 									<div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['company_nameErr']->value;?>
  </div>
 										</div>
@@ -198,7 +199,7 @@ echo $_smarty_tpl->tpl_vars['bill_copyErr']->value;?>
 										<div class="control-group">
 											<label for="textfield" class="control-label">Email Id </label>
 											<div class="controls field">
-									<input name="email_id" class="input-xlarge" placeholder="" type="text" id="email_id" value="<?php echo $_POST['email_id'];?>
+									<input name="email_id" class="input-xlarge" placeholder="" type="text" id="company_email" value="<?php echo $_POST['email_id'];?>
 "/> 
 										</div>
 										</div>
@@ -206,7 +207,7 @@ echo $_smarty_tpl->tpl_vars['bill_copyErr']->value;?>
 										<div class="control-group">
 											<label for="password" class="control-label">Contact Number </label>
 											<div class="controls">
-	<input name="company_contact" class="input-xlarge" placeholder="" type="text" id="company_contact" value="<?php echo $_POST['company_contact'];?>
+	<input name="company_contact" class="input-xlarge" placeholder="" type="text" id="contact_number" value="<?php echo $_POST['company_contact'];?>
 "/> 
 											</div>
 										</div>
@@ -224,7 +225,7 @@ echo $_smarty_tpl->tpl_vars['bill_copyErr']->value;?>
 <label for="textfield" class="control-label">Contact Person
 </label>
 											<div class="controls field">
-											<input name="contact_per" class="input-xlarge" placeholder="" type="text" id="contact_per" value="<?php echo $_POST['contact_per'];?>
+											<input name="contact_per" class="input-xlarge" placeholder="" type="text" id="contact_person" value="<?php echo $_POST['contact_per'];?>
 "/> 
 											</div>
 										</div>
