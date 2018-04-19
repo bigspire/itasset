@@ -1,6 +1,6 @@
 {* Purpose : To view hardware details.
    Created : Nikitasa
-   Date : 15-06-2016 *}
+   Date : 19-06-2016 *}
 
 {include file='include/header.tpl'}		
 <div id="page_wrapper">
@@ -13,7 +13,7 @@
 			<div class="container-fluid">
 				<div class="page-header">
 					<div class="pull-left">
-						<h1>View Hardware</h1>
+						<h1>View Billing</h1>
 					</div>
 					
 				</div>
@@ -25,19 +25,18 @@
 						</li>
 						
 						<li>
-							<a href="list_hardware.php">Hardware</a>
+							<a href="list_billing.php">Billing</a>
 								<i class="icon-angle-right"></i>
 						</li>
 						
 						<li>
-							<a href="view_hardware.php?id={$id}">View Hardware</a>
+							<a href="view_billing_hardware.php?id={$id}">View Billing</a>
 						</li>   
 					</ul>
-<!--						<a href="add_scrap.php?id={$id}&page={$page}" onclick="return scrapfunction()"><button type="button" class="btn btn-primary" style="float:right">Scrap Hardware</button></a>-->
 				</div>
 					<div class="row-fluid  footer_div">					
 					<div class="span12">
-								<form action="view.software.php" method="POST" class="form-horizontal form-wizard ui-formwizard" id="ss" novalidate="novalidate">
+								<form action="view_billing_hardware.php" method="POST" class="form-horizontal form-wizard ui-formwizard" id="ss" novalidate="novalidate">
 									<div class="step ui-formwizard-content" id="firstStep" style="width:99%;margin-top:20px;">
 									</div>
 								</form>
@@ -49,35 +48,31 @@
 							</div>						
 							<div class="box-content nopadding">
 									<div class="span6">
-									
+									{foreach from=$data item=item key=key}	
 						<div class="control-group">
 											<label for="textfield" class="control-label">Type </label>
 											<div class="controls">
-	                            {$hardware_type}
+	                            {$item.hw_type}
 										</div>
 										</div>
 										<div class="control-group">
-											<label for="textfield" class="control-label">Color </label>
+											<label for="textfield" class="control-label">Amount  </label>
 											<div class="controls">
-											{$color}
+											{$item.cost}
 													</div>
 										</div>
 
 										
 								<div class="control-group">
-											<label for="password" class="control-label">Description</label>
+											<label for="password" class="control-label">Payment Type</label>
 											<div class="controls">
-												{$description}
+												{$item.payment_type}
 										</div>
 										</div>
 										<div class="control-group">
-											<label for="textfield" class="control-label">Status </label>
+											<label for="textfield" class="control-label">Description </label>
 											<div class="controls">
-                                  {if $status}
-                                  Active
-                                  {else}
-                                  Inactive
-                                  {/if}
+											{$item.message}
 											</div>
 										</div>
 									</div>
@@ -88,22 +83,28 @@
 
 										
 										<div class="control-group">
-											<label for="textfield" class="control-label">Brand </label>
+											<label for="textfield" class="control-label">Inventory No (Brand)  </label>
 											<div class="controls">
-										{$brand}
+										{$item.invid} ({$item.brand})
 													</div>
 										</div>
 												<div class="control-group">
-											<label for="textfield" class="control-label">Model ID / Name </label>
+											<label for="textfield" class="control-label">Bill Date  </label>
 											<div class="controls">
-											{$model_id}
+											{$item.invoice_date}
 											</div>
 										</div>
 																			
 										<div class="control-group">
-										<label for="textfield" class="control-label">Subscription Validity   </label>
+										<label for="textfield" class="control-label">Bill Copy   </label>
 											<div class="controls">
-											 	{if $validity_from}{$validity_from}  -  {$validity_to}{/if}
+											 	{$item.attachment}
+											</div>
+									</div>
+									<div class="control-group">
+										<label for="textfield" class="control-label">Bill No   </label>
+											<div class="controls">
+											 	{$item.bill_no}
 											</div>
 									</div>
 	
@@ -118,167 +119,59 @@
 							
 						<div class="box">
 							<div class="box-title">
-								<h3><i class="icon-list"></i> Inventory Details</h3>
+								<h3><i class="icon-list"></i> Vendor Details</h3>
 								</div>
-																		{foreach from=$data item=item key=key}	
+																		
 
 							<div class="box-content nopadding">
 
 											<div class="span6">
 
 										<div class="control-group">
-											<label for="textfield" class="control-label">Inventory No </label>
+											<label for="textfield" class="control-label">Company Name </label>
 											<div class="controls">
-										    {$item.inventory_no}
+										    {$item.vendor_company}
 												</div>
 										</div>    
 										<div class="control-group">
-											<label for="textfield" class="control-label">Location </label>
+											<label for="textfield" class="control-label">Email Id </label>
 											<div class="controls">
-												{$item.district_name} ( {$item.state_name} )
+											  {$item.vendor_email}
 													</div>
 										</div>   
+										<div class="control-group">
+											<label for="textfield" class="control-label">Contact Number </label>
+											<div class="controls">
+													  {$item.vendor_phone}
+													</div>
+										</div>  
 				<div class="control-group"></div>
 		            </div>
 									<div class="span6">		
-<!--	<a href="add_scrap.php?id={$item.id}&page={$page}" onclick="return scrapfunction()">
-	<button type="button" class="btn btn-primary" style="float:right">Scrap Hardware</button></a>-->																							
+																						
 	                           <div class="control-group">
-											<label for="password" class="control-label">Serial Number </label>
+											<label for="password" class="control-label">Contact Person </label>
 											<div class="controls">
-												{$item.serial_no}
+												{$item.vendor_person}
 										</div>
 										</div>	
-											<div class="control-group">
-											<label for="textfield" class="control-label">Asset Description </label>
-											<div class="controls">
-										{$item.asset_desc}
-											</div>
-										</div>							
-
-				<div class="control-group"></div>	
-									</div>
-						</div>
-																  {/foreach}
-						</div>
-				
-
-						<div class="box">
-							<div class="box-title">
-								<h3><i class="icon-list"></i> Pricing Details</h3>
-							</div>
-													
-							<div class="box-content nopadding">
-								
-																<div class="span6" style="">
-										<div class="control-group">
-											<label for="textfield" class="control-label">Amount </label>
-											<div class="controls">
-										{$currency} {$amount} 
-													</div>
-										</div>
-										
-										
-																					
-									<div class="control-group">
-											<label for="textfield" class="control-label">Paid By </label>
-											<div class="controls">
-											{$paid_mode}
-												</div>
-										</div>
-									
-                       								
-										
-	                    <div class="control-group">
-											<label for="password" class="control-label">Attach Bill</label> </label>
-											<div class="controls">
-                      				<a href = "view_hardware.php?id={$smarty.get.id}&action=download&file={$item.bill}">{$bill}</a>
-											</div>
-					             	</div>
-	                   																			
-									</div>
-									
-								
-									<div class="span6">									
-
-	                      <div class="control-group">
-											<label for="password" class="control-label">Purchase Date  </label> </label>
-											<div class="controls">
-											{$purchase_date}
-											</div>
-										</div>
-										<div class="control-group">
-											<label for="password" class="control-label">Paid Date  </label> </label>
-											<div class="controls">
-											{$paid_date}
-											</div>
-										</div>
-									</div>
-					
-							
-								
-							</div>
-						</div>
-				
-
-						
-<div class="box">
-							<div class="box-title">
-								<h3><i class="icon-list"></i> Vendor Details</h3>
-							</div>
-							
-						
-							<div class="box-content nopadding">
-								
-								
-								
-					
-												
-																<div class="span6" style="">
-				<div class="control-group">
-											<label for="textfield" class="control-label">Company Name</label>
-											<div class="controls">
-											{$vendor_name}
-													</div>
-										</div>
-									<div class="control-group">
-											<label for="textfield" class="control-label">Email Id </label>
-											<div class="controls">
-												{$vendor_email}
-											</div>
-										</div>			
-										<div class="control-group">
-											<label for="textfield" class="control-label">Contact Number</label>
-											<div class="controls">
-												 	{$vendor_phone}
-											</div>
-										</div>
-																			
-										
-									</div>
-									
-									
-									<div class="span6">									
-	
-   <div class="control-group">
-											<label for="textfield" class="control-label">Contact Person </label>
-											<div class="controls">
-												{$vendor_person}	
-											</div>
-										</div>
 											<div class="control-group">
 											<label for="textfield" class="control-label">City </label>
 											<div class="controls">
-												{$vendor_city}
+										{$item.city}
 											</div>
-										</div>	
-	<div class="control-group">
+										</div>							
+<div class="control-group">
 											<label for="textfield" class="control-label">Address </label>
 											<div class="controls">
-													{$vendor_address}																							
+										{$item.address}
 											</div>
-										</div>
-									</div>	
+										</div>	
+				<div class="control-group"></div>	
+									</div>
+					
+																  {/foreach}
+								
 							<div class="span12">
 										<div class="form-actions">
 										<a href="list_billing.php"><input type="button" val="list_billing.php" value="Back" class="jsRedirect btn btn-primary"></a>	

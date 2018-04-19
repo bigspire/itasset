@@ -120,9 +120,9 @@
 											<label for="textfield" class="control-label">Amount <span class="red_star"> *</span></label>
 											<div class="controls field">
 												<input name="amount" class="input-medium" placeholder="" type="text" id="amount" value="{$smarty.session['s'].amount}"/> 	
-<div class="spaError errorMsg error" tyle="width:170px;">{$amountErr}{$amountE}</div>
-{html_options name=currency_type class="input-small" placeholder="" style="clear:left" id="currency_type" options=$currency_types selected=$smarty.session['s'].currency_type}											
-	<div class="errorMsg error"  style="margin-left:170px;">{$currency_typeErr}</div>
+												<div class="spaError errorMsg error" style="width:170px;">{$amountErr}{$amountE}</div>
+												{html_options name=currency_type class="input-small" placeholder="" style="clear:left" id="currency_type" options=$currency_types selected=$smarty.session['s'].currency_type}											
+												<div class="errorMsg error"  style="margin-left:170px;">{$currency_typeErr}</div>
 											</div>
 										</div>
 										

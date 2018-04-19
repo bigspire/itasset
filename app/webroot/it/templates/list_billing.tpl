@@ -1,6 +1,6 @@
 {* Purpose : To list billing hardware details.
    Created : Nikitasa
-   Date : 18-04-2018 *}
+   Date : 19-04-2018 *}
 
 	{include file='include/header.tpl'}		
 	<div id="page_wrapper">
@@ -116,12 +116,12 @@
 				                <td>{ucfirst($item.inventory_no)}</td>
 		                      <td>{ucfirst($item.location)}</td> 
 		                      <td>{ucfirst($item.asset_desc)}</td> 
-		                      <td>{$item.validity_to}</td> 
+		                      <td>{$item.billing_date}</td> 
 		                      <td>{ucfirst($item.vendor_name)}</td> 
 		                      <td>{$item.created_date}</td>
 									 
 									 <td class='hidden-480'>
-											<a href="view_billing_hardware.php?id={$item.id}" class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
+											<a href="view_billing_hardware.php?id={$item.billing_id}" class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
 									 </td>
 								</tr>
 							  {/if}

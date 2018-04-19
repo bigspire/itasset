@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-23 16:24:43
+/* Smarty version 3.1.29, created on 2018-04-19 15:52:28
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\add_hardware_details.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a8ff2f3ad2b86_38843843',
+  'unifunc' => 'content_5ad86de4930e18_19254776',
   'file_dependency' => 
   array (
     '635a7b4b3fd28688f979e8fc4bdc3d699b0871d4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\add_hardware_details.tpl',
-      1 => 1519292828,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a8ff2f3ad2b86_38843843 ($_smarty_tpl) {
+function content_5ad86de4930e18_19254776 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -262,6 +262,9 @@ echo $_smarty_tpl->tpl_vars['EXIST_MSG']->value;?>
 								
 							</div>
 						</div>
+						
+						
+						
 						</div>
 					<input type="hidden" id="next_hdn" name="next_hdn">
 					<input type="hidden" id="confirm_hdn" name="confirm_hdn">

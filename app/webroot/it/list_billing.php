@@ -2,7 +2,7 @@
 /* 
 Purpose : To list and search hardware billing details.
 Created : Nikitasa
-Date : 18-04-2018
+Date : 19-04-2018
 */
 
 session_start();

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-19 10:32:44
+/* Smarty version 3.1.29, created on 2018-04-19 16:50:39
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_billing.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad822f41931b2_57914219',
+  'unifunc' => 'content_5ad87b87c55ab8_46434495',
   'file_dependency' => 
   array (
     'd8a63d00289983df6f87731a049337bc9705e315' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_billing.tpl',
-      1 => 1524114112,
+      1 => 1524136289,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad822f41931b2_57914219 ($_smarty_tpl) {
+function content_5ad87b87c55ab8_46434495 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -256,7 +256,7 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 </td> 
 		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['asset_desc']);?>
 </td> 
-		                      <td><?php echo $_smarty_tpl->tpl_vars['item']->value['validity_to'];?>
+		                      <td><?php echo $_smarty_tpl->tpl_vars['item']->value['billing_date'];?>
 </td> 
 		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['vendor_name']);?>
 </td> 
@@ -264,7 +264,7 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 </td>
 									 
 									 <td class='hidden-480'>
-											<a href="view_billing_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+											<a href="view_billing_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['billing_id'];?>
 " class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
 									 </td>
 								</tr>

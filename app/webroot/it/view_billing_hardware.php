@@ -2,8 +2,7 @@
 /* 
 Purpose : To view hardware.
 Created : Nikitasa
-Modified: Gayathri
-Date : 15-06-2016
+Date : 19-06-2016
 */
 // ini_set('display_errors',1);
 include 'configs/smartyconfig.php';
@@ -34,7 +33,7 @@ if(($fun->isnumeric($id)) || ($fun->is_empty($id)) || ($id == 0)){
 }
 
 // select and execute query and fetch the result
-$query = "CALL it_view_hw_inventory('".$id."')"; 
+$query = "CALL it_view_billing('".$id."')"; 
 try{
 	if(!$result = $mysql->execute_query($query)){
 		throw new Exception('Problem in executing view page');

@@ -1,6 +1,6 @@
 {* Purpose : To add Billing Hardware details.
    Created : Nikitasa
-   Date : 18-04-2018 *}
+   Date : 19-04-2018 *}
    
 
 	{include file='include/header.tpl'}	
@@ -38,7 +38,7 @@
 					<div class="row-fluid  footer_div">
 					<div class="span12">
 					
-								<form action="add_billing_hardware_details.php" method="POST" class="form-horizontal form-column form-bordered form-wizard ui-formwizard" id="formID" novalidate="novalidate">
+								<form  enctype= "multipart/form-data" method="POST" class="form-horizontal form-column form-bordered form-wizard ui-formwizard" id="formID" novalidate="novalidate">
 														
 						<div class="box">
 							<div class="box-title">
@@ -50,53 +50,42 @@
 											<label for="textfield" class="control-label">Type <span class="red_star"> *</span></label>
 											
 											<div class="controls field">
-											<select name="hardware_type_id" id="hardware_type_id">
-										<option value="">Select</option>	
-									{html_options class="input-xlarge" placeholder="" style="clear:left" id="license_no" options=$billingType selected=$smarty.post.hardware_type_id}
-										</select>
-									<div class="errorMsg error">{$hardware_type_idErr} </div>
+											<select name="hardware_type_id" class="hwtype" id="hardware_type_id">
+												<option value="">Select</option>	
+											{html_options class="input-xlarge" placeholder="" style="clear:left" id="license_no" options=$billingType selected=$smarty.post.hardware_type_id}
+												</select>
+											<div class="errorMsg error">{$hardware_type_idErr} </div>
+											</div>
 										</div>
-										</div>
-										<div class="control-group">
-		<label for="textfield" class="control-label">Amount <span class="red_star"> *</span></label>
-			<div class="controls field">
-		<input name="amount" class="input-xlarge" placeholder="" type="text" id="amount" value="{$smarty.post.amount}"/>
-		<div class="errorMsg error">{$amountErr} </div>
-			</div>
-	</div>
 										
-
+										<div class="control-group">
+										<label for="textfield" class="control-label">Amount <span class="red_star"> *</span></label>
+											<div class="controls field">
+										<input name="amount" class="input-xlarge" placeholder="" type="text" id="amount" value="{$smarty.post.amount}"/>
+										<div class="errorMsg error">{$amountErr} </div>
+											</div>
+										</div>
 								
 										<div class="control-group">
 											<label for="textfield" class="control-label">Payment Type <span class="red_star"> *</span></label>
 											
 											<div class="controls field">
-											<select name="payment_type"  tabindex="3" style="clear:left" id="payment_type" class="input-xlarge change_payment_type">
+											<select name="payment_type"  tabindex="3"  id="payment_type" class="input-medium change_payment_type">
 											<option value="">Select</option>
 											{html_options   options=$pay_types selected=$smarty.post.payment_type}	
 											</select>
-											<div class="errorMsg error">{$payment_typeErr} </div>	
-											<input name="payment_details" class="input-xlarge payment_Validity" placeholder="" type="text" id="payment_details" value="{$smarty.post.payment_details}"/> 
-										</div>
+											<div class="spaError errorMsg error"> {$payment_typeErr}</div>
+												<input name="payment_details" style="clear:left" class="input-large payment_Validity" placeholder="Other Payment Type" type="text" id="payment_details" value="{$smarty.post.payment_details}"/> 
+											</div>
 										</div>
 										
 										<div class="control-group">
 											<label for="password" class="control-label">Description<span class="red_star"></span></span></label>
 											<div class="controls">
-									<textarea name="description" rows="2" class="input-xlarge" placeholder="" cols="30" id="description">{$smarty.post.description}</textarea> 
-											
-											
-												  
+											<textarea name="description" rows="2" class="input-xlarge" placeholder="" cols="30" id="description">{$smarty.post.description}</textarea>   
 											</div>
 										</div>
-										
-										
-									</div>
-									
-									
-
-									
-									
+									</div>	
 
 <div class="span6">		
      <div class="control-group">
@@ -104,7 +93,7 @@
 
  <span class="red_star"> *</span></label>
 											<div class="controls field">
-											<select name="it_brand_id" id="it_brand_id">
+											<select name="it_brand_id" id="inventory" class="inventory">
 										<option value="">Select</option>	
 	{html_options class="input-xlarge" placeholder="" style="clear:left" id="it_brand_id" options=$hw_brand selected=$smarty.post.it_brand_id}
 										</select>											
@@ -124,14 +113,14 @@
 										<div class="control-group">
 											<label for="password" class="control-label">Bill Copy <span class="red_star"> *</span></label>
 											<div class="controls field">
- <input name="bill_copy" class="input-medium dpd1 sValidity" placeholder="Valid From" type="file" id="bill_copy" value="{$smarty.post.bill_copy}"/> 										
-											<div class="errorMsg error">{$bill_copyErr}</div>
+											<input name="bill_copy" class="upload" type="file" id="bill_copy"> 										
+											<div class="errorMsg error">{$attachmentuploadErr}{$bill_copyErr}</div>
 											</div>
 										</div>
 										<div class="control-group">
 											<label for="password" class="control-label">Bill No <span class="red_star"> *</span></label>
 											<div class="controls field">
-											<input name="bill_no" class="input-xlarge" placeholder="" type="text" id="bill_no" value="{$smarty.post.bill_no}"> 
+											<input name="bill_no" class="input-xlarge" placeholder="" type="text" id="bill_no" value="{$smarty.post.bill_no}"/> 
 											<div class="errorMsg error">{$bill_noErr}</div>
 											</div>
 										</div>
@@ -245,18 +234,37 @@ $(document).ready(function(){
 	$('.change_payment_type').change(function(){ 
 		if($(this).val() == 'other'){
 			$('.payment_Validity').show();
-		}else{
-			$('.payment_Validity').hide();
 		}
 	});
 	
 	if($('.change_payment_type').length > 0){
 		if($('.change_payment_type:selected').val() == 'other'){
 			$('.payment_Validity').show();
-		}else{
-			$('.payment_Validity').hide();
 		}
 	}
 });
+
+$(document).ready(function(){
+	// fetch the inventory and brand details
+    $(".hwtype").change(function (){
+		var type_id = $(this).val();
+	    var type_name = $(this).attr('id').split('_');			
+		$.ajax({
+			url : "get_billing_inventory.php",
+			method : "GET",
+			dataType: "json",
+			data : {hwtype : type_id},
+			encode  : false
+		})
+		.done(function (data){
+			var div_data = '<option value="">Select</option>';
+			$.each(data,function (a,y){ 
+				div_data +=  "<option value="+a+">"+y+"</option>";
+			});
+			$('#inventory').empty();
+			$('#inventory').html(div_data); 
+		});
+	});	
+});	
 </script>	
 {/literal}

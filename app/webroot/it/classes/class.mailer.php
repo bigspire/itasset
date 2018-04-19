@@ -14,7 +14,7 @@ class phpMail{
 		$mail->Username = 'testing@bigspire.com';                 // SMTP username
 		$mail->Password = 'bigspire1230';                           // SMTP password
 		$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-		$mail->Port = 465;                                    // TCP port to connect to
+		$mail->Port = 587;                                    // TCP port to connect to
 		
 
 		$mail->SMTPOptions = array(
@@ -24,6 +24,8 @@ class phpMail{
 				'allow_self_signed' => true
 			)
 		);
+		
+		echo from_email;echo $from;die;
 		
 		// $recipient_email = 'jravi.j@gmail.com';
 		// echo $recipient_email;
