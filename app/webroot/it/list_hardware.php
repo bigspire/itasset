@@ -39,7 +39,8 @@ if(empty($_SESSION['Hardware'])){
 $keyword = $_POST['keyword'] ? $_POST['keyword'] : $_GET['keyword'];
 $hw_type = $_POST['hw_type'] ? $_POST['hw_type'] : $_GET['hw_type'];
 $t_date = $_POST['t_date'] ? $_POST['t_date'] : $_GET['t_date'];
-$f_date = $_POST['f_date'] ? $_POST['f_date'] : $_GET['f_date'];    
+$f_date = $_POST['f_date'] ? $_POST['f_date'] : $_GET['f_date'];   
+$rental_type = $_POST['rental_type'] ? $_POST['rental_type'] : $_GET['rental_type'];  
 $from_date = $fun->convert_date($f_date);
 $to_date = $fun->convert_date($t_date);
 $hw_type = $hw_type == '' ? 0 : $hw_type;
@@ -57,6 +58,7 @@ if(isset($_POST['hw_status'])){
 if($_POST){
 	$post_url .= '&keyword='.$keyword;
 	$post_url .= '&hw_status='.$hw_status;
+	$post_url .= '&rental_type='.$rental_type;
 	$post_url .= '&hw_type='.$hw_type;
 	$post_url .= '&f_date='.$f_date;
 	$post_url .= '&t_date='.$t_date;
@@ -68,7 +70,7 @@ if($_GET['action'] == 'export'){
 }
 					
 // count the total no. of records
-$query = "CALL it_list_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
+$query = "CALL it_list_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$rental_type."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
 try{
 	if(!$result = $mysql->execute_query($query)){
 		throw new Exception('Problem in executing list hardware page');
@@ -142,7 +144,7 @@ try{
 	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 // fetch all records
-$query = "CALL it_list_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','$start','$limit',
+$query = "CALL it_list_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$rental_type."','".$from_date."','".$to_date."','$start','$limit',
 '".$field."','".$order."','".$_GET['action']."')";
 
 try{
@@ -181,7 +183,8 @@ try{
 	}
 	// assign software status into array 
 	$type = array('' => 'All Status', '1' => 'Active', '0' => 'Inactive');
-
+	// assign software status into array 
+	$rental_types = array('' => 'Hardware', 'N' => 'New', 'Y' => 'Rental');
 	// create,update,delete message validation
 	if($_GET['status'] == 'deleted' || $_GET['status'] == 'created' || $_GET['status'] == 'updated'){
   		$success_msg = 'Hardware details ' . $_GET['status'] . ' successfully';
@@ -212,6 +215,8 @@ $paging->posturl($post_url);
 // assign smarty variables here
 $smarty->assign('page_links',$paging->print_link_frontend());
 $smarty->assign('type', $type);
+$smarty->assign('rental_type', $rental_type);
+$smarty->assign('rental_types', $rental_types);
 $smarty->assign('hw_status', $hw_status);
 $smarty->assign('hw_type', $hw_type);
 $smarty->assign('data', $data);

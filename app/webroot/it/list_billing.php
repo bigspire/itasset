@@ -33,24 +33,16 @@ if(empty($_SESSION['Billing'])){
 $keyword = $_POST['keyword'] ? $_POST['keyword'] : $_GET['keyword'];
 $hw_type = $_POST['hw_type'] ? $_POST['hw_type'] : $_GET['hw_type'];
 $t_date = $_POST['t_date'] ? $_POST['t_date'] : $_GET['t_date'];
-$f_date = $_POST['f_date'] ? $_POST['f_date'] : $_GET['f_date'];    
+$f_date = $_POST['f_date'] ? $_POST['f_date'] : $_GET['f_date'];   
+$rental_type = $_POST['rental_types'] ? $_POST['rental_types'] : $_GET['rental_types']; 
 $from_date = $fun->convert_date($f_date);
 $to_date = $fun->convert_date($t_date);
 $hw_type = $hw_type == '' ? 0 : $hw_type;
 
-// to display the data using status filter
-if(isset($_POST['hw_status'])){
-	$hw_status = $_POST['hw_status'];
-}else if(isset($_GET['hw_status'])){
-	$hw_status = $_GET['hw_status'];
-}else{
-	$hw_status = '1';
-}
-
 //post url for paging
 if($_POST){
 	$post_url .= '&keyword='.$keyword;
-	$post_url .= '&hw_status='.$hw_status;
+	$post_url .= '&rental_type='.$rental_type;
 	$post_url .= '&hw_type='.$hw_type;
 	$post_url .= '&f_date='.$f_date;
 	$post_url .= '&t_date='.$t_date;
@@ -58,11 +50,11 @@ if($_POST){
 	
 // for export
 if($_GET['action'] == 'export'){
-	$hw_status = $_GET['hw_status']; 
+	$rental_type = $_GET['rental_type']; 
 }
 					
 // count the total no. of records
-$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
+$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$rental_type."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
 try{
 	if(!$result = $mysql->execute_query($query)){
 		throw new Exception('Problem in executing list Billing hardware page');
@@ -136,7 +128,7 @@ try{
 	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 // fetch all records
-$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','$start','$limit',
+$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$rental_type."','".$from_date."','".$to_date."','$start','$limit',
 '".$field."','".$order."','".$_GET['action']."')";
 
 try{
@@ -173,7 +165,7 @@ try{
 		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J','K','L','M'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','validity_to','vendor_name','billing_date','created_date','modified_date','status', 'message'),'Billing_'.$current_date);
 	}
 	// assign software status into array 
-	$type = array('' => 'All Status', 'N' => 'New', 'Y' => 'Rental');
+	$type = array('' => 'Hardware', 'N' => 'New', 'Y' => 'Rental');
 
 	// create,update,delete message validation
 	if($_GET['status'] == 'deleted' || $_GET['status'] == 'created' || $_GET['status'] == 'updated'){

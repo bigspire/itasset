@@ -58,7 +58,9 @@
 				 <span>Search:</span>  
 				 <input name="keyword" value="{$keyword}" id="keyword" autocomplete="off" placeholder="Search here..." type="text"/>
 			    {html_options name='hw_type' class="input-medium" placeholder="" style="clear:left" id="HrEmployeeRecStatus" options=$hw_type_data selected=$hw_type}
-			    {html_options name='hw_status' class="input-medium" placeholder="" style="clear:left" id="HrEmployeeRecStatus1" options=$type selected=$hw_status}
+				{html_options name='rental_type' class="input-small" placeholder="" style="clear:left" id="HrEmployeeRecStatus1" options=$rental_types selected=$rental_type}
+			    {html_options name='hw_status' class="input-small" placeholder="" style="clear:left" id="HrEmployeeRecStatus1" options=$type selected=$hw_status}
+				
 	          <input name="f_date" value="{$f_date}" class="input-small datepick" placeholder="Validity From" type="text" id="HrEmployeeDob"/> 
 	          <input name="t_date" value="{$t_date}" class="input-small datepick" placeholder="Validity To" type="text" id="HrEmployeeDob"/> 
 		       <input type="submit" value="Search" class="btn btn-primary" style="margin-bottom:9px;margin-left:4px;">
@@ -87,25 +89,25 @@
 					<thead>
 						<tr>
 							<th width="80">
-										<a href="list_hardware.php?field=hardware_type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_hardware_type}">Type</a></th>
+										<a href="list_hardware.php?field=hardware_type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}&rental_type={$rental_type}" class="{$sort_field_hardware_type}">Type</a></th>
 										<th width="80">
-											<a href="list_hardware.php?field=brand&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_brand}">Brand</a></th>		
+											<a href="list_hardware.php?field=brand&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}&rental_type={$rental_type}" class="{$sort_field_brand}">Brand</a></th>		
 										<th width="80">
-											<a href="list_hardware.php?field=model_id&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_model_id}">Model Id</a></th>
+											<a href="list_hardware.php?field=model_id&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}&rental_type={$rental_type}" class="{$sort_field_model_id}">Model Id</a></th>
 										<th width="80">
-											<a href="list_hardware.php?field=inventory_no&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_inventory_no}">Inventory No</a></th>
+											<a href="list_hardware.php?field=inventory_no&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}&rental_type={$rental_type}" class="{$sort_field_inventory_no}">Inventory No</a></th>
 										<th width="80">
-											<a href="list_hardware.php?field=location&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_location}">Location</a></th>
+											<a href="list_hardware.php?field=location&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}&rental_type={$rental_type}" class="{$sort_field_location}">Location</a></th>
 										<th width="80">
-											<a href="list_hardware.php?field=asset_desc&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Asset</a></th>
+											<a href="list_hardware.php?field=asset_desc&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}&rental_type={$rental_type}" class="{$sort_field_asset_desc}">Asset</a></th>
 										<th width="80">
-											<a href="list_hardware.php?field=validity&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_validity}">Validity</a></th>																				
+											<a href="list_hardware.php?field=validity&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}&rental_type={$rental_type}" class="{$sort_field_validity}">Validity</a></th>																				
 										<th width="80">
-											<a href="list_hardware.php?field=vendor&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_vendor}">Vendor</a></th>																			
+											<a href="list_hardware.php?field=vendor&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}&rental_type={$rental_type}" class="{$sort_field_vendor}">Vendor</a></th>																			
 										<th width="60">										
-										<a href="list_hardware.php?field=created&order={$order}&page={$smarty.get.page}&keyword={$keyword}&sw_type={$sw_type}&sw_status={$sw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created}">Created</a></th>										
+										<a href="list_hardware.php?field=created&order={$order}&page={$smarty.get.page}&keyword={$keyword}&sw_type={$sw_type}&sw_status={$sw_status}&f_date={$f_date}&t_date={$t_date}&rental_type={$rental_type}" class="{$sort_field_created}">Created</a></th>										
 										<th width="60">										
-										<a href="list_hardware.php?field=modified&order={$order}&page={$smarty.get.page}&keyword={$keyword}&sw_type={$sw_type}&sw_status={$sw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_modified}">Modified</a></th>																				
+										<a href="list_hardware.php?field=modified&order={$order}&page={$smarty.get.page}&keyword={$keyword}&sw_type={$sw_type}&sw_status={$sw_status}&f_date={$f_date}&t_date={$t_date}&rental_type={$rental_type}" class="{$sort_field_modified}">Modified</a></th>																				
 										<th style="text-align:center" width="40">Status</th>
 										<th width="180">Options</th>
 										</tr>
