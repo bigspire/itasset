@@ -1,6 +1,6 @@
-{* Purpose : To add software details.
-   Created : Gayathri
-   Date : 04-06-2016 *}
+{* Purpose : To add Billing Hardware details.
+   Created : Nikitasa
+   Date : 18-04-2018 *}
    
 
 	{include file='include/header.tpl'}	
@@ -25,7 +25,7 @@
 						</li>
 						
 						<li>
-							<a href="list_billing.php">Hardware</a>
+							<a href="list_billing.php">Billing</a>
 								<i class="icon-angle-right"></i>
 						</li>
 						
@@ -52,7 +52,7 @@
 											<div class="controls field">
 											<select name="hardware_type_id" id="hardware_type_id">
 										<option value="">Select</option>	
-									{html_options class="input-xlarge" placeholder="" style="clear:left" id="license_no" options=$billingType selected=$smarty.session['h'].hardware_type_id}
+									{html_options class="input-xlarge" placeholder="" style="clear:left" id="license_no" options=$billingType selected=$smarty.post.hardware_type_id}
 										</select>
 									<div class="errorMsg error">{$hardware_type_idErr} </div>
 										</div>
@@ -60,8 +60,8 @@
 										<div class="control-group">
 		<label for="textfield" class="control-label">Amount <span class="red_star"> *</span></label>
 			<div class="controls field">
-		<input name="color" class="input-xlarge" placeholder="" type="text" id="color" value="{$smarty.session['h'].color}"/>
-		<div class="errorMsg error">{$colorErr} </div>
+		<input name="amount" class="input-xlarge" placeholder="" type="text" id="amount" value="{$smarty.post.amount}"/>
+		<div class="errorMsg error">{$amountErr} </div>
 			</div>
 	</div>
 										
@@ -71,15 +71,19 @@
 											<label for="textfield" class="control-label">Payment Type <span class="red_star"> *</span></label>
 											
 											<div class="controls field">
-									{html_options name=status class="input-xlarge" placeholder="" style="clear:left" id="status" options=$pay_types selected=$smarty.session['h'].status}	
-											<div class="errorMsg error">{$statusErr} </div>	
+											<select name="payment_type"  tabindex="3" style="clear:left" id="payment_type" class="input-xlarge change_payment_type">
+											<option value="">Select</option>
+											{html_options   options=$pay_types selected=$smarty.post.payment_type}	
+											</select>
+											<div class="errorMsg error">{$payment_typeErr} </div>	
+											<input name="payment_details" class="input-xlarge payment_Validity" placeholder="" type="text" id="payment_details" value="{$smarty.post.payment_details}"/> 
 										</div>
 										</div>
 										
 										<div class="control-group">
 											<label for="password" class="control-label">Description<span class="red_star"></span></span></label>
 											<div class="controls">
-									<textarea name="description" rows="2" class="input-xlarge" placeholder="" cols="30" id="description">{$smarty.session['h'].description}</textarea> 
+									<textarea name="description" rows="2" class="input-xlarge" placeholder="" cols="30" id="description">{$smarty.post.description}</textarea> 
 											
 											
 												  
@@ -102,7 +106,7 @@
 											<div class="controls field">
 											<select name="it_brand_id" id="it_brand_id">
 										<option value="">Select</option>	
-	{html_options class="input-xlarge" placeholder="" style="clear:left" id="it_brand_id" options=$hw_brand selected=$smarty.session['h'].it_brand_id}
+	{html_options class="input-xlarge" placeholder="" style="clear:left" id="it_brand_id" options=$hw_brand selected=$smarty.post.it_brand_id}
 										</select>											
 											<div class="errorMsg error">{$it_brand_idErr}</div>
 											</div>
@@ -110,34 +114,29 @@
 	
 																				
 											<div class="control-group">
-											<label for="textfield" class="control-label">Paid Date <span class="red_star"> *</span></label>
+											<label for="textfield" class="control-label">Bill Date <span class="red_star"> *</span></label>
 											<div class="controls field">
 										
-		<input name="model_id" class="input-xlarge datepick" placeholder="" type="text" id="model_id" value="{$smarty.session['h'].model_id}"/> 
-<div class="errorMsg error">{$model_idErr}{$EXIST_MSG}</div>											
+		<input name="bill_date" class="input-xlarge datepick" placeholder="" type="text" id="bill_date" value="{$smarty.post.bill_date}"/> 
+<div class="errorMsg error">{$bill_dateErr}</div>											
 											</div>
 										</div>
 										<div class="control-group">
 											<label for="password" class="control-label">Bill Copy <span class="red_star"> *</span></label>
 											<div class="controls field">
-<!--											{html_options name=subscription_validity class="input-small" placeholder="" style="clear:left" id="subscription_validity" options=$subscription_validity selected=$smarty.session['h'].subscription_validity}-->
-											
- <input name="validity_from" class="input-medium dpd1 sValidity" placeholder="Valid From" type="file" id="validity_from" value="{$smarty.session['h'].validity_from}"/> 										
-
-
- 
- 
-											<div class="errorMsg error">{$subscription_validityErr} {$valid_tillErr}</div>
+ <input name="bill_copy" class="input-medium dpd1 sValidity" placeholder="Valid From" type="file" id="bill_copy" value="{$smarty.post.bill_copy}"/> 										
+											<div class="errorMsg error">{$bill_copyErr}</div>
 											</div>
 										</div>
-									
-									
+										<div class="control-group">
+											<label for="password" class="control-label">Bill No <span class="red_star"> *</span></label>
+											<div class="controls field">
+											<input name="bill_no" class="input-xlarge" placeholder="" type="text" id="bill_no" value="{$smarty.post.bill_no}"> 
+											<div class="errorMsg error">{$bill_noErr}</div>
+											</div>
+										</div>
 									</div>
 
-
-										
-							
-								
 							</div>
 						</div>
 						
@@ -151,9 +150,8 @@
 											<label for="textfield" class="control-label">Company Name  <span class="red_star"> *</span></label>
 											
 											<div class="controls field">
-											<input name="model_id" class="input-xlarge" placeholder="" type="text" id="model_id" value="{$smarty.session['h'].model_id}"/> 
-<div class="errorMsg error">{$model_idErr}{$EXIST_MSG}</div>
-									<div class="errorMsg error">{$hardware_type_idErr} </div>
+											<input name="company_name" class="input-xlarge" placeholder="" type="text" id="company_name" value="{$smarty.post.company_name}"/> 
+									<div class="errorMsg error">{$company_nameErr} </div>
 										</div>
 										</div>
 										
@@ -162,21 +160,15 @@
 								
 										<div class="control-group">
 											<label for="textfield" class="control-label">Email Id </label>
-											
 											<div class="controls field">
-									<input name="model_id" class="input-xlarge" placeholder="" type="text" id="model_id" value="{$smarty.session['h'].model_id}"/> 
-<div class="errorMsg error">{$model_idErr}{$EXIST_MSG}</div>	
-											<div class="errorMsg error">{$statusErr} </div>	
+									<input name="email_id" class="input-xlarge" placeholder="" type="text" id="email_id" value="{$smarty.post.email_id}"/> 
 										</div>
 										</div>
 										
 										<div class="control-group">
 											<label for="password" class="control-label">Contact Number </label>
 											<div class="controls">
-	<input name="model_id" class="input-xlarge" placeholder="" type="text" id="model_id" value="{$smarty.session['h'].model_id}"/> 
-<div class="errorMsg error">{$model_idErr}{$EXIST_MSG}</div>											
-											
-												  
+	<input name="company_contact" class="input-xlarge" placeholder="" type="text" id="company_contact" value="{$smarty.post.company_contact}"/> 
 											</div>
 										</div>
 										
@@ -190,14 +182,10 @@
 
 <div class="span6">		
      <div class="control-group">
-											<label for="textfield" class="control-label">Contact Person
-
-
+<label for="textfield" class="control-label">Contact Person
 </label>
 											<div class="controls field">
-											<input name="model_id" class="input-xlarge" placeholder="" type="text" id="model_id" value="{$smarty.session['h'].model_id}"/> 
-<div class="errorMsg error">{$model_idErr}{$EXIST_MSG}</div>											
-											<div class="errorMsg error">{$it_brand_idErr}</div>
+											<input name="contact_per" class="input-xlarge" placeholder="" type="text" id="contact_per" value="{$smarty.post.contact_per}"/> 
 											</div>
 										</div>
 	
@@ -206,21 +194,13 @@
 											<label for="textfield" class="control-label">City </label>
 											<div class="controls field">
 										
-		<input name="model_id" class="input-xlarge" placeholder="" type="text" id="model_id" value="{$smarty.session['h'].model_id}"/> 
-<div class="errorMsg error">{$model_idErr}{$EXIST_MSG}</div>											
+		<input name="city" class="input-xlarge" placeholder="" type="text" id="city" value="{$smarty.post.city}"/> 										
 											</div>
 										</div>
 										<div class="control-group">
 											<label for="password" class="control-label">Address </label>
 											<div class="controls field">
-<!--											{html_options name=subscription_validity class="input-small" placeholder="" style="clear:left" id="subscription_validity" options=$subscription_validity selected=$smarty.session['h'].subscription_validity}-->
-											
-									<textarea name="description" rows="2" class="input-xlarge" placeholder="" cols="30" id="description">{$smarty.session['h'].description}</textarea> 
-
-
- 
- 
-											<div class="errorMsg error">{$subscription_validityErr} {$valid_tillErr}</div>
+									<textarea name="address" rows="2" class="input-xlarge" placeholder="" cols="30" id="address">{$smarty.post.address}</textarea> 
 											</div>
 										</div>
 									
@@ -232,14 +212,8 @@
 										
 							<div class="span12">
 										<div class="form-actions">
-											<input onclick="return validate_hd()" type="submit" name="next" id="submit_next" value="Submit" class="btn btn-primary">
-<!--											<input type="submit" name="next" id="submit_next" value="Next" class="btn btn-primary">-->
-											{if !empty ($smarty.session['h'].confirm_add)}  											
-											<input onclick="return validate_hd()" type="submit" name="confirm" id="submit_confirm" value="Confirm" class="btn btn-primary">
-<!--											<input type="submit" name="confirm" id="submit_confirm" value="Confirm" class="btn btn-primary">-->
-											{/if}
-											<a href="list_billing.php"><button type="button" val="list_hardware.php" class="jsRedirect btn regCancel"  onclick="return cancelfunction()" >Cancel</button></a>
-											
+											<input onclick="return validate_brand()" type="submit" name="submit" value="Submit" class="btn btn-primary">
+											<a href="list_billing.php"><button type="button" val="list_billing.php" class="jsRedirect btn regCancel" >Cancel</button></a>
 										</div>
 									</div>	
 								
@@ -262,3 +236,27 @@
 		</div>
 	<input type="hidden" value="/" id="css_root">
 {include file='include/footer_js.tpl'}
+
+{literal}
+<script type="text/javascript">
+
+$(document).ready(function(){
+	// function to change the amount
+	$('.change_payment_type').change(function(){ 
+		if($(this).val() == 'other'){
+			$('.payment_Validity').show();
+		}else{
+			$('.payment_Validity').hide();
+		}
+	});
+	
+	if($('.change_payment_type').length > 0){
+		if($('.change_payment_type:selected').val() == 'other'){
+			$('.payment_Validity').show();
+		}else{
+			$('.payment_Validity').hide();
+		}
+	}
+});
+</script>	
+{/literal}

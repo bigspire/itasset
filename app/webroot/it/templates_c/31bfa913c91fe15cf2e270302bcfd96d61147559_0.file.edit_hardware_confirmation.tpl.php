@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-23 16:23:56
+/* Smarty version 3.1.29, created on 2018-04-16 17:05:17
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\edit_hardware_confirmation.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a8ff2c4961217_54660148',
+  'unifunc' => 'content_5ad48a7520f334_48190243',
   'file_dependency' => 
   array (
     '31bfa913c91fe15cf2e270302bcfd96d61147559' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\edit_hardware_confirmation.tpl',
-      1 => 1519292828,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a8ff2c4961217_54660148 ($_smarty_tpl) {
+function content_5ad48a7520f334_48190243 ($_smarty_tpl) {
 ?>
 
    
@@ -115,10 +115,18 @@ function content_5a8ff2c4961217_54660148 ($_smarty_tpl) {
 													<span class="circle">
 													</span>
 													<span class="description">
-													<a href="edit_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
+													
+													<?php if ($_SESSION['h']['is_rental'] == 'Y') {?>
+													<a href="edit_rental_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
 &inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
 ">Pricing Details</a> 		
-																				</span>
+													<?php } else { ?>
+													<a href="edit_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
+&inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
+">Pricing Details</a> 
+													<?php }?>
+													
+													</span>
 												</div>
 											</li>
 											<li class="">
@@ -339,7 +347,7 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
 													</div>
 										</div>
 										
-										
+								<?php if ($_SESSION['h']['is_rental'] != 'Y') {?>				
 																					
 									<div class="control-group">
 											<label for="textfield" class="control-label">Paid By </label>
@@ -356,10 +364,23 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
 
 												</div>
 						</div>
-									</div>
 									
+								<?php } else { ?>	
 								
-									<div class="span6">									
+								<div class="control-group">
+											<label for="textfield" class="control-label">Rental Type </label>
+											<div class="controls">
+											<?php echo $_SESSION['h']['rental_type_detail'];?>
+
+												</div>
+										</div>	
+								
+								
+								<?php }?>
+							</div>	
+									<div class="span6">	
+
+	<?php if ($_SESSION['h']['is_rental'] != 'Y') {?>										
 
 	<div class="control-group">
 											<label for="password" class="control-label">Purchase Date</label> </label>
@@ -391,6 +412,20 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
 											<?php }?>	
 											</div>
 						</div>
+						
+						<?php } else { ?>
+						<div class="control-group">
+											<label for="password" class="control-label">Rented Date</label> </label>
+											<div class="controls">
+											<?php echo $_SESSION['h']['purchasedate'];?>
+
+											</div>
+										</div>
+						
+						
+						<?php }?>
+						
+						
 								
 									</div>
 					

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-23 16:23:54
+/* Smarty version 3.1.29, created on 2018-04-16 17:03:56
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\edit_hardware_vendor_details.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a8ff2c2c91632_06817208',
+  'unifunc' => 'content_5ad48a24caf8a7_07365206',
   'file_dependency' => 
   array (
     'ff90a725d9390d9f2fe9c3daae89609dbb2b275b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\edit_hardware_vendor_details.tpl',
-      1 => 1519292829,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a8ff2c2c91632_06817208 ($_smarty_tpl) {
+function content_5ad48a24caf8a7_07365206 ($_smarty_tpl) {
 ?>
 
    
@@ -119,10 +119,17 @@ function content_5a8ff2c2c91632_06817208 ($_smarty_tpl) {
 													<span class="circle">
 													</span>
 													<span class="description">
-													<a href="edit_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
+													<?php if ($_SESSION['h']['is_rental'] == 'Y') {?>
+													<a href="edit_rental_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
 &inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
 ">Pricing Details</a> 		
-																				</span>
+													<?php } else { ?>
+													<a href="edit_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
+&inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
+">Pricing Details</a> 
+													<?php }?>						
+
+																			</span>
 												</div>
 											</li>
 											

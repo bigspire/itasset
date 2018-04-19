@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-03-06 10:58:27
+/* Smarty version 3.1.29, created on 2018-04-16 17:09:37
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_approve_scrap_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a9e26fb266b80_57717966',
+  'unifunc' => 'content_5ad48b79060fc1_72397452',
   'file_dependency' => 
   array (
     'f364ac4afa2b5cd94d002109ef7f46635b619a38' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_approve_scrap_hardware.tpl',
-      1 => 1520314105,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a9e26fb266b80_57717966 ($_smarty_tpl) {
+function content_5ad48b79060fc1_72397452 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -41,7 +41,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 			<div class="container-fluid">
 				<div class="page-header">
 					<div class="pull-left">
-						<h1>Approve Scrap Hardware</h1>
+						<h1>Approve Hardware (Scrap, Lost, Resale & Exchange)</h1>
 					</div>
 				</div>
 				<div class="breadcrumbs">
@@ -51,7 +51,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 							<i class="icon-angle-right"></i>
 						</li>
 						<li>
-							<a href="list_approve_scrap_hardware.php">List Approve Scrap Hardware</a>
+							<a href="list_approve_scrap_hardware.php">Approve Hardware (Scrap, Lost, Resale & Exchange)</a>
 						</li>
 					</ul>
 				</div>
@@ -69,7 +69,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 					<div class="span12">
 						<div class="box box-bordered box-color">
 						<div class="box-title">
-								<h3><i class="icon-list"></i>Approve Scrap Hardware</h3>
+								<h3><i class="icon-list"></i>Approve Hardware</h3>
 						</div>
 				<form action="list_approve_scrap_hardware.php" name="" id="formID" class="" method="post" accept-charset="utf-8">							
 				<div class="box-content">
@@ -111,7 +111,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_type']->value;?>
-">Type</a></th>
+">Hardware Type</a></th>
 							<th width="200">
 								<a href="list_approve_scrap_hardware.php?field=brand&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
@@ -157,7 +157,18 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_asset_desc']->value;?>
 ">Asset Description</a></th>
-							<th width="200">
+							
+								<th width="200">
+								<a href="list_approve_scrap_hardware.php?field=status&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+&page=<?php echo $_GET['page'];?>
+&keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
+&f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
+&t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_asset_desc']->value;?>
+">Status</a></th>
+								
+								<th width="200">
 								<a href="list_approve_scrap_hardware.php?field=created_date&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
@@ -165,7 +176,16 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_created_date']->value;?>
-">Scrap Date</a></th>
+">Created Date</a></th>
+									<th width="200">
+								<a href="list_approve_scrap_hardware.php?field=created_by&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+&page=<?php echo $_GET['page'];?>
+&keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
+&f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
+&t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_created_date']->value;?>
+">Created By</a></th>
 							<th width="100">Options</th>
 				      </tr>
 				  </thead>
@@ -198,7 +218,20 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['asset_desc'];?>
 </td>
+						<td>
+						<?php if ($_smarty_tpl->tpl_vars['item']->value['status'] == 'Approved' || $_smarty_tpl->tpl_vars['item']->value['status'] == 'Rejected') {?>
+						<span class='label label-<?php echo $_smarty_tpl->tpl_vars['item']->value['status_cls'];?>
+'><a href='#' rel='tooltip' data-original-title = <?php echo $_smarty_tpl->tpl_vars['item']->value['status'];?>
+><?php echo $_smarty_tpl->tpl_vars['item']->value['status'];?>
+</a>
+						<?php } else { ?>
+						</span><span style="color:#ff0000;font-size:11px;"><?php echo $_smarty_tpl->tpl_vars['item']->value['status_msg'];?>
+</span>
+						<?php }?>
+						</td>
 						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['scrap_created'];?>
+</td>
+						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['created_by'];?>
 </td>
 					   <!-- td class='hidden-480'>
 						<a href="view_approve_scrap_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
@@ -206,7 +239,7 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 					   </td-->
 							<td style="text-align:center">
 								<a href="view_approve_scrap_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
-" rel="tooltip" class="btn  btn-mini" title="Approve Scrap"><i class="icon-edit"></i></a>
+" rel="tooltip" class="btn  btn-mini" title="Approve Hardware"><i class="icon-edit"></i></a>
 							</td>
 
 					</tr>

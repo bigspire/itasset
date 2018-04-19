@@ -1,9 +1,8 @@
 <?php
 /* 
-Purpose : To list and search hardware details.
+Purpose : To list and search hardware billing details.
 Created : Nikitasa
-Modified : Gayathri
-Date : 14-06-2016
+Date : 18-04-2018
 */
 
 session_start();
@@ -25,12 +24,8 @@ include 'include/menu_count.php';
 // include permission file
 include 'include/get_modules.php';
 
-// redirect to error page if the user is not it admin
-if($roleid != '21'){
-	header('Location:'.IT_DIR.'home/');
-}
 // redirecting to dashboard if the user don't have the permission to this module
-if(empty($_SESSION['Hardware'])){
+if(empty($_SESSION['Billing'])){
 	session_start();
 	header('Location:dashboard.php?access=Access denied!');
 }
@@ -67,10 +62,10 @@ if($_GET['action'] == 'export'){
 }
 					
 // count the total no. of records
-$query = "CALL it_list_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
+$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
 try{
 	if(!$result = $mysql->execute_query($query)){
-		throw new Exception('Problem in executing list hardware page');
+		throw new Exception('Problem in executing list Billing hardware page');
 	}
 
 	// fetch result
@@ -79,9 +74,9 @@ try{
 	$count = $data_num['total'];
 	if($count == 0){
 		if($keyword){
-			$alert_msg = 'No hardware "' .$keyword. '" is found in our database';
+			$alert_msg = 'No Billing "' .$keyword. '" is found in our database';
 		}else{
-			$alert_msg = 'No hardware details found in our database';
+			$alert_msg = 'No Billing details found in our database';
 		}
 	}
 	$page = $_GET['page'] ?  $_GET['page'] : 1;
@@ -97,8 +92,8 @@ try{
 }
 // set the condition to check ascending or descending order		
 $order = ($_GET['order'] == 'desc') ? 'asc' :  'desc';	
-$sort_fields = array('1' => 'hardware_type','brand','model_id','inventory_no','location','asset_desc','validity','vendor','modified','created');
-$org_fields = array('1' => 'ht.title', 'b.title', 'h.model_id', 'hi.inventory_no','ad.district_name','hi.asset_desc','validity_to','vendor_name','modified_date','created_date');
+$sort_fields = array('1' => 'hardware_type','billing_date','brand','model_id','inventory_no','location','asset_desc','validity','vendor','modified','created');
+$org_fields = array('1' => 'ht.title', 'billing_date','b.title', 'h.model_id', 'hi.inventory_no','ad.district_name','hi.asset_desc','validity_to','vendor_name','modified_date','created_date');
 
 // to set the sorting image
 foreach($sort_fields as $key => $h_field){
@@ -113,7 +108,7 @@ foreach($sort_fields as $key => $h_field){
 // if no fields are set, set default sort image
 if(empty($_GET['field']) && empty($keyword)){		
 	$order = 'desc';			
-	$field = 'h.created_date';			
+	$field = 'irb.created_date';			
 	$smarty->assign('sort_field_created', 'sorting desc');
 }	
 $smarty->assign('order', $order);
@@ -141,12 +136,12 @@ try{
 	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 // fetch all records
-$query = "CALL it_list_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','$start','$limit',
+$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$hw_status."','".$from_date."','".$to_date."','$start','$limit',
 '".$field."','".$order."','".$_GET['action']."')";
 
 try{
 	if(!$result = $mysql->execute_query($query)){
-		throw new Exception('Problem in executing list hardware page');
+		throw new Exception('Problem in executing list Billing hardware page');
 	}
 	// calling mysql fetch_result function
 	$i = '0';
@@ -160,9 +155,8 @@ try{
 	}
 	$data[$i]['status_cls'] = $fun->status_cls($obj['status']);
 	$data[$i]['is_rental_hw'] = $obj['is_rental'] == 'Y' ? 'Rental' : 'New';
-	$data[$i]['validity_to'] = $fun->it_software_created_date($obj['validity_to']);
  	$data[$i]['created_date'] = $fun->it_software_created_date($obj['created_date']);
- 	$data[$i]['modified_date'] = $fun->it_software_created_date($obj['modified_date']);
+	$data[$i]['billing_date'] = $fun->it_software_created_date($obj['billing_date']);
  	$i++;
  	$pno[]=$paging->print_no();
  	$smarty->assign('pno',$pno);
@@ -174,27 +168,18 @@ try{
 		include('classes/class.excel.php');
 		$excelObj = new libExcel();
 		// function to print the excel header
-      $excelObj->printHeader($header = array('Type','Brand','Model Id','Inventory No','Location','Asset Description','Validity','Vendor','Created Date','Modified Date','Status') ,$col = array('A','B','C','D','E','F','G','H','I','J','K'));  
+      $excelObj->printHeader($header = array('Type','Brand','Model Id','Inventory No','Location','Asset Description','Validity','Vendor','billing_date','Created Date','Modified Date','Status','Description') ,$col = array('A','B','C','D','E','F','G','H','I','J','K','L','M'));  
 		// function to print the excel data
-		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J','K'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','validity_to','vendor_name','created_date','modified_date','status'),'Hardwares_'.$current_date);
+		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J','K','L','M'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','validity_to','vendor_name','billing_date','created_date','modified_date','status', 'message'),'Billing_'.$current_date);
 	}
 	// assign software status into array 
-	$type = array('' => 'All Status', '1' => 'Active', '0' => 'Inactive');
+	$type = array('' => 'All Status', 'N' => 'New', 'Y' => 'Rental');
 
 	// create,update,delete message validation
 	if($_GET['status'] == 'deleted' || $_GET['status'] == 'created' || $_GET['status'] == 'updated'){
-  		$success_msg = 'Hardware details ' . $_GET['status'] . ' successfully';
-	}else if($_GET['status'] == 'not_deleted'){
-		$erro_msg = "You cannot delete unless you remove this hardware from assigned asset.";	
-	}else if($_GET['status'] == 'not_deleted_scrap'){
-		$erro_msg = "You cannot move this to scrap unless you remove this hardware from assigned asset.";	
-	}else if($_GET['status'] == 'not_exchange'){
-		$erro_msg = "You cannot exchange / re-sale this unless you remove this hardware from assigned asset.";	
-	}else if($_GET['status'] == 'moved'){
-		$success_msg = "Harware Details went for Director Approval";	
+  		$success_msg = 'Billing details ' . $_GET['status'] . ' successfully';
 	}
 
-	
 	// validating pagination
 	$total_pages = ceil($count / $limit);
 
@@ -224,7 +209,7 @@ $smarty->assign('ALERT_MSG', $alert_msg);
 $smarty->assign('SUCCESS_MSG', $success_msg);
 $smarty->assign('ERROR_MSG', $erro_msg);
 // assign page title
-$smarty->assign('page_title' , 'Hardware - IT');  
+$smarty->assign('page_title' , 'Billing Hardware - IT');  
 // assigning active class status to smarty menu.tpl
 $smarty->assign('hardware_active' , 'active'); 	  
 // display smarty file

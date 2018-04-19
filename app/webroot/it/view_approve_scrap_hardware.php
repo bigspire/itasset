@@ -33,7 +33,7 @@ if(($fun->isnumeric($id)) || ($fun->is_empty($id)) || ($id == 0)){
 }
 
 // select and execute query and fetch the result
-$query = "CALL it_view_scrap_hardware('".$id."','W')"; 
+$query = "CALL it_view_scrap_hardware('".$id."')"; 
 try{
 	if(!$result = $mysql->execute_query($query)){
 		throw new Exception('Problem in executing view page');
@@ -76,14 +76,12 @@ $c_c = $mysql->close_connection();
 // here assign smarty variables
 $smarty->assign('id' , $_GET['id']); 
 $smarty->assign('data', $data); 
-// here assign smarty variables
-$smarty->assign('id' , $_GET['id']); 
-$smarty->assign('data', $data); 
+$smarty->assign('roleid', $roleid); 
 
 // assign page title
 $smarty->assign('page_title' , 'View Approve Hardware - IT');
 // assigning active class status to smarty menu.tpl
-$smarty->assign('assign_asset_active' , 'active'); 	   
+$smarty->assign('scrap_hardware_active' , 'active'); 	   
 // display smarty template
 $smarty->display('view_approve_scrap_hardware.tpl');
 ?>

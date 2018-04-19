@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-03-07 16:13:32
+/* Smarty version 3.1.29, created on 2018-04-16 16:49:50
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a9fc254999438_77469098',
+  'unifunc' => 'content_5ad486d6b94c21_39171667',
   'file_dependency' => 
   array (
     '368d71be8341817b155ac32d10bab46c9d264be9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_hardware.tpl',
-      1 => 1520419402,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a9fc254999438_77469098 ($_smarty_tpl) {
+function content_5ad486d6b94c21_39171667 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -101,7 +101,22 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="input-small datepick" placeholder="Validity To" type="text" id="HrEmployeeDob"/> 
 		       <input type="submit" value="Search" class="btn btn-primary" style="margin-bottom:9px;margin-left:4px;">
              <a href="list_hardware.php"><button style="margin-bottom:9px;margin-left:4px;" type="button" val="list_hardware.php" class="jsRedirect btn btn-primary"><i class="icon-refresh"></i> Reset</button></a>
-             <a href="add_hardware_details.php"><button type="button" val="add_hardware_details.php" class="jsRedirect btn btn-primary" style="float:right"><i class="icon-plus"></i> Add Hardware</button></a>
+             <!--a href="add_hardware_details.php"><button type="button" val="add_hardware_details.php" class="jsRedirect btn btn-primary" style="float:right"><i class="icon-plus"></i> Add Hardware</button></a-->
+			 
+			 <div class="btn-group" style="margin-bottom:9px;margin-left:4px;" >
+												<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="icon-plus"></i> Add Hardware <span class="caret"></span></a>
+												<ul class="dropdown-menu dropdown-primary">
+													<li>
+														<a href="add_hardware_details.php?type=new">New Hardware</a>
+													</li>
+													<li>
+														<a href="add_hardware_details.php?type=rental">Rental Hardware</a>
+													</li>
+													
+												</ul>
+											</div>
+			 
+			 
              <?php if (!$_smarty_tpl->tpl_vars['ALERT_MSG']->value) {?> 
              <a href="list_hardware.php?action=export&keyword=<?php echo $_POST['keyword'];?>
 &hw_type=<?php echo $_POST['hw_type'];?>
@@ -220,7 +235,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_modified']->value;?>
 ">Modified</a></th>																				
 										<th style="text-align:center" width="40">Status</th>
-										<th width="150">Options</th>
+										<th width="180">Options</th>
 										</tr>
 					</thead>
 					<tbody>
@@ -239,10 +254,20 @@ foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['item']->_loop = true;
 $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 ?>		
+						
 							 <?php if ($_smarty_tpl->tpl_vars['item']->value['type']) {?>		
 								<tr>
 									 <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['type']);?>
-</td>
+ <br>
+									 <?php if ($_smarty_tpl->tpl_vars['item']->value['is_rental'] == 'Y') {?>
+									  <span class='label label-orange'><a href='#' rel='tooltip'>
+									 <?php echo $_smarty_tpl->tpl_vars['item']->value['is_rental_hw'];?>
+ </span>
+									 <?php }?>
+									 
+									 </a>
+									 
+									 </td>
 		        					 <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['brand']);?>
 </td> 
 		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['model_id']);?>
@@ -266,29 +291,44 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 									 <a href='#' rel='tooltip' data-original-title = <?php echo $_smarty_tpl->tpl_vars['item']->value['status'];?>
 ><?php echo $_smarty_tpl->tpl_vars['item']->value['status'];?>
 
-									 <br><?php echo $_smarty_tpl->tpl_vars['item']->value['scrap_hw_type'];?>
-</a></span></td>
+									 </a></span><br><span style="color:#ff0000;font-size:11px;"><?php echo $_smarty_tpl->tpl_vars['item']->value['scrap_hw_type'];?>
+</span></td>
 									 <td class='hidden-480'>
-										<a href="view_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+								
+								<?php if ($_smarty_tpl->tpl_vars['item']->value['scrap_id'] == '' && $_smarty_tpl->tpl_vars['item']->value['is_rental'] != 'Y') {?>
+								<div class="btn-group">
+												<a href="#" data-toggle="dropdown" class="btn dropdown-toggle"><i class="icon-cog"></i> <span class="caret"></span></a>
+												<ul class="dropdown-menu">
+													<li>
+														<a href="add_scrap.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['invid'];?>
+&page=<?php echo $_GET['page'];?>
+&scrap_type=S"  class="iframeBox" val="40_67">Move to Scrap / Lost</a>
+													</li>
+													<li>
+														<a href="add_exchange_hw.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['invid'];?>
+&page=<?php echo $_GET['page'];?>
+&scrap_type=R" class="iframeBox" val="55_80">Move to Exchange / Re-sale</a>
+													</li>
+												
+												</ul>
+											</div>
+								<?php }?>			
+
+											<a href="view_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 " class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
-											<?php if ($_smarty_tpl->tpl_vars['item']->value['scrap_status'] != 'W') {?>
+									 
+											<?php if ($_smarty_tpl->tpl_vars['item']->value['scrap_id'] == '') {?>
 									  <a href="edit_hardware_details.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 &inv_id=<?php echo $_smarty_tpl->tpl_vars['item']->value['invid'];?>
 " class="btn" rel="tooltip" title="Edit"><i class="icon-edit"></i></a>
 							<a href="delete_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['invid'];?>
 &page=<?php echo $_GET['page'];?>
-" name="21" onclick="return deletefunction()" class="btn delRec" rel="tooltip" title="Delete"><i class="icon-remove"></i></a>                          
-						  <?php if ($_smarty_tpl->tpl_vars['item']->value['status'] == 'Active') {?>										
-								<?php if ($_smarty_tpl->tpl_vars['item']->value['is_deleted'] != 'N') {?>	
-									 <a href="add_scrap.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['invid'];?>
-&page=<?php echo $_GET['page'];?>
-&scrap_type=S" rel="tooltip" title="Scrap/Lost" class="iframeBox btn" val="40_67"><i class="icon-trash"></i></a>						
-									 <a href="add_exchange_hw.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['invid'];?>
-&page=<?php echo $_GET['page'];?>
-&scrap_type=R" rel="tooltip" title="Resale/Exchange" class="iframeBox btn" val="40_67"><i class="icon-trash"></i></a>						
-									 <?php }?>	
-								<?php }?>	
-						  <?php }?>									 
+" name="21" onclick="return deletefunction()" class="btn delRec" rel="tooltip" title="Delete"><i class="icon-remove"></i></a>  
+							<?php }?>
+							
+									
+											
+															 
 									 </td>
 								</tr>
 							  <?php }?>

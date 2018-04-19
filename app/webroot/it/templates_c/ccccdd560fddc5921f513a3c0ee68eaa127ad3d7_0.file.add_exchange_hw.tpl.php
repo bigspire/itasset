@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-03-07 17:32:27
+/* Smarty version 3.1.29, created on 2018-04-16 17:01:35
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\add_exchange_hw.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a9fd4d3432352_39321188',
+  'unifunc' => 'content_5ad48997550760_12878417',
   'file_dependency' => 
   array (
     'ccccdd560fddc5921f513a3c0ee68eaa127ad3d7' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\add_exchange_hw.tpl',
-      1 => 1520424115,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,8 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5a9fd4d3432352_39321188 ($_smarty_tpl) {
+function content_5ad48997550760_12878417 ($_smarty_tpl) {
+if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -71,7 +72,7 @@ function content_5a9fd4d3432352_39321188 ($_smarty_tpl) {
 	<div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">       
-          <h4 class="modal-title">Scrap Hardware</h4>
+          <h4 class="modal-title">Exchange / Re-Sale Hardware</h4>
         </div><div class="container"></div>
         <div class="">
 		<?php if ($_smarty_tpl->tpl_vars['ALERT_MSG1']->value) {?>
@@ -96,17 +97,25 @@ function content_5a9fd4d3432352_39321188 ($_smarty_tpl) {
 </p>								
 										</div>
 										<?php }?>
+										
+										
+										
 		
 <div class="chgReqFrm" align="center">
 <div class="" ><div class="" style="display: block;">
 		<div class="no-padding">
 			<form action="add_exchange_hw.php?id=<?php echo $_GET['id'];?>
 &page=<?php echo $_GET['page'];?>
-" id="formID"  method="post" accept-charset="utf-8">
+" id="formID"  method="post" enctype="multipart/form-data" accept-charset="utf-8">
 									<div class="space-4"></div>
 									<div class="space-4"></div>
 									<div class="form-group" style="text-align:left">
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Hardware Type <span class="red"> *</span> </label>
+									
+									
+									<div class="box">
+									<div class="box-content nopadding">
+									<div class="span6" >
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Type <span class="red"> *</span> </label>
 										<div class="col-sm-3">
 										<input type="radio"  name="hw_type"    <?php if ($_POST['hw_type'] == 'RS') {?> checked="checked" <?php }?> value="RS"> Resale
 										<input type="radio"    name="hw_type"  <?php if ($_POST['hw_type'] == 'EX') {?> checked="checked" <?php }?>  value="EX"> Exchange
@@ -114,53 +123,35 @@ function content_5a9fd4d3432352_39321188 ($_smarty_tpl) {
 </div>	<br>
 										</div>
 										
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Exchange/Resale Cost <span class="red"> *</span> </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Amount <span class="red">*</span> </label>
 										<div class="col-sm-3">
 										<input type="text"  name="cost" value="<?php echo $_POST['cost'];?>
 ">
 										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['costErr']->value;?>
-</div>	<br>
+</div>
+										<br>
 										</div>
 										
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Payment Type <span class="red"> *</span> </label>
+										<!--label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Payment Method <span class="red"> *</span> </label>
 										<div class="col-sm-3">
 										<input type="radio"  name="pay_type"    <?php if ($_POST['pay_type'] == 'CQ') {?> checked="checked" <?php }?> value="CQ"> Cheque
 										<input type="radio"    name="pay_type"  <?php if ($_POST['pay_type'] == 'CA') {?> checked="checked" <?php }?>  value="CA"> Cash
 										<input type="radio"    name="pay_type"  <?php if ($_POST['pay_type'] == 'OT') {?> checked="checked" <?php }?>  value="OT"> Online Transfer
 										<input type="radio"    name="pay_type"  <?php if ($_POST['pay_type'] == 'CC') {?> checked="checked" <?php }?>  value="CC"> Credit card
-										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['pay_typeErr']->value;?>
+										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['paymentErr']->value;?>
 </div>	<br>
 										</div>
 										
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Amount Received  Date <span class="red"> *</span> </label>
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Payment Date  <span class="red"> *</span> </label>
 										<div class="col-sm-3">
-										<input type="text"  name="amt_rcv_date" class="input-small datepick" value="<?php echo $_POST['amt_rcv_date'];?>
+										<input type="text"  name="paid_date" class="datepick" value="<?php echo $_POST['paid_date'];?>
 ">
-										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['amt_rcv_dateErr']->value;?>
+										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['amountErr']->value;?>
 </div><br>
 										</div>
 
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Description </label>
-										<div class="col-sm-3">
-										<textarea id="desc" rows="5" cols="45" name="desc"><?php echo $_POST['desc'];?>
-</textarea>
-										</div>
 										
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> New Hardware (mandatory for Exchange H/w) 
-										<span class="red"> *</span> </label>
-										<div class="col-sm-3">
-										<input type="text"  name="new_hw"  value="<?php echo $_POST['new_hw'];?>
-"> 
-										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['new_hwErr']->value;?>
-</div>	<br>
-										</div>
-										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Vendor Details (Same as existing form) <span class="red"> *</span> </label>
-										<div class="col-sm-3">
-										<input type="text"  name="vendor"  value="<?php echo $_POST['vendor'];?>
-"> 
-										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['vendorErr']->value;?>
-</div>	<br>
-										</div>
+										
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Bill No <span class="red"> *</span> </label>
 										<div class="col-sm-3">
 										<input type="text"  name="bill_no"  value="<?php echo $_POST['bill_no'];?>
@@ -170,26 +161,130 @@ function content_5a9fd4d3432352_39321188 ($_smarty_tpl) {
 										</div>
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Bill Attachment <span class="red"> *</span> </label>
 										<div class="col-sm-3">
-										<input type="file" name="bill_file" class="upload" id="bill_file"/>
-										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['bill_fileErr']->value;?>
+										<input type="file" name="attach_bill" class="upload" id="attach_bill"/>
+										<div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['billuploadErr']->value;?>
+</div>	<br>
+										</div-->
+										
+										
+										<!--span class="red"> *</span--> 
+										
+										</label>
+										
+										
+										
+									<div class="span6">	
+										
+									
+							<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> New Hardware Details </label>
+	<div class="col-sm-3">
+										<!--select name="hwtype" class="hwtype" id="hwtype">
+										<option value="">Hardware Type</option>	
+										<?php echo smarty_function_html_options(array('options'=>$_smarty_tpl->tpl_vars['hw_type']->value,'selected'=>$_POST['hwtype']),$_smarty_tpl);?>
+
+										</select
+										<select name="inventory"  id="inventory">
+										<option value="">Inventory No (Brand) </option>
+										<?php echo smarty_function_html_options(array('options'=>$_smarty_tpl->tpl_vars['h_inventory']->value,'selected'=>$_POST['inventory']),$_smarty_tpl);?>
+ 
+										</select>
+										-->	
+										<textarea id="new_hw" rows="2" cols="45" name="new_hw"><?php echo $_POST['new_hw'];?>
+</textarea>
+
+										
+										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['new_hwErr']->value;?>
+</div>	<br>
+										
+										
+										</div>
+										
+										<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Message <span class="red"> *</span></label>
+										<div class="col-sm-3">
+										<textarea id="desc" rows="2" cols="45" name="desc"><?php echo $_POST['desc'];?>
+</textarea>
+										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['descErr']->value;?>
+</div>	<br>
+										</div>
+										</div>
+										<!--label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Company Name <span class="red"> *</span> </label>
+										<div class="col-sm-3">
+										<input type="text"  name="company"  value="<?php echo $_POST['company'];?>
+"> 
+										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['companyErr']->value;?>
 </div>	<br>
 										</div>
 										
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Vendor Email <span class="red"> *</span> </label>
+										<div class="col-sm-3">
+										<input type="text"  name="email"  value="<?php echo $_POST['email'];?>
+"> 
+										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['emailErr']->value;?>
+</div>	<br>
+										</div>
+										
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Vendor Contact No. <span class="red"> *</span> </label>
+										<div class="col-sm-3">
+										<input type="text"  name="contact"  value="<?php echo $_POST['contact'];?>
+"> 
+										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['contactErr']->value;?>
+</div>	<br>
+										</div>
+										
+										
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Contact Person <span class="red"> *</span> </label>
+										<div class="col-sm-3">
+										<input type="text"  name="person"  value="<?php echo $_POST['person'];?>
+"> 
+										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['personErr']->value;?>
+</div>	<br>
+										</div>
+										
+										
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> City <span class="red"> *</span> </label>
+										<div class="col-sm-3">
+										<input type="text"  name="city"  value="<?php echo $_POST['city'];?>
+"> 
+										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['cityErr']->value;?>
+</div>	<br>
+										</div>
+										
+											<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Address <span class="red"> *</span> </label>
+										<div class="col-sm-3">
+										<textarea type="text"  name="address"><?php echo $_POST['address'];?>
+</textarea> 
+										<br><div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['addressErr']->value;?>
+</div>	<br>
+										</div>
+										
+										
+										
+										
+										</div-->
+										
+										<div class="space-4"></div>						
+
+
+										</div>
+										
+
 									</div>
+									
+
+
+
+
+								</div>
+									
 								
-									
-									
-<div class="space-4"></div>						
-<div class="clearfix form-actions">
-<div class="col-md-9">
+<div style="clear:both;padding:20px;">
 <input class="btn btn-info btn-sm" name="submit" value="Submit" id="btnReq" type="submit"/>
-</div>
 </div>
 					
 <input type="hidden" value="list_hardware.php?page=<?php echo $_GET['page'];?>
 &status=moved" class="redirect_url">
 <input type="hidden" value="list_hardware.php?page=<?php echo $_GET['page'];?>
-&status=not_deleted_scrap" class="redirect_url1">
+&status=not_exchange" class="redirect_url1">
 								</form>
 						
 </div></div>
@@ -241,6 +336,27 @@ $(document).ready(function(){
 		$('.cancelBtn').hide();
 		
 	});
+	
+	// fetch the inventory
+	$(".hwtype").change(function (){
+		var type_id = $(this).val();
+		 $.ajax({
+			url : "get_inventory.php",
+			method : "GET",
+			dataType: "json",
+			data : {hwtype : type_id},
+			encode  : false
+		})
+		.done(function (data){
+				var div_data = '<option value="">Select</option>';
+				$.each(data,function (a,y){ 
+					div_data +=  "<option value="+a+">"+y+"</option>";
+				});
+			$('#inventory').empty();
+			$('#inventory').html(div_data); 
+		});
+	});
+	
 });
 <?php echo '</script'; ?>
 >	

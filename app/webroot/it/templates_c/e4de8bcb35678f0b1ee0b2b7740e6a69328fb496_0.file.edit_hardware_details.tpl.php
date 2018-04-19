@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-23 16:23:43
+/* Smarty version 3.1.29, created on 2018-04-16 17:03:52
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\edit_hardware_details.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a8ff2b76da1a6_88156688',
+  'unifunc' => 'content_5ad48a20207ee6_22670045',
   'file_dependency' => 
   array (
     'e4de8bcb35678f0b1ee0b2b7740e6a69328fb496' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\edit_hardware_details.tpl',
-      1 => 1519292828,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a8ff2b76da1a6_88156688 ($_smarty_tpl) {
+function content_5ad48a20207ee6_22670045 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -116,9 +116,18 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 														<span class="active"></span>
 													</span>
 													<span class="description">
+													
+													
+													<?php if ($_SESSION['h']['is_rental'] == 'Y') {?>
+													<a href="edit_rental_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
+&inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
+">Pricing Details</a> 		
+													<?php } else { ?>
 													<a href="edit_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
 &inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
-">Pricing Details</a>	
+">Pricing Details</a> 
+													<?php }?>
+													
 																				</span>
 												</div>
 											</li>

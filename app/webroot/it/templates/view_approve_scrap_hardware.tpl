@@ -86,7 +86,12 @@
 												{$item.first_name}	
 											</div>
 										</div>
-										
+										<div class="control-group">
+											<label for="textfield" class="control-label">Remarks </label>
+											<div class="controls">
+												{$item.remarks}	
+											</div>
+										</div>
 										
 									</div>	
 									{/if}
@@ -152,7 +157,12 @@
 												{$item.first_name}	
 											</div>
 										</div>
-										
+										<div class="control-group">
+											<label for="textfield" class="control-label">Remarks </label>
+											<div class="controls">
+												{$item.remarks}	
+											</div>
+										</div>
 										
 									</div>	
 									{/if}
@@ -385,7 +395,7 @@
 									
 							<div class="span12">
 									<div class="form-actions">
-										{if $item.scrap_status eq 'W'}
+										{if $item.scrap_status eq 'W' && $roleid eq '18'}
 <a class="iframeBox unreadLink" rel="tooltip" title="Approve Scrap" href="remarks.php?scrap_id={$item.scrap_id}&user_id={$smarty.session.user_id}&inv_id={$item.inv_id}&action=approve" val="40_50"><input type="button" value="Approve" class="btn btn btn-success"/></a>
 <a class="iframeBox unreadLink" rel="tooltip" title="Reject Scrap" href="remarks.php?scrap_id={$item.scrap_id}&user_id={$smarty.session.user_id}&inv_id={$item.inv_id}&action=reject" val="40_50"><input type="button" value="Reject" class="btn btn btn-danger"/></a>
 				{/if}{/foreach}	
