@@ -22,6 +22,7 @@ include 'include/get_modules.php';
 if($roleid != '21'){
 	header('Location:'.IT_DIR.'home/');
 } */
+
 // redirecting to dashboard if the user don't have the permission to this module
 if(empty($_SESSION['Hardware'])){
 	header('Location:dashboard.php?access=Access denied!');
@@ -40,16 +41,14 @@ try{
 	}
 	// check record exists
 	if($result->num_rows){
-	// calling mysql fetch_result function
+		// calling mysql fetch_result function
 		$i = '0';
 		while($obj = $mysql->display_result($result)){  
 			$data[] = $obj;
  			$data[$i]['id'] =  $obj['id'];
- 			$data[$i]['inventory_no'] =  $obj['inventory_no'];
- 	  	   $data[$i]['asset_desc'] = $obj['asset_desc'];
- 	   	$data[$i]['serial_no'] = $obj['serial_no'];
- 	   	$data[$i]['district_name'] = $obj['district_name'];
- 	   	$data[$i]['state_name'] = $obj['state_name'];
+ 			$data[$i]['hw_type'] =  $fun->it_scrap_hw_type($obj['hw_type']);
+			$data[$i]['payment_type'] =  $fun->it_software_paid_mode($obj['payment_type']);
+			$data[$i]['invoice_date'] =  $fun->it_software_created_date($obj['invoice_date']);
 			$i++;	
 		}
 	}else{
@@ -63,28 +62,10 @@ try{
 	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
-$query = "CALL it_view_hardware('".$id."')";
-try{
-	// calling mysql exe_query function
-	if(!$result = $mysql->execute_query($query)){ 
-		throw new Exception('Problem in executing view hardware');
-	}
-	$row = $mysql->display_result($result);
-	$smarty->assign('currency' ,$fun->currency_type($row['currency_type']));
-	//$smarty->assign('rows',$row);
-	// assign the db values into session
-	foreach($row as $key => $record){
-		$smarty->assign($key,$record);
-	}
-	// free the memory
-	$mysql->clear_result($result);
-}catch(Exception $e){
-	echo 'Caught exception: ',  $e->getMessage(), "\n";
-}
 
 // to download files
 if($_GET['action'] == 'download'){
-	$path = 'uploads/hardware/'.$_GET['file'];
+	$path = 'uploads/bill_copy/'.$_GET['file'];
 	$fun->download_file($path);
 }
 
@@ -94,10 +75,6 @@ $c_c = $mysql->close_connection();
 // here assign smarty variables
 $smarty->assign('id' , $_GET['id']); 
 $smarty->assign('data', $data); 
-$smarty->assign('paid_date', $fun->it_software_created_date($row['paid_date'])); 
-$smarty->assign('purchase_date', $fun->it_software_created_date($row['purchase_date'])); 
-$smarty->assign('validity_from', $fun->it_software_created_date($row['validity_from'])); 
-$smarty->assign('validity_to', $fun->it_software_created_date($row['validity_to'])); 
 // assign page title
 $smarty->assign('page_title' , 'View Billing Hardware - IT');
 // assigning active class status to smarty menu.tpl

@@ -52,7 +52,7 @@
 						<div class="control-group">
 											<label for="textfield" class="control-label">Type </label>
 											<div class="controls">
-	                            {$item.hw_type}
+										{$item.hw_type}
 										</div>
 										</div>
 										<div class="control-group">
@@ -98,7 +98,9 @@
 										<div class="control-group">
 										<label for="textfield" class="control-label">Bill Copy   </label>
 											<div class="controls">
-											 	{$item.attachment}
+											<a href = "view_billing_hardware.php?id={$smarty.get.id}&action=download&file={$item.attachment}">
+											{$item.attachment}
+											</a>
 											</div>
 									</div>
 									<div class="control-group">
@@ -158,13 +160,13 @@
 											<div class="control-group">
 											<label for="textfield" class="control-label">City </label>
 											<div class="controls">
-										{$item.city}
+										{$item.vendor_city}
 											</div>
 										</div>							
 <div class="control-group">
 											<label for="textfield" class="control-label">Address </label>
 											<div class="controls">
-										{$item.address}
+										{$item.vendor_address}
 											</div>
 										</div>	
 				<div class="control-group"></div>	

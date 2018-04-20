@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-19 16:54:14
+/* Smarty version 3.1.29, created on 2018-04-20 14:45:18
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\view_billing_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad87c5ef2d6f8_38115050',
+  'unifunc' => 'content_5ad9afa6c62bd6_97782399',
   'file_dependency' => 
   array (
     'a0b617ad93a52df593375dc87f1429627ede2d54' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\view_billing_hardware.tpl',
-      1 => 1524137051,
+      1 => 1524215706,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad87c5ef2d6f8_38115050 ($_smarty_tpl) {
+function content_5ad9afa6c62bd6_97782399 ($_smarty_tpl) {
 ?>
 
 
@@ -95,7 +95,7 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 						<div class="control-group">
 											<label for="textfield" class="control-label">Type </label>
 											<div class="controls">
-	                            <?php echo $_smarty_tpl->tpl_vars['item']->value['hw_type'];?>
+										<?php echo $_smarty_tpl->tpl_vars['item']->value['hw_type'];?>
 
 										</div>
 										</div>
@@ -148,8 +148,12 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 										<div class="control-group">
 										<label for="textfield" class="control-label">Bill Copy   </label>
 											<div class="controls">
-											 	<?php echo $_smarty_tpl->tpl_vars['item']->value['attachment'];?>
+											<a href = "view_billing_hardware.php?id=<?php echo $_GET['id'];?>
+&action=download&file=<?php echo $_smarty_tpl->tpl_vars['item']->value['attachment'];?>
+">
+											<?php echo $_smarty_tpl->tpl_vars['item']->value['attachment'];?>
 
+											</a>
 											</div>
 									</div>
 									<div class="control-group">
@@ -214,14 +218,14 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 											<div class="control-group">
 											<label for="textfield" class="control-label">City </label>
 											<div class="controls">
-										<?php echo $_smarty_tpl->tpl_vars['item']->value['city'];?>
+										<?php echo $_smarty_tpl->tpl_vars['item']->value['vendor_city'];?>
 
 											</div>
 										</div>							
 <div class="control-group">
 											<label for="textfield" class="control-label">Address </label>
 											<div class="controls">
-										<?php echo $_smarty_tpl->tpl_vars['item']->value['address'];?>
+										<?php echo $_smarty_tpl->tpl_vars['item']->value['vendor_address'];?>
 
 											</div>
 										</div>	

@@ -515,3 +515,57 @@ Request URL: /2017/itassetsvn/itasset/it/bootstrap/css/bootstrap.min.css
 Stack Trace:
 #0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2018-04-20 14:27:00 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/css/blue.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-20 14:27:00 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/bootstrap/css/bootstrap-responsive.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-20 14:35:44 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/view_blling_hardware.php?id=18&action=download&file=
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-20 14:36:41 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/view_blling_hardware.php?id=18&action=download&file=
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-20 14:36:47 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/view_blling_hardware.php?id=18&action=download&file=18_Nimesh%5B1%5D.pdf
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-20 14:37:55 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/view_blling_hardware.php?action=download&file=18_Nimesh%5B1%5D.pdf
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
