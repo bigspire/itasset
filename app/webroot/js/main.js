@@ -2032,9 +2032,9 @@ $(document).ready(function() {
 		}	
 		
 		/* notify for IT asset assigning */
-		if($('#notifyHome').length > 0 && $('#notifyHome').val() != '1'){
+		if($('#notifyHome').length > 0 && $('#notifyHome').val() > 0){
 			$.colorbox({width:"45%",height: "85%", iframe:true,overlayClose:false, href: '../it/fr_it_pop_up.php'});		
-			// $('#cboxClose').hide();	
+			 $('#cboxClose').hide();	
 			return false;
 		}	
 		

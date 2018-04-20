@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-19 13:52:54
+/* Smarty version 3.1.29, created on 2018-04-20 11:01:03
   from "C:\xampp\htdocs\itassetsvn\itasset\app\webroot\it\templates\list_billing.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad851dee20ef6_78744491',
+  'unifunc' => 'content_5ad97b171515d5_05666214',
   'file_dependency' => 
   array (
     '53af720c05e64eaa3e5d5b7c6fd329a087bfabbb' => 
     array (
       0 => 'C:\\xampp\\htdocs\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_billing.tpl',
-      1 => 1524126091,
+      1 => 1524202104,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad851dee20ef6_78744491 ($_smarty_tpl) {
+function content_5ad97b171515d5_05666214 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -93,7 +93,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " id="keyword" autocomplete="off" placeholder="Search here..." type="text"/>
 			    <?php echo smarty_function_html_options(array('name'=>'hw_type','class'=>"input-medium",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus",'options'=>$_smarty_tpl->tpl_vars['hw_type_data']->value,'selected'=>$_smarty_tpl->tpl_vars['hw_type']->value),$_smarty_tpl);?>
 
-				<?php echo smarty_function_html_options(array('name'=>'hw_status','class'=>"input-medium",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus1",'options'=>$_smarty_tpl->tpl_vars['type']->value,'selected'=>$_smarty_tpl->tpl_vars['hw_status']->value),$_smarty_tpl);?>
+				<?php echo smarty_function_html_options(array('name'=>'rental_types','class'=>"input-medium",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus1",'options'=>$_smarty_tpl->tpl_vars['type']->value,'selected'=>$_smarty_tpl->tpl_vars['rental_types']->value),$_smarty_tpl);?>
 
 	          <input name="f_date" value="<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 " class="input-small datepick" placeholder="Billing From" type="text" id="HrEmployeeDob"/> 
@@ -256,7 +256,7 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 </td> 
 		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['asset_desc']);?>
 </td> 
-		                      <td><?php echo $_smarty_tpl->tpl_vars['item']->value['validity_to'];?>
+		                      <td><?php echo $_smarty_tpl->tpl_vars['item']->value['billing_date'];?>
 </td> 
 		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['vendor_name']);?>
 </td> 
@@ -264,7 +264,7 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 </td>
 									 
 									 <td class='hidden-480'>
-											<a href="view_billing_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+											<a href="view_billing_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['billing_id'];?>
 " class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
 									 </td>
 								</tr>

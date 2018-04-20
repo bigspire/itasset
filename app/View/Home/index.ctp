@@ -1119,7 +1119,7 @@
 
 
 <?php //if(strtotime(date('Y-m-d')) <= strtotime('2014-10-13')):?>
-<input type="hidden" value="<?php echo $this->Session->read('USER.Login.notify_user');?>" id="notifyHome">
+<input type="hidden" value="<?php echo $IT_ASSIGN_COUNT;?>" id="notifyHome">
 <?php //endif; ?>
 
 <?php else: ?>

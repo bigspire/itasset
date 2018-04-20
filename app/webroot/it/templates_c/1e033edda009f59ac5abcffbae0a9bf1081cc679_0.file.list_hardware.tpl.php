@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-03-26 20:16:49
+/* Smarty version 3.1.29, created on 2018-04-20 11:00:55
   from "C:\xampp\htdocs\itassetsvn\itasset\app\webroot\it\templates\list_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ab907d9431e75_06801753',
+  'unifunc' => 'content_5ad97b0f701ec6_97901497',
   'file_dependency' => 
   array (
     '1e033edda009f59ac5abcffbae0a9bf1081cc679' => 
     array (
       0 => 'C:\\xampp\\htdocs\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_hardware.tpl',
-      1 => 1522075607,
+      1 => 1524202104,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ab907d9431e75_06801753 ($_smarty_tpl) {
+function content_5ad97b0f701ec6_97901497 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -93,8 +93,11 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " id="keyword" autocomplete="off" placeholder="Search here..." type="text"/>
 			    <?php echo smarty_function_html_options(array('name'=>'hw_type','class'=>"input-medium",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus",'options'=>$_smarty_tpl->tpl_vars['hw_type_data']->value,'selected'=>$_smarty_tpl->tpl_vars['hw_type']->value),$_smarty_tpl);?>
 
-			    <?php echo smarty_function_html_options(array('name'=>'hw_status','class'=>"input-medium",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus1",'options'=>$_smarty_tpl->tpl_vars['type']->value,'selected'=>$_smarty_tpl->tpl_vars['hw_status']->value),$_smarty_tpl);?>
+				<?php echo smarty_function_html_options(array('name'=>'rental_type','class'=>"input-small",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus1",'options'=>$_smarty_tpl->tpl_vars['rental_types']->value,'selected'=>$_smarty_tpl->tpl_vars['rental_type']->value),$_smarty_tpl);?>
 
+			    <?php echo smarty_function_html_options(array('name'=>'hw_status','class'=>"input-small",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus1",'options'=>$_smarty_tpl->tpl_vars['type']->value,'selected'=>$_smarty_tpl->tpl_vars['hw_status']->value),$_smarty_tpl);?>
+
+				
 	          <input name="f_date" value="<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 " class="input-small datepick" placeholder="Validity From" type="text" id="HrEmployeeDob"/> 
 	          <input name="t_date" value="<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
@@ -142,6 +145,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+&rental_type=<?php echo $_smarty_tpl->tpl_vars['rental_type']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_hardware_type']->value;?>
 ">Type</a></th>
 										<th width="80">
@@ -152,6 +156,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+&rental_type=<?php echo $_smarty_tpl->tpl_vars['rental_type']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_brand']->value;?>
 ">Brand</a></th>		
 										<th width="80">
@@ -162,6 +167,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+&rental_type=<?php echo $_smarty_tpl->tpl_vars['rental_type']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_model_id']->value;?>
 ">Model Id</a></th>
 										<th width="80">
@@ -172,6 +178,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+&rental_type=<?php echo $_smarty_tpl->tpl_vars['rental_type']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_inventory_no']->value;?>
 ">Inventory No</a></th>
 										<th width="80">
@@ -182,6 +189,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+&rental_type=<?php echo $_smarty_tpl->tpl_vars['rental_type']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_location']->value;?>
 ">Location</a></th>
 										<th width="80">
@@ -192,6 +200,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+&rental_type=<?php echo $_smarty_tpl->tpl_vars['rental_type']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_asset_desc']->value;?>
 ">Asset</a></th>
 										<th width="80">
@@ -202,6 +211,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+&rental_type=<?php echo $_smarty_tpl->tpl_vars['rental_type']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_validity']->value;?>
 ">Validity</a></th>																				
 										<th width="80">
@@ -212,6 +222,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+&rental_type=<?php echo $_smarty_tpl->tpl_vars['rental_type']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_vendor']->value;?>
 ">Vendor</a></th>																			
 										<th width="60">										
@@ -222,6 +233,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &sw_status=<?php echo $_smarty_tpl->tpl_vars['sw_status']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+&rental_type=<?php echo $_smarty_tpl->tpl_vars['rental_type']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_created']->value;?>
 ">Created</a></th>										
 										<th width="60">										
@@ -232,6 +244,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &sw_status=<?php echo $_smarty_tpl->tpl_vars['sw_status']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+&rental_type=<?php echo $_smarty_tpl->tpl_vars['rental_type']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_modified']->value;?>
 ">Modified</a></th>																				
 										<th style="text-align:center" width="40">Status</th>

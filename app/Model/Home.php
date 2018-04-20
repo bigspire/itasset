@@ -325,6 +325,19 @@ and date_format(end, '%Y-%m-%d') >= '$day')) group by status;";
 	}
 	
 	
+	/* function to get assigned asset count */
+	public function get_it_assign_count($user_id){ 
+		$sql = "CALL it_list_assign_emp('".$user_id."','S', '')"; 
+		$result = $this->query($sql);
+		$count_sw = (count($result));
+		$sql = "CALL it_list_assign_emp('".$user_id."','H', '')"; 
+		$result = $this->query($sql);
+		$count_hw = (count($result));
+		return $count = $count_sw + $count_hw;
+	}
+	
+
+	
 	
 	
 
