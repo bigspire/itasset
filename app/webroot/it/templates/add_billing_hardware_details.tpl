@@ -37,7 +37,10 @@
 				</div>
 					<div class="row-fluid  footer_div">
 					<div class="span12">
-					
+					{if $EXIST_MSG}
+				<div id="flashMessage" class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert">&#x2A2F;</button>{$EXIST_MSG}</div>					
+				{/if}
 								<form  enctype= "multipart/form-data" method="POST" class="form-horizontal form-column form-bordered form-wizard ui-formwizard" id="formID" novalidate="novalidate">
 														
 						<div class="box">
@@ -76,6 +79,10 @@
 											</select>
 											<div class="spaError errorMsg error"> {$payment_typeErr}</div>
 												<input name="payment_details" style="clear:left" class="input-large payment_Validity" placeholder="Other Payment Type" type="text" id="payment_details" value="{$smarty.post.payment_details}"/> 
+													<div class="spaError errorMsg error"> {$payment_detailsErr}</div>
+													{* if $smarty.post.payment_type eq 'other'}
+												<input name="payment_details" style="clear:left" class="input-large " placeholder="Other Payment Type" type="text" id="" value="{$smarty.post.payment_details}"/> 
+													{/if *}
 											</div>
 										</div>
 										
@@ -164,11 +171,6 @@
 										
 										
 									</div>
-									
-									
-
-									
-									
 
 <div class="span6">		
      <div class="control-group">
@@ -235,12 +237,16 @@ $(document).ready(function(){
 	$('.change_payment_type').change(function(){ 
 		if($(this).val() == 'other'){
 			$('.payment_Validity').show();
+		}else{
+			$('.payment_Validity').hide();
 		}
 	});
 	
 	if($('.change_payment_type').length > 0){
 		if($('.change_payment_type:selected').val() == 'other'){
 			$('.payment_Validity').show();
+		}else{
+			$('.payment_Validity').hide();
 		}
 	}
 });

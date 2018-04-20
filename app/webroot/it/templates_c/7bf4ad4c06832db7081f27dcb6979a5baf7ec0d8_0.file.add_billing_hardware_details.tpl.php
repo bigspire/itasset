@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-19 17:44:09
+/* Smarty version 3.1.29, created on 2018-04-20 16:28:58
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\add_billing_hardware_details.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad8881186c049_63357339',
+  'unifunc' => 'content_5ad9c7f27989d5_99756935',
   'file_dependency' => 
   array (
     '7bf4ad4c06832db7081f27dcb6979a5baf7ec0d8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\add_billing_hardware_details.tpl',
-      1 => 1524140044,
+      1 => 1524221933,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad8881186c049_63357339 ($_smarty_tpl) {
+function content_5ad9c7f27989d5_99756935 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -67,7 +67,11 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 				</div>
 					<div class="row-fluid  footer_div">
 					<div class="span12">
-					
+					<?php if ($_smarty_tpl->tpl_vars['EXIST_MSG']->value) {?>
+				<div id="flashMessage" class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert">&#x2A2F;</button><?php echo $_smarty_tpl->tpl_vars['EXIST_MSG']->value;?>
+</div>					
+				<?php }?>
 								<form  enctype= "multipart/form-data" method="POST" class="form-horizontal form-column form-bordered form-wizard ui-formwizard" id="formID" novalidate="novalidate">
 														
 						<div class="box">
@@ -113,6 +117,9 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 </div>
 												<input name="payment_details" style="clear:left" class="input-large payment_Validity" placeholder="Other Payment Type" type="text" id="payment_details" value="<?php echo $_POST['payment_details'];?>
 "/> 
+													<div class="spaError errorMsg error"> <?php echo $_smarty_tpl->tpl_vars['payment_detailsErr']->value;?>
+</div>
+													
 											</div>
 										</div>
 										
@@ -214,11 +221,6 @@ echo $_smarty_tpl->tpl_vars['bill_copyErr']->value;?>
 										
 										
 									</div>
-									
-									
-
-									
-									
 
 <div class="span6">		
      <div class="control-group">
@@ -293,12 +295,16 @@ $(document).ready(function(){
 	$('.change_payment_type').change(function(){ 
 		if($(this).val() == 'other'){
 			$('.payment_Validity').show();
+		}else{
+			$('.payment_Validity').hide();
 		}
 	});
 	
 	if($('.change_payment_type').length > 0){
 		if($('.change_payment_type:selected').val() == 'other'){
 			$('.payment_Validity').show();
+		}else{
+			$('.payment_Validity').hide();
 		}
 	}
 });

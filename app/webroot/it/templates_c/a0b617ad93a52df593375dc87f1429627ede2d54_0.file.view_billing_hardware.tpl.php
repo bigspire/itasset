@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-20 14:45:18
+/* Smarty version 3.1.29, created on 2018-04-20 15:58:42
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\view_billing_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad9afa6c62bd6_97782399',
+  'unifunc' => 'content_5ad9c0dac362b9_90891103',
   'file_dependency' => 
   array (
     'a0b617ad93a52df593375dc87f1429627ede2d54' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\view_billing_hardware.tpl',
-      1 => 1524215706,
+      1 => 1524220121,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad9afa6c62bd6_97782399 ($_smarty_tpl) {
+function content_5ad9c0dac362b9_90891103 ($_smarty_tpl) {
 ?>
 
 
@@ -112,7 +112,8 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 											<label for="password" class="control-label">Payment Type</label>
 											<div class="controls">
 												<?php echo $_smarty_tpl->tpl_vars['item']->value['payment_type'];?>
-
+ <?php if ($_smarty_tpl->tpl_vars['item']->value['payment_type'] == 'Other') {?>- <?php echo $_smarty_tpl->tpl_vars['item']->value['payment_type_other'];
+}?>
 										</div>
 										</div>
 										<div class="control-group">

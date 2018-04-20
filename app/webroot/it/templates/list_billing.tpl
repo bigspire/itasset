@@ -89,6 +89,10 @@
 											<a href="list_billing.php?field=location&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_location}">Location</a></th>
 										<th width="80">
 											<a href="list_billing.php?field=asset_desc&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Asset</a></th>
+										
+										<th width="80">
+											<a href="list_billing.php?field=asset_desc&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Billing amount</a></th>
+										
 										<th width="80">
 											<a href="list_billing.php?field=validity&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_validity}">Billing Date</a></th>																				
 										<th width="80">
@@ -106,16 +110,13 @@
 							 {if $item.type}		
 								<tr>
 									 <td>{ucfirst($item.type)} <br>
-								
-									 
-									 </a>
-									 
 									 </td>
 		        					 <td>{ucfirst($item.brand)}</td> 
 		                      <td>{ucfirst($item.model_id)}</td> 	
 				                <td>{ucfirst($item.inventory_no)}</td>
 		                      <td>{ucfirst($item.location)}</td> 
 		                      <td>{ucfirst($item.asset_desc)}</td> 
+							  <td>{$item.cost}</td> 
 		                      <td>{$item.billing_date}</td> 
 		                      <td>{ucfirst($item.vendor_name)}</td> 
 		                      <td>{$item.created_date}</td>

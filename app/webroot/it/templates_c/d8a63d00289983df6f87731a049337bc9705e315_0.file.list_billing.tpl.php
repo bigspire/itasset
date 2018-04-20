@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-19 16:50:39
+/* Smarty version 3.1.29, created on 2018-04-20 16:09:12
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_billing.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad87b87c55ab8_46434495',
+  'unifunc' => 'content_5ad9c35056ff41_71571608',
   'file_dependency' => 
   array (
     'd8a63d00289983df6f87731a049337bc9705e315' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_billing.tpl',
-      1 => 1524136289,
+      1 => 1524220750,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad87b87c55ab8_46434495 ($_smarty_tpl) {
+function content_5ad9c35056ff41_71571608 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -186,6 +186,18 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_asset_desc']->value;?>
 ">Asset</a></th>
+										
+										<th width="80">
+											<a href="list_billing.php?field=asset_desc&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+&page=<?php echo $_GET['page'];?>
+&keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
+&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
+&f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
+&t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_asset_desc']->value;?>
+">Billing amount</a></th>
+										
 										<th width="80">
 											<a href="list_billing.php?field=validity&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
@@ -241,10 +253,6 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 								<tr>
 									 <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['type']);?>
  <br>
-								
-									 
-									 </a>
-									 
 									 </td>
 		        					 <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['brand']);?>
 </td> 
@@ -255,6 +263,8 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['location']);?>
 </td> 
 		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['asset_desc']);?>
+</td> 
+							  <td><?php echo $_smarty_tpl->tpl_vars['item']->value['cost'];?>
 </td> 
 		                      <td><?php echo $_smarty_tpl->tpl_vars['item']->value['billing_date'];?>
 </td> 

@@ -66,7 +66,7 @@
 								<div class="control-group">
 											<label for="password" class="control-label">Payment Type</label>
 											<div class="controls">
-												{$item.payment_type}
+												{$item.payment_type} {if $item.payment_type eq 'Other'}- {$item.payment_type_other}{/if}
 										</div>
 										</div>
 										<div class="control-group">

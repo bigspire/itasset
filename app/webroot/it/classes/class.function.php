@@ -170,6 +170,10 @@ class fun{
 	 		$pm = 'Cheque';
 		}if($paid_mode == 'OT'){	
 	 		$pm = 'Online Transfer';
+		}if($paid_mode == 'CC'){	
+	 		$pm = 'Credit Card';
+		}if($paid_mode == 'OTH'){	
+	 		$pm = 'Other';
 		}
 		return $pm;
 	}
