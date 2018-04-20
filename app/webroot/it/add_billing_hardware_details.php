@@ -211,7 +211,7 @@ if(!empty($_POST)){
 				$msg = $content->get_billing_mail($_POST,$director_name,$admin_name);
 				$mailer->send_mail($sub,$msg,$admin_name,$admin_email,$director_name,$email_address ,'','');
 				$suc = '2';
-			}die;
+			}
 			
 			if($suc == '2'){ 
 				// redirecting to list page

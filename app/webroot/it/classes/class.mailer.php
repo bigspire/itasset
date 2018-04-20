@@ -9,7 +9,7 @@ class phpMail{
 		// $mail->SMTPDebug = 4;                               // Enable verbose debug output
 		
 		$mail->isSMTP();                                      // Set mailer to use SMTP
-		$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+		$mail->Host = 'tls://smtp.gmail.com';  // Specify main and backup SMTP servers
 		$mail->SMTPAuth = true;                               // Enable SMTP authentication
 		$mail->Username = 'testing@bigspire.com';                 // SMTP username
 		$mail->Password = 'bigspire1230';                           // SMTP password
@@ -24,8 +24,8 @@ class phpMail{
 				'allow_self_signed' => true
 			)
 		);
-		
-		
+		                        
+	
 		// $recipient_email = 'jravi.j@gmail.com';
 		// echo $recipient_email;
 		$mail->setFrom($from_email, $from);
