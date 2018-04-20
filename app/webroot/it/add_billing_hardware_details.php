@@ -127,10 +127,6 @@ if(!empty($_POST)){
 				}
 				$row = $mysql->display_result($result);
 				$last_id = $row['inserted_id'];
-				if(!empty($last_id)){
-					// redirecting to view page
-					header('Location: list_billing.php?status=created');		
-				}
 				// free the memory
 				$mysql->clear_result($result);
 				// call the next result
@@ -215,11 +211,11 @@ if(!empty($_POST)){
 				$msg = $content->get_billing_mail($_POST,$director_name,$admin_name);
 				$mailer->send_mail($sub,$msg,$admin_name,$admin_email,$director_name,$email_address ,'','');
 				$suc = '2';
-			}
+			}die;
 			
 			if($suc == '2'){ 
-					// redirecting to list page
-					header("Location: list_billing.php?status=created");		
+				// redirecting to list page
+				header("Location: list_billing.php?status=created");		
 			}
 		}else{
 			$msg = "Billing already added for the inventory";

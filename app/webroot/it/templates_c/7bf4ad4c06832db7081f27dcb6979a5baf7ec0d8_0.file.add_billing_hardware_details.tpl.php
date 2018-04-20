@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-20 16:28:58
+/* Smarty version 3.1.29, created on 2018-04-20 17:10:34
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\add_billing_hardware_details.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad9c7f27989d5_99756935',
+  'unifunc' => 'content_5ad9d1b2cfcb83_22329855',
   'file_dependency' => 
   array (
     '7bf4ad4c06832db7081f27dcb6979a5baf7ec0d8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\add_billing_hardware_details.tpl',
-      1 => 1524221933,
+      1 => 1524224427,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad9c7f27989d5_99756935 ($_smarty_tpl) {
+function content_5ad9d1b2cfcb83_22329855 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -257,7 +257,7 @@ echo $_smarty_tpl->tpl_vars['bill_copyErr']->value;?>
 										
 							<div class="span12">
 										<div class="form-actions">
-											<input onclick="return validate_brand()" type="submit" name="submit" value="Submit" class="btn btn-primary">
+											<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 											<a href="list_billing.php"><button type="button" val="list_billing.php" class="jsRedirect btn regCancel" >Cancel</button></a>
 										</div>
 									</div>	

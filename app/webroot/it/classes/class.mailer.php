@@ -25,7 +25,6 @@ class phpMail{
 			)
 		);
 		
-		echo from_email;echo $from;die;
 		
 		// $recipient_email = 'jravi.j@gmail.com';
 		// echo $recipient_email;
@@ -48,7 +47,7 @@ class phpMail{
 			echo 'Message could not be sent.';
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
 		} else {
-			echo 'Message has been sent';
+			echo 'Message has been sent';die;
 		}
 	}
 }
