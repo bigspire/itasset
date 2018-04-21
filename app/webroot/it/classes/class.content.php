@@ -7,7 +7,7 @@ Date : 11-07-2016
 
 class mailContent extends fun{
 	/* function to print the hardware scrap html for back end */
-	function get_billing_mail($form_data,$inv_brand,$hardware_type,$billing_date,$payment_type,$director_name,$admin_name){ 
+	function get_billing_mail($form_data,$inv_brand,$hardware_type,$billing_date,$payment_type,$recipient,$admin_name){ 
 	$city = ucfirst($form_data['city']);
 	$company_name = ucfirst($form_data['company_name']);
 	if($payment_type == 'Other' && $form_data['payment_details'] != ''){
@@ -33,7 +33,7 @@ class mailContent extends fun{
   <tr>
     <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="490" valign="top"  style="padding:0 20px;"><h1 style="font:bold 15px Arial, Helvetica, sans-serif; color:#676767; margin:0 0 10px 0;">Dear {$director_name},</h1>
+        <td width="490" valign="top"  style="padding:0 20px;"><h1 style="font:bold 15px Arial, Helvetica, sans-serif; color:#676767; margin:0 0 10px 0;">Dear {$recipient},</h1>
           <p style="font:13px Arial, Helvetica, sans-serif; color:#676767; margin:0;">You have received Billing details mail from  {$admin_name}. Please login to MyPDCA and update the details.</p><br />
 
           <p style="font:bold 13px Arial, Helvetica, sans-serif; color:#676767; margin:0;">Below are the hardware details,</p>

@@ -185,6 +185,23 @@ if(!empty($_POST)){
 			}catch(Exception $e){
 				echo 'Caught exception: ',  $e->getMessage(), "\n";
 			}
+			
+			// fetch the director details 
+			$query = "call it_get_financeTeam_details()";
+			try{
+				if(!$result = $mysql->execute_query($query)){
+					throw new Exception('Problem in getting finance team details');
+				}
+				while($account = $mysql->display_result($result)){
+					$row_account[] = $account;
+				}
+				// free the memory
+				$mysql->clear_result($result);
+				// call the next result
+				$mysql->next_query();
+			}catch(Exception $e){
+				echo 'Caught exception: ',  $e->getMessage(), "\n";
+			}
 		
 			// get the admin details
 			$query = "CALL it_get_admin_name('21')";
@@ -209,6 +226,7 @@ if(!empty($_POST)){
 			$hardware_type = $fun->it_scrap_hw_type($_POST['hardware_type_id']);
 			$billing_date = $fun->it_software_created_date($fun->convert_date($_POST['bill_date']));
 			$payment_type = $fun->it_software_paid_mode($_POST['payment_type']);
+			
 			// query to check whether it is exist or not. 
 			$query = "CALL it_get_inventory_brand('".$invent."')";
 			try{
@@ -224,13 +242,21 @@ if(!empty($_POST)){
 			}catch(Exception $e){
 				echo 'Caught exception: ',  $e->getMessage(), "\n";
 			}
+			
 			$inv_brand = $row['inventory_no'].' ('.$row['brand'].')';
 			$suc = '1';
 			if(!empty($last_id)){
 				// send mail to admin
 				$sub = 'Billing Created By '.$admin_name;
 				$msg = $content->get_billing_mail($_POST,$inv_brand,$hardware_type,$billing_date,$payment_type,$director_name,$admin_name);
-				$mailer->send_mail($sub,$msg,$admin_name,$admin_email,$director_name,$email_address ,'',$path);
+				$mailer->send_mail($sub,$msg,$admin_name,$admin_email,$director_name,$email_address,'',$path);
+					
+				foreach($row_account as  $finance_team){ 
+					// send mail to admin
+					$sub = 'Billing Created By '.$admin_name;
+					$msg = $content->get_billing_mail($_POST,$inv_brand,$hardware_type,$billing_date,$payment_type,$finance_team['finance_name'],$admin_name);
+					$mailer->send_mail($sub,$msg,$admin_name,$admin_email,$finance_team['finance_name'],$finance_team['finance_email_address'],'',$path);
+				}
 				$suc = '2';
 			}
 			

@@ -866,3 +866,111 @@ Request URL: /2017/itassetsvn/itasset/it/bootstrap/css/bootstrap.min.css
 Stack Trace:
 #0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2018-04-21 15:45:34 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/bootstrap/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-21 15:45:34 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/bootstrap/css/bootstrap-responsive.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-21 15:45:34 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/css/blue.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-21 15:50:30 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/bootstrap/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-21 15:50:30 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/bootstrap/css/bootstrap-responsive.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-21 15:50:30 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/css/blue.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-21 15:55:43 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/bootstrap/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-21 15:55:43 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/css/blue.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-21 15:55:43 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/bootstrap/css/bootstrap-responsive.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-21 15:57:54 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/css/blue.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-21 15:57:54 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/bootstrap/css/bootstrap.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2018-04-21 15:57:54 Error: [MissingControllerException] Controller class ItController could not be found.
+Exception Attributes: array (
+  'class' => 'ItController',
+  'plugin' => NULL,
+)
+Request URL: /2017/itassetsvn/itasset/it/bootstrap/css/bootstrap-responsive.min.css
+Stack Trace:
+#0 C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
