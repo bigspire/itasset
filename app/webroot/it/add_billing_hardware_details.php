@@ -41,6 +41,11 @@ if(!empty($_POST)){
 		$smarty->assign('payment_detailsErr', 'Please enter the payment detials');	
 		$test = 'error';			
 	}
+	if($fun->isnumeric($_POST['amount']) == true){
+		$amountErr = 'Please enter the correct amount'; 
+		$smarty->assign('amountErr',$amountErr);
+		$test = 'error';		
+	}	
 	
 	// Validating the required fields  
 	// array for printing correct field name in error message
