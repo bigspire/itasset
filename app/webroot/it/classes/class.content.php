@@ -7,8 +7,12 @@ Date : 11-07-2016
 
 class mailContent extends fun{
 	/* function to print the hardware scrap html for back end */
-	function get_billing_mail($form_data,$director_name,$admin_name){ 
-	
+	function get_billing_mail($form_data,$inv_brand,$hardware_type,$billing_date,$payment_type,$director_name,$admin_name){ 
+	$city = ucfirst($form_data['city']);
+	$company_name = ucfirst($form_data['company_name']);
+	if($payment_type == 'Other' && $form_data['payment_details'] != ''){
+		$payment_details = " - ".$form_data['payment_details'];
+	} 
 	  $content = <<< EOD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -36,9 +40,37 @@ class mailContent extends fun{
           <table width="100%" border="0" cellspacing="2" cellpadding="10" style="border:1px solid #ededed; font:bold 13px Arial, Helvetica, sans-serif; color:#6f6e6e; margin:10px 0 20px 0;">
           
              <tr style="background:#f5f4f4;">
-              	<td width="100">Remarks </td>
-              	<td style="color:#2a2a2a;">{$form_data['amount']}</td>  
+              	<td width="100">Type </td>
+              	<td style="color:#2a2a2a;">{$hardware_type}</td>  
+				<td width="100">Amount </td>
+              	<td style="color:#2a2a2a;">{$form_data['amount']}</td> 
             </tr>
+			<tr style="background:#f5f4f4;">
+              	<td width="100">Payment Type </td>
+              	<td style="color:#2a2a2a;">{$payment_type}{$payment_details}</td>  
+				<td width="100">Description </td>
+              	<td style="color:#2a2a2a;">{$form_data['description']}</td> 
+            </tr>
+
+			<tr style="background:#f5f4f4;">
+              	<td width="100">Inventory No (Brand) </td>
+              	<td style="color:#2a2a2a;">{$inv_brand}</td>  
+				<td width="100">Bill Date </td>
+              	<td style="color:#2a2a2a;">{$billing_date}</td> 
+            </tr>
+
+			<tr style="background:#f5f4f4;">
+				<td width="100">Bill No </td>
+              	<td style="color:#2a2a2a;">{$form_data['bill_no']}</td>  
+				<td width="100">Company Name </td>
+              	<td style="color:#2a2a2a;">{$company_name}</td>  
+            </tr>
+
+			<tr style="background:#f5f4f4;">
+				<td width="100">City </td>
+              	<td style="color:#2a2a2a;">{$city}</td>  
+            </tr>
+
           </table>
         
 </td>

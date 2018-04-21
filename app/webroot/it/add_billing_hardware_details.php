@@ -37,7 +37,7 @@ if(!empty($_POST)){
 	}
 	
 	// validating the required fields
-	if(($_POST['payment_type'] == 'other') && (empty($_POST['payment_details']))){
+	if(($_POST['payment_type'] == 'OTH') && (empty($_POST['payment_details']))){
 		$smarty->assign('payment_detailsErr', 'Please enter the payment detials');	
 		$test = 'error';			
 	}
@@ -90,7 +90,7 @@ if(!empty($_POST)){
 	$inv_arr  = $_POST['it_brand_id'];
 	$inv_details = explode("-", $inv_arr);
 	$invent =  $inv_details[0]; 
-		
+
 	// query to check whether it is exist or not. 
 	$query = "CALL it_check_bill_exist('".$fun->convert_date($_POST['bill_date'])."','".$invent."')";
 	try{
@@ -110,7 +110,7 @@ if(!empty($_POST)){
 	if(empty($test)){
 		if($row['total'] == '0'){
 			// assigning the date
-			$date = date('Y-m-d h:i:s');
+			$date = date('Y-m-d H:i:s');
 			$mysql->next_query();
 			// query to insert into database. 
 			$query = "CALL it_add_billing('".$mysql->real_escape_str($_POST['hardware_type_id'])."', '".$mysql->real_escape_str($_POST['amount'])."', 
@@ -204,12 +204,33 @@ if(!empty($_POST)){
 			}catch(Exception $e){
 				echo 'Caught exception: ',  $e->getMessage(), "\n";
 			}
+			
+			// hardware type
+			$hardware_type = $fun->it_scrap_hw_type($_POST['hardware_type_id']);
+			$billing_date = $fun->it_software_created_date($fun->convert_date($_POST['bill_date']));
+			$payment_type = $fun->it_software_paid_mode($_POST['payment_type']);
+			// query to check whether it is exist or not. 
+			$query = "CALL it_get_inventory_brand('".$invent."')";
+			try{
+				// calling mysql exe_query function
+				if(!$result = $mysql->execute_query($query)){ 
+					throw new Exception('Problem in getting inventory and brand details');
+				}
+				$row = $mysql->display_result($result);	
+				// free the memory
+				$mysql->clear_result($result);
+				// next query execution
+				$mysql->next_query();
+			}catch(Exception $e){
+				echo 'Caught exception: ',  $e->getMessage(), "\n";
+			}
+			$inv_brand = $row['inventory_no'].' ('.$row['brand'].')';
 			$suc = '1';
 			if(!empty($last_id)){
 				// send mail to admin
 				$sub = 'Billing Created By '.$admin_name;
-				$msg = $content->get_billing_mail($_POST,$director_name,$admin_name);
-				$mailer->send_mail($sub,$msg,$admin_name,$admin_email,$director_name,$email_address ,'','');
+				$msg = $content->get_billing_mail($_POST,$inv_brand,$hardware_type,$billing_date,$payment_type,$director_name,$admin_name);
+				$mailer->send_mail($sub,$msg,$admin_name,$admin_email,$director_name,$email_address ,'',$path);
 				$suc = '2';
 			}
 			

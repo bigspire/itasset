@@ -34,7 +34,7 @@ $keyword = $_POST['keyword'] ? $_POST['keyword'] : $_GET['keyword'];
 $hw_type = $_POST['hw_type'] ? $_POST['hw_type'] : $_GET['hw_type'];
 $t_date = $_POST['t_date'] ? $_POST['t_date'] : $_GET['t_date'];
 $f_date = $_POST['f_date'] ? $_POST['f_date'] : $_GET['f_date'];   
-$rental_type = $_POST['rental_types'] ? $_POST['rental_types'] : $_GET['rental_types']; 
+$bill_types = $_POST['bill_types'] ? $_POST['bill_types'] : $_GET['bill_types']; 
 $from_date = $fun->convert_date($f_date);
 $to_date = $fun->convert_date($t_date);
 $hw_type = $hw_type == '' ? 0 : $hw_type;
@@ -42,7 +42,7 @@ $hw_type = $hw_type == '' ? 0 : $hw_type;
 //post url for paging
 if($_POST){
 	$post_url .= '&keyword='.$keyword;
-	$post_url .= '&rental_type='.$rental_type;
+	$post_url .= '&bill_types='.$bill_types;
 	$post_url .= '&hw_type='.$hw_type;
 	$post_url .= '&f_date='.$f_date;
 	$post_url .= '&t_date='.$t_date;
@@ -50,11 +50,11 @@ if($_POST){
 	
 // for export
 if($_GET['action'] == 'export'){
-	$rental_type = $_GET['rental_type']; 
+	$bill_types = $_GET['bill_types']; 
 }
 					
 // count the total no. of records
-$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$rental_type."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
+$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$bill_types."','".$from_date."','".$to_date."','0','0','','','".$_GET['action']."')";
 try{
 	if(!$result = $mysql->execute_query($query)){
 		throw new Exception('Problem in executing list Billing hardware page');
@@ -84,8 +84,8 @@ try{
 }
 // set the condition to check ascending or descending order		
 $order = ($_GET['order'] == 'desc') ? 'asc' :  'desc';	
-$sort_fields = array('1' => 'hardware_type','billing_date','brand','model_id','inventory_no','location','asset_desc','validity','vendor','modified','created');
-$org_fields = array('1' => 'ht.title', 'billing_date','b.title', 'h.model_id', 'hi.inventory_no','ad.district_name','hi.asset_desc','validity_to','vendor_name','modified_date','created_date');
+$sort_fields = array('1' => 'type','hw_type','brand','inventory_no','location','cost','billing_date','vendor_company','created_date');
+$org_fields = array('1' => 'type', 'hw_type','brand', 'inventory_no', 'location','cost','billing_date','vendor_company','created_date');
 
 // to set the sorting image
 foreach($sort_fields as $key => $h_field){
@@ -128,7 +128,7 @@ try{
 	echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 // fetch all records
-$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$rental_type."','".$from_date."','".$to_date."','$start','$limit',
+$query = "CALL it_list_billing_hardware('".$mysql->real_escape_str($keyword)."','".$hw_type."','".$bill_types."','".$from_date."','".$to_date."','$start','$limit',
 '".$field."','".$order."','".$_GET['action']."')";
 
 try{
@@ -149,6 +149,7 @@ try{
 	$data[$i]['is_rental_hw'] = $obj['is_rental'] == 'Y' ? 'Rental' : 'New';
  	$data[$i]['created_date'] = $fun->it_software_created_date($obj['created_date']);
 	$data[$i]['billing_date'] = $fun->it_software_created_date($obj['billing_date']);
+	$data[$i]['hw_type'] = $fun->it_scrap_hw_type($obj['hw_type']);
  	$i++;
  	$pno[]=$paging->print_no();
  	$smarty->assign('pno',$pno);
@@ -160,12 +161,13 @@ try{
 		include('classes/class.excel.php');
 		$excelObj = new libExcel();
 		// function to print the excel header
-      $excelObj->printHeader($header = array('Type','Brand','Model Id','Inventory No','Location','Asset Description','Validity','Vendor','billing_date','Created Date','Modified Date','Status','Description') ,$col = array('A','B','C','D','E','F','G','H','I','J','K','L','M'));  
+      $excelObj->printHeader($header = array('Type','Billing Type','Brand','Inventory No','Location','Billing Amount','Billing Date','Vendor','Created','Description') ,$col = array('A','B','C','D','E','F','G','H','I','J'));  
 		// function to print the excel data
-		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J','K','L','M'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','validity_to','vendor_name','billing_date','created_date','modified_date','status', 'message'),'Billing_'.$current_date);
+		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J'), $field = array('type','hw_type','brand','inventory_no','location','cost','billing_date','vendor_company','created_date','message'),'Billing_'.$current_date);
 	}
-	// assign software status into array 
-	$type = array('' => 'Hardware', 'N' => 'New', 'Y' => 'Rental');
+	
+	$billing_type = array('' => 'Select','RS' => 'Resale', 'EX' => 'Exchange', 'R' => 'Rental'); 
+	$smarty->assign('billingType', $billing_type);
 
 	// create,update,delete message validation
 	if($_GET['status'] == 'deleted' || $_GET['status'] == 'created' || $_GET['status'] == 'updated'){

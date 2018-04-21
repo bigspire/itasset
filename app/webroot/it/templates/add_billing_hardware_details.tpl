@@ -55,7 +55,7 @@
 											<div class="controls field">
 											<select name="hardware_type_id" class="hwtype" id="hardware_type_id">
 												<option value="">Select</option>	
-											{html_options class="input-xlarge" placeholder="" style="clear:left" id="license_no" options=$billingType selected=$smarty.post.hardware_type_id}
+											{html_options class="input-xlarge" placeholder="" style="clear:left" options=$billingType selected=$smarty.post.hardware_type_id}
 												</select>
 											<div class="errorMsg error">{$hardware_type_idErr} </div>
 											</div>
@@ -78,7 +78,7 @@
 											{html_options   options=$pay_types selected=$smarty.post.payment_type}	
 											</select>
 											<div class="spaError errorMsg error"> {$payment_typeErr}</div>
-												<input name="payment_details" style="clear:left" class="input-large payment_Validity" placeholder="Other Payment Type" type="text" id="payment_details" value="{$smarty.post.payment_details}"/> 
+												<input name="payment_details" style="clear:left" class="input-medium payment_Validity" placeholder="Other Payment Type" type="text" id="payment_details" value="{$smarty.post.payment_details}"/> 
 													<div class="spaError errorMsg error"> {$payment_detailsErr}</div>
 													{* if $smarty.post.payment_type eq 'other'}
 												<input name="payment_details" style="clear:left" class="input-large " placeholder="Other Payment Type" type="text" id="" value="{$smarty.post.payment_details}"/> 
@@ -235,7 +235,7 @@
 $(document).ready(function(){
 	// function to change the amount
 	$('.change_payment_type').change(function(){ 
-		if($(this).val() == 'other'){
+		if($(this).val() == 'OTH'){
 			$('.payment_Validity').show();
 		}else{
 			$('.payment_Validity').hide();
@@ -243,7 +243,7 @@ $(document).ready(function(){
 	});
 	
 	if($('.change_payment_type').length > 0){
-		if($('.change_payment_type:selected').val() == 'other'){
+		if($('.change_payment_type').val() == 'OTH'){
 			$('.payment_Validity').show();
 		}else{
 			$('.payment_Validity').hide();

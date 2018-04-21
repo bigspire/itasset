@@ -57,13 +57,12 @@
 				 <span>Search:</span>  
 				 <input name="keyword" value="{$keyword}" id="keyword" autocomplete="off" placeholder="Search here..." type="text"/>
 			    {html_options name='hw_type' class="input-medium" placeholder="" style="clear:left" id="HrEmployeeRecStatus" options=$hw_type_data selected=$hw_type}
-				{html_options name='rental_types' class="input-medium" placeholder="" style="clear:left" id="HrEmployeeRecStatus1" options=$type selected=$rental_types}
+				{html_options name='bill_types' class="input-medium" placeholder="" style="clear:left" id="HrEmployeeRecStatus1" options=$billingType selected=$bill_types}
 	          <input name="f_date" value="{$f_date}" class="input-small datepick" placeholder="Billing From" type="text" id="HrEmployeeDob"/> 
 	          <input name="t_date" value="{$t_date}" class="input-small datepick" placeholder="Billing To" type="text" id="HrEmployeeDob"/> 
 		       <input type="submit" value="Search" class="btn btn-primary" style="margin-bottom:9px;margin-left:4px;">
              <a href="list_billing.php"><button style="margin-bottom:9px;margin-left:4px;" type="button" val="list_billing.php" class="jsRedirect btn btn-primary"><i class="icon-refresh"></i> Reset</button></a>
-             <!--a href="add_hardware_details.php"><button type="button" val="add_hardware_details.php" class="jsRedirect btn btn-primary" style="float:right"><i class="icon-plus"></i> Add Hardware</button></a-->
-			 
+
 			 <div class="btn-group" style="margin-bottom:9px;margin-left:4px;" >
 												<a href="add_billing_hardware_details.php"  class="btn btn-primary"><i class="icon-plus"></i> Add Billing </a>
 											
@@ -71,34 +70,33 @@
 			 
 			 
              {if !$ALERT_MSG} 
-             <a href="list_billing.php?action=export&keyword={$smarty.post.keyword}&hw_type={$smarty.post.hw_type}&hw_status={$hw_status}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}"><button type="button" val="list_hardware.php?action=export&keyword={$smarty.post.keyword}&hw_type={$smarty.post.hw_type}&hw_status={$hw_status}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}" class="jsRedirect btn btn-primary" style="float:right;margin-right:20px;"><i class="icon-reply"></i> Export</button></a>	
+             <a href="list_billing.php?action=export&keyword={$smarty.post.keyword}&hw_type={$smarty.post.hw_type}&bill_types={$smarty.post.bill_types}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}"><button type="button" val="list_hardware.php?action=export&keyword={$smarty.post.keyword}&hw_type={$smarty.post.hw_type}&bill_types={$smarty.post.bill_types}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}" class="jsRedirect btn btn-primary" style="float:right;margin-right:20px;"><i class="icon-reply"></i> Export</button></a>	
             {/if}
             </div>			
 				<table class="table table-hover table-nomargin table-bordered usertable dataTable">
 					<thead>
 						<tr>
+						<th width="80">
+										<a href="list_billing.php?field=type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_type}">Type</a></th>
+								
 							<th width="80">
-										<a href="list_billing.php?field=hardware_type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_hardware_type}">Type</a></th>
+										<a href="list_billing.php?field=hw_type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_hw_type}">Billing Type</a></th>
 										<th width="80">
-											<a href="list_billing.php?field=brand&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_brand}">Brand</a></th>		
+											<a href="list_billing.php?field=brand&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_brand}">Brand</a></th>		
 										<th width="80">
-											<a href="list_billing.php?field=model_id&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_model_id}">Model Id</a></th>
+											<a href="list_billing.php?field=inventory_no&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_inventory_no}">Inventory No</a></th>
 										<th width="80">
-											<a href="list_billing.php?field=inventory_no&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_inventory_no}">Inventory No</a></th>
-										<th width="80">
-											<a href="list_billing.php?field=location&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_location}">Location</a></th>
-										<th width="80">
-											<a href="list_billing.php?field=asset_desc&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Asset</a></th>
+											<a href="list_billing.php?field=location&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_location}">Location</a></th>
 										
 										<th width="80">
-											<a href="list_billing.php?field=asset_desc&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Billing amount</a></th>
+											<a href="list_billing.php?field=cost&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_cost}">Billing amount</a></th>
 										
 										<th width="80">
-											<a href="list_billing.php?field=validity&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_validity}">Billing Date</a></th>																				
+											<a href="list_billing.php?field=billing_date&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_billing_date}">Billing Date</a></th>																				
 										<th width="80">
-											<a href="list_billing.php?field=vendor&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&hw_status={$hw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_vendor}">Vendor</a></th>																			
+											<a href="list_billing.php?field=vendor_company&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_vendor_company}">Vendor</a></th>																			
 										<th width="60">										
-										<a href="list_billing.php?field=created&order={$order}&page={$smarty.get.page}&keyword={$keyword}&sw_type={$sw_type}&sw_status={$sw_status}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created}">Created</a></th>										
+										<a href="list_billing.php?field=created_date&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created_date}">Created</a></th>										
 																													
 										<th width="100">Options</th>
 										</tr>
@@ -109,16 +107,15 @@
 						
 							 {if $item.type}		
 								<tr>
-									 <td>{ucfirst($item.type)} <br>
-									 </td>
+									
+									 <td>{ucfirst($item.type)}</td>
+									 <td>{ucfirst($item.hw_type)}</td>
 		        					 <td>{ucfirst($item.brand)}</td> 
-		                      <td>{ucfirst($item.model_id)}</td> 	
 				                <td>{ucfirst($item.inventory_no)}</td>
 		                      <td>{ucfirst($item.location)}</td> 
-		                      <td>{ucfirst($item.asset_desc)}</td> 
 							  <td>{$item.cost}</td> 
 		                      <td>{$item.billing_date}</td> 
-		                      <td>{ucfirst($item.vendor_name)}</td> 
+		                      <td>{ucfirst($item.vendor_company)}</td> 
 		                      <td>{$item.created_date}</td>
 									 
 									 <td class='hidden-480'>
@@ -140,7 +137,7 @@
 														
 						</div>	
 					 </div>
-					 <input type="hidden" id="page" value="list_hardware">
+					 <input type="hidden" id="page" value="list_billing_hardware">
 					</form>						
 				 </div>
 				

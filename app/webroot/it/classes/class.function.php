@@ -106,6 +106,8 @@ class fun{
 			$st = 'Resale';
 		}else if($status == 'EX'){
 	 		$st = 'Exchange';
+		}else if($status == 'R'){
+	 		$st = 'Rental';
 		}
 		return $st;
 	}

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-20 16:09:12
+/* Smarty version 3.1.29, created on 2018-04-21 15:18:34
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_billing.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad9c35056ff41_71571608',
+  'unifunc' => 'content_5adb08f259cee9_48814956',
   'file_dependency' => 
   array (
     'd8a63d00289983df6f87731a049337bc9705e315' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_billing.tpl',
-      1 => 1524220750,
+      1 => 1524304104,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad9c35056ff41_71571608 ($_smarty_tpl) {
+function content_5adb08f259cee9_48814956 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -93,7 +93,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " id="keyword" autocomplete="off" placeholder="Search here..." type="text"/>
 			    <?php echo smarty_function_html_options(array('name'=>'hw_type','class'=>"input-medium",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus",'options'=>$_smarty_tpl->tpl_vars['hw_type_data']->value,'selected'=>$_smarty_tpl->tpl_vars['hw_type']->value),$_smarty_tpl);?>
 
-				<?php echo smarty_function_html_options(array('name'=>'rental_types','class'=>"input-medium",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus1",'options'=>$_smarty_tpl->tpl_vars['type']->value,'selected'=>$_smarty_tpl->tpl_vars['rental_types']->value),$_smarty_tpl);?>
+				<?php echo smarty_function_html_options(array('name'=>'bill_types','class'=>"input-medium",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus1",'options'=>$_smarty_tpl->tpl_vars['billingType']->value,'selected'=>$_smarty_tpl->tpl_vars['bill_types']->value),$_smarty_tpl);?>
 
 	          <input name="f_date" value="<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 " class="input-small datepick" placeholder="Billing From" type="text" id="HrEmployeeDob"/> 
@@ -101,8 +101,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="input-small datepick" placeholder="Billing To" type="text" id="HrEmployeeDob"/> 
 		       <input type="submit" value="Search" class="btn btn-primary" style="margin-bottom:9px;margin-left:4px;">
              <a href="list_billing.php"><button style="margin-bottom:9px;margin-left:4px;" type="button" val="list_billing.php" class="jsRedirect btn btn-primary"><i class="icon-refresh"></i> Reset</button></a>
-             <!--a href="add_hardware_details.php"><button type="button" val="add_hardware_details.php" class="jsRedirect btn btn-primary" style="float:right"><i class="icon-plus"></i> Add Hardware</button></a-->
-			 
+
 			 <div class="btn-group" style="margin-bottom:9px;margin-left:4px;" >
 												<a href="add_billing_hardware_details.php"  class="btn btn-primary"><i class="icon-plus"></i> Add Billing </a>
 											
@@ -112,12 +111,12 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
              <?php if (!$_smarty_tpl->tpl_vars['ALERT_MSG']->value) {?> 
              <a href="list_billing.php?action=export&keyword=<?php echo $_POST['keyword'];?>
 &hw_type=<?php echo $_POST['hw_type'];?>
-&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
+&bill_types=<?php echo $_POST['bill_types'];?>
 &f_date=<?php echo $_POST['f_date'];?>
 &t_date=<?php echo $_POST['t_date'];?>
 "><button type="button" val="list_hardware.php?action=export&keyword=<?php echo $_POST['keyword'];?>
 &hw_type=<?php echo $_POST['hw_type'];?>
-&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
+&bill_types=<?php echo $_POST['bill_types'];?>
 &f_date=<?php echo $_POST['f_date'];?>
 &t_date=<?php echo $_POST['t_date'];?>
 " class="jsRedirect btn btn-primary" style="float:right;margin-right:20px;"><i class="icon-reply"></i> Export</button></a>	
@@ -126,42 +125,43 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 				<table class="table table-hover table-nomargin table-bordered usertable dataTable">
 					<thead>
 						<tr>
-							<th width="80">
-										<a href="list_billing.php?field=hardware_type&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+						<th width="80">
+										<a href="list_billing.php?field=type&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
-&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
+&bill_types=<?php echo $_smarty_tpl->tpl_vars['bill_types']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_hardware_type']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_type']->value;?>
 ">Type</a></th>
+								
+							<th width="80">
+										<a href="list_billing.php?field=hw_type&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+&page=<?php echo $_GET['page'];?>
+&keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
+&bill_types=<?php echo $_smarty_tpl->tpl_vars['bill_types']->value;?>
+&f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
+&t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_hw_type']->value;?>
+">Billing Type</a></th>
 										<th width="80">
 											<a href="list_billing.php?field=brand&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
-&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
+&bill_types=<?php echo $_smarty_tpl->tpl_vars['bill_types']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_brand']->value;?>
 ">Brand</a></th>		
 										<th width="80">
-											<a href="list_billing.php?field=model_id&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
-&page=<?php echo $_GET['page'];?>
-&keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
-&hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
-&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
-&f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
-&t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_model_id']->value;?>
-">Model Id</a></th>
-										<th width="80">
 											<a href="list_billing.php?field=inventory_no&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
-&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
+&bill_types=<?php echo $_smarty_tpl->tpl_vars['bill_types']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_inventory_no']->value;?>
@@ -171,62 +171,52 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
-&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
+&bill_types=<?php echo $_smarty_tpl->tpl_vars['bill_types']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_location']->value;?>
 ">Location</a></th>
-										<th width="80">
-											<a href="list_billing.php?field=asset_desc&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
-&page=<?php echo $_GET['page'];?>
-&keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
-&hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
-&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
-&f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
-&t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_asset_desc']->value;?>
-">Asset</a></th>
 										
 										<th width="80">
-											<a href="list_billing.php?field=asset_desc&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+											<a href="list_billing.php?field=cost&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
-&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
+&bill_types=<?php echo $_smarty_tpl->tpl_vars['bill_types']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_asset_desc']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_cost']->value;?>
 ">Billing amount</a></th>
 										
 										<th width="80">
-											<a href="list_billing.php?field=validity&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+											<a href="list_billing.php?field=billing_date&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
-&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
+&bill_types=<?php echo $_smarty_tpl->tpl_vars['bill_types']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_validity']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_billing_date']->value;?>
 ">Billing Date</a></th>																				
 										<th width="80">
-											<a href="list_billing.php?field=vendor&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+											<a href="list_billing.php?field=vendor_company&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
-&hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
+&bill_types=<?php echo $_smarty_tpl->tpl_vars['bill_types']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_vendor']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_vendor_company']->value;?>
 ">Vendor</a></th>																			
 										<th width="60">										
-										<a href="list_billing.php?field=created&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+										<a href="list_billing.php?field=created_date&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
-&sw_type=<?php echo $_smarty_tpl->tpl_vars['sw_type']->value;?>
-&sw_status=<?php echo $_smarty_tpl->tpl_vars['sw_status']->value;?>
+&hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
+&bill_types=<?php echo $_smarty_tpl->tpl_vars['bill_types']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_created']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_created_date']->value;?>
 ">Created</a></th>										
 																													
 										<th width="100">Options</th>
@@ -251,24 +241,22 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 						
 							 <?php if ($_smarty_tpl->tpl_vars['item']->value['type']) {?>		
 								<tr>
+									
 									 <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['type']);?>
- <br>
-									 </td>
+</td>
+									 <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['hw_type']);?>
+</td>
 		        					 <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['brand']);?>
 </td> 
-		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['model_id']);?>
-</td> 	
 				                <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['inventory_no']);?>
 </td>
 		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['location']);?>
-</td> 
-		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['asset_desc']);?>
 </td> 
 							  <td><?php echo $_smarty_tpl->tpl_vars['item']->value['cost'];?>
 </td> 
 		                      <td><?php echo $_smarty_tpl->tpl_vars['item']->value['billing_date'];?>
 </td> 
-		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['vendor_name']);?>
+		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['vendor_company']);?>
 </td> 
 		                      <td><?php echo $_smarty_tpl->tpl_vars['item']->value['created_date'];?>
 </td>
@@ -304,7 +292,7 @@ $_smarty_tpl->tpl_vars['key'] = $__foreach_item_0_saved_key;
 														
 						</div>	
 					 </div>
-					 <input type="hidden" id="page" value="list_hardware">
+					 <input type="hidden" id="page" value="list_billing_hardware">
 					</form>						
 				 </div>
 				

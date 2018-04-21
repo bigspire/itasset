@@ -163,6 +163,7 @@ try{
 	}
 	$data[$i]['status_cls'] = $fun->status_cls($obj['status']);
 	$data[$i]['is_rental_hw'] = $obj['is_rental'] == 'Y' ? 'Rental' : 'New';
+	$data[$i]['is_rental_status'] = $obj['is_rental'] == 'Y' ? 'Yes' : 'No';
 	$data[$i]['validity_to'] = $fun->it_software_created_date($obj['validity_to']);
  	$data[$i]['created_date'] = $fun->it_software_created_date($obj['created_date']);
  	$data[$i]['modified_date'] = $fun->it_software_created_date($obj['modified_date']);
@@ -177,9 +178,9 @@ try{
 		include('classes/class.excel.php');
 		$excelObj = new libExcel();
 		// function to print the excel header
-      $excelObj->printHeader($header = array('Type','Brand','Model Id','Inventory No','Location','Asset Description','Validity','Vendor','Created Date','Modified Date','Status') ,$col = array('A','B','C','D','E','F','G','H','I','J','K'));  
+      $excelObj->printHeader($header = array('Type','Is Rental','Brand','Model Id','Inventory No','Location','Asset Description','Validity','Vendor','Created Date','Modified Date','Status') ,$col = array('A','B','C','D','E','F','G','H','I','J','K','L'));  
 		// function to print the excel data
-		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J','K'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','validity_to','vendor_name','created_date','modified_date','status'),'Hardwares_'.$current_date);
+		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J','K','L'), $field = array('type','is_rental_status','brand','model_id','inventory_no','location','asset_desc','validity_to','vendor_name','created_date','modified_date','status'),'Hardwares_'.$current_date);
 	}
 	// assign software status into array 
 	$type = array('' => 'All Status', '1' => 'Active', '0' => 'Inactive');
