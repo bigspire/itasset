@@ -269,7 +269,7 @@ if(!empty($_POST)){
 		$invent =  $inv_details[0]; 
 		$h_brand =  $inv_details[1];
 		// query to check whether it is exist or not. 
-		$query = "CALL it_check_assign_inventory_no_exist('0','".$invent."')";
+		$query = "CALL it_check_assign_inventory_no_exist('$getid','".$invent."')";
 		try{
 			// calling mysql exe_query function
 			if(!$result = $mysql->execute_query($query)){ 
@@ -285,7 +285,7 @@ if(!empty($_POST)){
 		}
 	
 		if($row['total'] != '0'){
-				$msg = "Inventory no already exists";
+				$msg = "Inventory no already assigned";
 				$er[$i][$inventoryErr] = $msg;
 				$smarty->assign('EXIST_MSG',$msg); 
 		}
