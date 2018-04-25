@@ -72,12 +72,12 @@
 								<a href="list_approve_scrap_hardware.php?field=asset_desc&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Asset Description</a></th>
 							
 								<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=status&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Status</a></th>
+								<a href="list_approve_scrap_hardware.php?field=status&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_status}">Status</a></th>
 								
 								<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=created_date&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created_date}">Created Date</a></th>
+								<a href="list_approve_scrap_hardware.php?field=scrap_created&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_scrap_created}">Created Date</a></th>
 									<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=created_by&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created_date}">Created By</a></th>
+								<a href="list_approve_scrap_hardware.php?field=created_by&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created_by}">Created By</a></th>
 							<th width="100">Options</th>
 				      </tr>
 				  </thead>

@@ -158,7 +158,7 @@ try{
  	$data[] = $obj;
  	$data[$i]['subscription'] =  $fun->it_software_subscription($obj['subscription']);
  	$data[$i]['status'] = $fun->it_software_status($obj['status']);
-	if($obj['scrap_hw_type'] != ''){
+	if($obj['scrap_hw_type'] != '' and $obj['scrap_status'] != 'R'){
 		$data[$i]['scrap_hw_type'] = '['.$fun->it_scrap_hw($obj['scrap_hw_type']).']';
 	}
 	$data[$i]['status_cls'] = $fun->status_cls($obj['status']);

@@ -85,8 +85,8 @@ try{
 }
 // set the condition to check ascending or descending order		
 $order = ($_GET['order'] == 'desc') ? 'asc' :  'desc';	
-$sort_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','created_date');
-$org_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','scrap_created');
+$sort_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','scrap_created','status','created_by');
+$org_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','scrap_created','status','created_by');
 
 // to set the sorting image
 foreach($sort_fields as $key => $h_field){

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-16 17:09:37
+/* Smarty version 3.1.29, created on 2018-04-25 11:37:06
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_approve_scrap_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad48b79060fc1_72397452',
+  'unifunc' => 'content_5ae01b0a1a9190_86606740',
   'file_dependency' => 
   array (
     'f364ac4afa2b5cd94d002109ef7f46635b619a38' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_approve_scrap_hardware.tpl',
-      1 => 1523876664,
+      1 => 1524636414,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad48b79060fc1_72397452 ($_smarty_tpl) {
+function content_5ae01b0a1a9190_86606740 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -165,17 +165,17 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_asset_desc']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_status']->value;?>
 ">Status</a></th>
 								
 								<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=created_date&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+								<a href="list_approve_scrap_hardware.php?field=scrap_created&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_created_date']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_scrap_created']->value;?>
 ">Created Date</a></th>
 									<th width="200">
 								<a href="list_approve_scrap_hardware.php?field=created_by&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
@@ -184,7 +184,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_created_date']->value;?>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_created_by']->value;?>
 ">Created By</a></th>
 							<th width="100">Options</th>
 				      </tr>

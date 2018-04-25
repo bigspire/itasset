@@ -138,7 +138,7 @@
 		                      <td>{$item.modified_date}</td>
 									 <td style="text-align:center"><span class='label label-{$item.status_cls}'>
 									 <a href='#' rel='tooltip' data-original-title = {$item.status}>{$item.status}
-									 </a></span><br><span style="color:#ff0000;font-size:11px;">{$item.scrap_hw_type}</span></td>
+									 </a></span><br><span style="color:#ff0000;font-size:11px;">{if $item.scrap_status neq 'R'}{$item.scrap_hw_type}{/if}</span></td>
 									 <td class='hidden-480'>
 								
 								{if $item.scrap_id eq '' &&  $item.is_rental neq 'Y'}
