@@ -190,6 +190,7 @@ $paging->posturl($post_url);
 // assign smarty variables here
 $smarty->assign('page_links',$paging->print_link_frontend());
 $smarty->assign('type', $type);
+$smarty->assign('bill_types', $bill_types);
 $smarty->assign('hw_status', $hw_status);
 $smarty->assign('hw_type', $hw_type);
 $smarty->assign('data', $data);
