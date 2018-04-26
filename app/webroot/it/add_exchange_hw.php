@@ -321,7 +321,7 @@ if(!empty($_POST)){
 			if(!empty($last_id)){
 				// send mail to admin
 				$sub = 'Hardware details Received From '.$admin_name;
-				$msg = $content->get_scrap_hw_mail($_POST,$director_name,$admin_name);
+				$msg = $content->get_approve_scrap_hwmail_details($_POST,$director_name,$admin_name);
 				$mailer->send_mail($sub,$msg,$admin_name,$admin_email,$director_name,$email_address ,'','');
 				$suc = '1';
 			}	

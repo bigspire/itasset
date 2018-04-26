@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-25 12:31:46
+/* Smarty version 3.1.29, created on 2018-04-26 17:28:44
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ae027dab26ed4_83317666',
+  'unifunc' => 'content_5ae1bef4b3adf0_38706704',
   'file_dependency' => 
   array (
     '368d71be8341817b155ac32d10bab46c9d264be9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_hardware.tpl',
-      1 => 1524639703,
+      1 => 1524743917,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ae027dab26ed4_83317666 ($_smarty_tpl) {
+function content_5ae1bef4b3adf0_38706704 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -330,8 +330,8 @@ echo $_smarty_tpl->tpl_vars['item']->value['scrap_hw_type'];
 
 											<a href="view_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 " class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
-									 
-											<?php if ($_smarty_tpl->tpl_vars['item']->value['scrap_id'] == '') {?>
+											
+											<?php if ($_smarty_tpl->tpl_vars['item']->value['scrap_id'] == '' || ($_smarty_tpl->tpl_vars['item']->value['scrap_id'] != '' && $_smarty_tpl->tpl_vars['item']->value['scrap_status'] == 'R')) {?>
 									  <a href="edit_hardware_details.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 &inv_id=<?php echo $_smarty_tpl->tpl_vars['item']->value['invid'];?>
 " class="btn" rel="tooltip" title="Edit"><i class="icon-edit"></i></a>

@@ -161,6 +161,7 @@ try{
 	if($obj['scrap_hw_type'] != '' and $obj['scrap_status'] != 'R'){
 		$data[$i]['scrap_hw_type'] = '['.$fun->it_scrap_hw($obj['scrap_hw_type']).']';
 	}
+	$data[$i]['scrap_status'] = $obj['scrap_status'];
 	$data[$i]['status_cls'] = $fun->status_cls($obj['status']);
 	$data[$i]['is_rental_hw'] = $obj['is_rental'] == 'Y' ? 'Rental' : 'New';
 	$data[$i]['is_rental_status'] = $obj['is_rental'] == 'Y' ? 'Yes' : 'No';

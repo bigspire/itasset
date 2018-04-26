@@ -157,8 +157,8 @@
 								{/if}			
 
 											<a href="view_hardware.php?id={$item.id}" class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
-									 
-											{if $item.scrap_id eq ''}
+											
+											{if $item.scrap_id eq '' or ($item.scrap_id neq '' && $item.scrap_status eq 'R')}
 									  <a href="edit_hardware_details.php?id={$item.id}&inv_id={$item.invid}" class="btn" rel="tooltip" title="Edit"><i class="icon-edit"></i></a>
 							<a href="delete_hardware.php?id={$item.invid}&page={$smarty.get.page}" name="21" onclick="return deletefunction()" class="btn delRec" rel="tooltip" title="Delete"><i class="icon-remove"></i></a>  
 							{/if}
