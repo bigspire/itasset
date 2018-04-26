@@ -218,7 +218,7 @@ class HomeController extends AppController {
 		'110','111','112','118','114','119'), 'app_roles_id' => $this->Session->read('USER.Login.app_roles_id')),	'fields' => array('Module.module_name')));
 		$this->set('IT_COUNT', count($it_modules));
 		
-		$it_assign_count = $this->Home->get_it_assign_count($this->Session->read('USER.Login.app_roles_id'));
+		$it_assign_count = $this->Home->get_it_assign_count($this->Session->read('USER.Login.id'));
 		$this->set('IT_ASSIGN_COUNT', $it_assign_count);
 
 		
