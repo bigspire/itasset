@@ -24,7 +24,7 @@ include 'include/get_modules.php';
 
 // redirecting to dashboard if the user don't have the permission to this module
 if(empty($_SESSION['ScrapHardware'])){
-	header('Location:dashboard.php?access=Access denied!');
+	header('Location:../home/?access=Access denied!');
 }
 
 // get record id   

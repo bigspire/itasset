@@ -157,9 +157,10 @@
 <div class="span6">		
 
 	<div class="control-group">
-											<label for="password" class="control-label">Rented Date </label>
+											<label for="password" class="control-label">Rented Date <span class="red_star"> *</span></label>
 											<div class="controls field">
 												<input name="purchase_date" class="input-medium datepick" placeholder="" type="text" id="purchase_date" value="{$smarty.session['h'].purchase_date}"/>  
+											<div class="errorMsg error">{$purchase_dateErr}</div>
 											</div>
 										</div>
 

@@ -34,7 +34,7 @@ if($roleid != '21'){
 if(empty($_SESSION['Software'])){
 	//start session 
 	session_start();
-	header('Location:dashboard.php?access=Access denied!');
+	header('Location:../home/?access=Access denied!');
 } 
 
 	

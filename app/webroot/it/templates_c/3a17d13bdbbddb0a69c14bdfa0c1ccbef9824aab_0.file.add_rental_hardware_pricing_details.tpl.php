@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-27 15:37:22
-  from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\edit_rental_hardware_pricing_details.tpl" */
+/* Smarty version 3.1.29, created on 2018-04-27 15:34:52
+  from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\add_rental_hardware_pricing_details.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ae2f65aa45f64_08218028',
+  'unifunc' => 'content_5ae2f5c4d5cf53_94052975',
   'file_dependency' => 
   array (
-    'eaca37708990f8bf036699d1bd786fdac392cb18' => 
+    '3a17d13bdbbddb0a69c14bdfa0c1ccbef9824aab' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\edit_rental_hardware_pricing_details.tpl',
-      1 => 1524823640,
+      0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\add_rental_hardware_pricing_details.tpl',
+      1 => 1524823490,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ae2f65aa45f64_08218028 ($_smarty_tpl) {
+function content_5ae2f5c4d5cf53_94052975 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -43,7 +43,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 			<div class="container-fluid">
 				<div class="page-header">
 					<div class="pull-left">
-						<h1>Edit Hardware</h1>
+						<h1>Create Hardware</h1>
 					</div>
 					
 				</div>
@@ -60,9 +60,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 						</li>
 						
 						<li>
-							<a href="edit_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
-&inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
-">Edit Hardware</a>
+							<a href="add_hardware_pricing_details.php">Add Hardware</a>
 						</li>
 					</ul>
 					
@@ -76,9 +74,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 					
 					<div class="span12">
 					
-								<form action="edit_rental_hardware_pricing_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
-&inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
-" method="POST" class="form-horizontal form-column form-bordered form-wizard ui-formwizard" enctype="multipart/form-data" id="formID" novalidate="novalidate">
+								<form action="add_rental_hardware_pricing_details.php" method="POST" class="form-horizontal form-column form-bordered form-wizard ui-formwizard"  enctype="multipart/form-data" id="formID" novalidate="novalidate">
 									<div class="step ui-formwizard-content" id="firstStep" style="width:99%;margin-top:20px;">
 										<ul class="wizard-steps steps-4">
 												<li class="">
@@ -88,9 +84,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 													<span class="circle">
 													</span>
 													<span class="description">
-													<a href="edit_hardware_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
-&inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
-">Hardware Details</a> 		
+																				Hardware Details 		
 																		</span>
 												</div>
 											</li>
@@ -104,9 +98,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 														<span class="active"></span>
 													</span>
 													<span class="description">
-													<a href="edit_hardware_inventory_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
-&inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
-">Inventory Details</a> 		
+																						Inventory Details 		
 																				</span>
 												</div>
 											</li>
@@ -130,9 +122,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 													<span class="circle">
 													</span>
 													<span class="description">
-													<a href="edit_hardware_vendor_details.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
-&inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
-">Vendor Details</a> 		
+																						Vendor Details 		
 																				</span>
 												</div>
 											</li>
@@ -143,16 +133,15 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 													<span class="circle">
 													</span>
 													<span class="description">
-													<a href="edit_hardware_confirmation.php?id=<?php echo $_smarty_tpl->tpl_vars['getid']->value;?>
-&inv_id=<?php echo $_smarty_tpl->tpl_vars['invid']->value;?>
-">Confirm</a> 		
+																						Confirm 		
 																				</span>
 												</div>
 											</li>
 																					</ul>
 									</div>
 								
-							
+									
+									
 						<div class="box">
 							<div class="box-title">
 								<h3><i class="icon-list"></i> Pricing Details</h3>
@@ -176,9 +165,9 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 echo $_smarty_tpl->tpl_vars['amountE']->value;?>
 </div>
 <?php echo smarty_function_html_options(array('name'=>'currency_type','class'=>"input-small",'placeholder'=>'','style'=>"clear:left",'id'=>"currency_type",'options'=>$_smarty_tpl->tpl_vars['currency_types']->value,'selected'=>$_SESSION['h']['currency_type']),$_smarty_tpl);?>
-																								
-													
-											<div class="errorMsg error"  style="margin-left:170px;"><?php echo $_smarty_tpl->tpl_vars['currency_typeErr']->value;?>
+											
+										
+										<div class="errorMsg error"  style="margin-left:170px;"><?php echo $_smarty_tpl->tpl_vars['currency_typeErr']->value;?>
 </div>
 											</div>
 										</div>
@@ -191,13 +180,12 @@ echo $_smarty_tpl->tpl_vars['amountE']->value;?>
 		
 <?php echo smarty_function_html_options(array('name'=>'rental_type','class'=>"input-xlarge",'placeholder'=>'','style'=>"clear:left",'id'=>"rental_type",'options'=>$_smarty_tpl->tpl_vars['rental_types']->value,'selected'=>$_SESSION['h']['rental_type']),$_smarty_tpl);?>
 	
-<div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['paid_byErr']->value;?>
+<div class="errorMsg error"><?php echo $_smarty_tpl->tpl_vars['rental_type_byErr']->value;?>
 </div>
 
 											</div>
-										</div>
-
-								
+										</div>								
+							
 									</div>
 									
 							
@@ -215,7 +203,6 @@ echo $_smarty_tpl->tpl_vars['amountE']->value;?>
 										</div>
 
 								
-								
 </div>
 
 
@@ -223,11 +210,13 @@ echo $_smarty_tpl->tpl_vars['amountE']->value;?>
 										
 							<div class="span12">
 										<div class="form-actions">
-										<input type="submit" id="submit_previous" class="btn" name="previous" value="Previous">
-											<input onclick="return validate_hpd()" type="submit" id="submit_next" name="next" value="Next" class="btn btn-primary">												
-<!--											<input type="submit" id="submit_next" name="next" value="Next" class="btn btn-primary">												-->
-											<input onclick="return validate_hpd()" type="submit" id="submit_confirm" name="confirm" value="Confirm" class="btn btn-primary">
-<!--											<input type="submit" id="submit_confirm" name="confirm" value="Confirm" class="btn btn-primary">-->
+											<input  type="submit" id="submit_previous" class="btn" id="submit_previous" name="previous" value="Previous">
+											<input type="submit" id="submit_next" name="next" value="Next" class="btn btn-primary">
+<!--											<input type="submit" id="submit_next" name="next" value="Next" class="btn btn-primary">-->
+											<?php if (!empty($_SESSION['h']['confirm_add'])) {?>  											
+									<input  type="submit" id="submit_confirm" name="confirm" value="Confirm" class="btn btn-primary">
+<!--										<input type="submit" id="submit_confirm" name="confirm" value="Confirm" class="btn btn-primary">-->
+											<?php }?>
 											<a href="list_hardware.php"><button type="button" val="list_hardware.php" class="jsRedirect btn regCancel" onclick="return cancelfunction()">Cancel</button></a>
 											
 										</div>

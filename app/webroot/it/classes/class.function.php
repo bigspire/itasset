@@ -74,7 +74,7 @@ class fun{
 	
 	// function to validate database it_software created_date field 
 	public function it_software_created_date($created_date){
-		if(($created_date != '') && ($created_date != '0000-00-00')){
+		if(($created_date != '') && ($created_date != '0000-00-00') && ($created_date != '0000-00-00 00:00:00')){
 			$c_d = date('d-M-Y', strtotime($created_date));
 			return $c_d;
 		}

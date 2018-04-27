@@ -24,7 +24,7 @@ if($roleid != '21'){
 } */
 // redirecting to dashboard if the user don't have the permission to this module
 if(empty($_SESSION['AssignAssset'])){
-	header('Location:dashboard.php?access=Access denied!');
+	header('Location:../home/?access=Access denied!');
 }
 // get record id   
 $id = $_GET['id'];
@@ -40,14 +40,22 @@ try{
 	if(!$result = $mysql->execute_query($query)){
 		throw new Exception('Problem in executing view page');
 	}
+	$i = '0';
 	// check record exists
 	if($result->num_rows){
 		// calling mysql fetch_result function
 		while($obj = $mysql->display_result($result)){
-			$smarty->assign('name', $obj['full_name']);
-			$smarty->assign('modified' , $fun->it_software_created_date($obj['modified_date']));
-			$smarty->assign('created' , $fun->it_software_created_date($obj['created_date']));
 			$data[] = $obj;
+			$smarty->assign('name', $obj['full_name']);
+			$smarty->assign('created' , $fun->it_software_created_date($obj['created_date']));
+			$data[$i]['accept_date'] = $fun->it_software_created_date($obj['accept_date']);
+			if($obj['accept'] == 'Y'){
+				$data[$i]['accept'] = 'Accepted';
+			}else{
+				$data[$i]['accept'] = 'Awaiting';
+			}
+			
+			$i++;
 		}
 	}else{
 		header('Location:page_error.php');

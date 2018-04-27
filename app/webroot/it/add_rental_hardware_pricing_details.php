@@ -38,12 +38,11 @@ if(!empty($_POST)){
 	}	
 	// Validating the required fields  
 	// array for printing correct field name in error message
-	$fieldtype = array('0', '1','0');		
+	$fieldtype = array('0', '1','0','0');		
 	// Actual fields
-	$actualfield = array('amount', 'rental type', 'currency type');	
+	$actualfield = array('amount', 'rental type', 'currency type', 'rented Date');	
 	// Validating the required fields  
-   $field = array('amount' => 'amountErr', 'rental_type' => 'rental_type_byErr', 
-   'currency_type' => 'currency_typeErr');
+   $field = array('amount' => 'amountErr', 'rental_type' => 'rental_type_byErr', 'currency_type' => 'currency_typeErr', 'purchase_date' => 'purchase_dateErr');
 	$j = 0;
 	foreach($field as $field => $er_var){ 
 		if($_POST[$field] == ''){

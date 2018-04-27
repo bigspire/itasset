@@ -27,7 +27,7 @@ if($roleid != '21'){
 } */
 // redirecting to dashboard if the user don't have the permission to this module
 if(empty($_SESSION['Software'])){
-	header('Location:dashboard.php?access=Access denied!');
+	header('Location:../home/?access=Access denied!');
 }
 
 // Selecting the record to edit

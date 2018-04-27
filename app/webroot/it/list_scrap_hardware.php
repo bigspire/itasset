@@ -28,7 +28,7 @@ include 'include/get_modules.php';
 if(empty($_SESSION['ScrapHardware'])){
 	//start session 
 	session_start();
-	header('Location:dashboard.php?access=Access denied!');
+	header('Location:../home/?access=Access denied!');
 }
 
 //unset session

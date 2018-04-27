@@ -29,7 +29,7 @@ if($roleid != '21'){
 if(empty($_SESSION['AssignAssset'])){
 	//start session 
 	session_start();
-	header('Location:dashboard.php?access=Access denied!');
+	header('Location:../home/?access=Access denied!');
 }
 //unset session
 unset($_SESSION['s']);
@@ -208,7 +208,12 @@ if(!empty($_GET['action'])){
 			$data_assigned[$i]['sw_type'] = $fun->upper_case_string($obj['sw_type']);
 			$data_assigned[$i]['edition'] = $fun->upper_case_string($obj['edition']);
 			$data_assigned[$i]['created_date'] = $fun->it_software_created_date($obj['created_date']);
-			$data_assigned[$i]['modified_date'] = $fun->it_software_created_date($obj['modified_date']);
+			$data_assigned[$i]['accept_date'] = $fun->it_software_created_date($obj['accept_date']);
+			if($obj['accept'] == 'Y'){
+				$data_assigned[$i]['accept'] = 'Accepted';
+			}else{
+				$data_assigned[$i]['accept'] = 'Awaiting';
+			}
 			$i++;
 		}
 		
@@ -220,17 +225,17 @@ if(!empty($_GET['action'])){
 			include('classes/class.excel.php');
 			$excelObj = new libExcel();
 			// function to print the excel header
-		  $excelObj->printHeader($header = array('Employee Name','Hardware Type','Brand','Inventory No','Asset Description','Created','Modified') ,$col = array('A','B','C','D','E','F','G'));  
+		  $excelObj->printHeader($header = array('Employee Name','Hardware Type','Brand','Inventory No','Asset Description','Status','Verified Date','Created') ,$col = array('A','B','C','D','E','F','G','H'));  
 			// function to print the excel data
-			$excelObj->printCell($data_assigned, $count_total,$col = array('A','B','C','D','E','F','G'), $field = array('emp_name','hw_type','brand','inventory_no','asset_desc','created_date','modified_date'),'Assigned HW Assets_'.$current_date);
+			$excelObj->printCell($data_assigned, $count_total,$col = array('A','B','C','D','E','F','G','H'), $field = array('emp_name','hw_type','brand','inventory_no','asset_desc','accept','accept_date','created_date'),'Assigned HW Assets_'.$current_date);
 			die;
 		}else if($_GET['action'] == 'S'){
 			include('classes/class.excel.php');
 			$excelObj = new libExcel();
 			// function to print the excel header
-		  $excelObj->printHeader($header = array('Employee Name','Software Type','Brand','Edition','Created','Modified') ,$col = array('A','B','C','D','E','F'));  
+		  $excelObj->printHeader($header = array('Employee Name','Software Type','Brand','Edition','Status','Verified Date','Created') ,$col = array('A','B','C','D','E','F','G'));  
 			// function to print the excel data
-			$excelObj->printCell($data_assigned, $count_total,$col = array('A','B','C','D','E','F'), $field = array('emp_name','sw_type','brand','edition','created_date','modified_date'),'Assigned SW Assets_'.$current_date);
+			$excelObj->printCell($data_assigned, $count_total,$col = array('A','B','C','D','E','F','G'), $field = array('emp_name','sw_type','brand','edition','accept','accept_date','created_date'),'Assigned SW Assets_'.$current_date);
 			die;
 		}
 		// free the memory

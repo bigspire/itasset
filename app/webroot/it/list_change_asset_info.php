@@ -29,7 +29,7 @@ if($roleid != '21'){
 if(empty($_SESSION['ChangeAssetInfo'])){
 	// start session 
 	session_start();
-	header('Location:dashboard.php?access=Access denied!');
+	header('Location:../home/?access=Access denied!');
 }
 //unset session
 unset($_SESSION['s']);

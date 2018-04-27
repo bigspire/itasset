@@ -29,7 +29,7 @@ if($roleid != '21'){
 // redirecting to dashboard if the user don't have the permission to this module
 if(empty($_SESSION['SettingsLoginType'])){
 		session_start();
-	header('Location:dashboard.php?access=Access denied!');
+	header('Location:../home/?access=Access denied!');
 }
 //unset session
 unset($_SESSION['s']);

@@ -53,20 +53,13 @@
 									</div>
 									
 									<div class="control-group">
-											<label for="textfield" class="control-label">Created</label>
+											<label for="textfield" class="control-label">Last Modified</label>
 											
 											<div class="controls">
 											  {$created}
 										   </div>
 									</div>
-									
-									<div class="control-group">
-											<label for="textfield" class="control-label">Modified</label>
-											
-											<div class="controls">
-											  {$modified}
-										   </div>
-									</div>
+
 								</div>
 								</div>
 							</div>		
@@ -91,7 +84,13 @@
 											 {$item.brand}
 											</div>
 										</div>	
-
+										
+										<div class="control-group">
+											<label for="textfield" class="control-label">Status  </label>
+											<div class="controls">
+											 {$item.accept}
+											</div>
+										</div>	
 
 										
 									</div>
@@ -110,7 +109,12 @@
 											{if $item.type eq 'S'} {$item.edition} {else}{$item.inventory_no} {if $item.asset_desc} ({$item.asset_desc}){/if}{/if} 
 											</div>
 										</div>	
-										
+										<div class="control-group">
+											<label for="textfield" class="control-label">Verified Date</label>
+											<div class="controls">
+											{$item.accept_date}
+											</div>
+										</div>	
 									</div>	
 										
 								</div>

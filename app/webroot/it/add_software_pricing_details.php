@@ -18,11 +18,11 @@ include('classes/class.function.php');
 include 'include/menu_count.php';
 // include permission file
 include 'include/get_modules.php';
-
+/*
 // redirect to error page if the user is not it admin
 if($roleid != '21'){
 	header('Location:'.IT_DIR.'home/');
-}
+} */
 // Access next page only after finishing previous step.
 if($_SESSION['s']['add_software_pricing_details'] != 'next'){
 	header('Location:page_error.php');

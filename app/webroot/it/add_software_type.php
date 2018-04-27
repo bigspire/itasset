@@ -21,12 +21,12 @@ include 'include/menu_count.php';
 include 'include/get_modules.php';
 
 // redirect to error page if the user is not it admin
-if($roleid != '21'){
+/* if($roleid != '21'){
 	header('Location:'.IT_DIR.'home/');
-}
+} */
 // redirecting to dashboard if the user don't have the permission to this module
 if(empty($_SESSION['SettingsSoftwareType'])){
-	header('Location:dashboard.php?access=Access denied!');
+	header('Location:../home/?access=Access denied!');
 }
 
 if(!empty($_POST)){

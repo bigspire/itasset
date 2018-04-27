@@ -25,7 +25,7 @@ include('classes/class.content.php');
 
 // redirecting to dashboard if the user don't have the permission to this module
 if(empty($_SESSION['Billing'])){
-	header('Location:dashboard.php?access=Access denied!');
+	header('Location:../home/?access=Access denied!');
 }
 
 if(!empty($_POST)){
