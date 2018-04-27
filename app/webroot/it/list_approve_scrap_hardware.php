@@ -85,8 +85,8 @@ try{
 }
 // set the condition to check ascending or descending order		
 $order = ($_GET['order'] == 'desc') ? 'asc' :  'desc';	
-$sort_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','scrap_created','status','created_by');
-$org_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','scrap_created','status','created_by');
+$sort_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','approve_date','status','created_by');
+$org_fields = array('1' => 'type','brand','model_id','inventory_no','location','asset_desc','approve_date','status','created_by');
 
 // to set the sorting image
 foreach($sort_fields as $key => $h_field){
@@ -140,7 +140,7 @@ try{
 	while($obj = $mysql->display_result($result))
 	{
  		$data[] = $obj;
- 		$data[$i]['scrap_created'] = $fun->it_software_created_date($obj['scrap_created']);
+ 		$data[$i]['approve_date'] = $fun->it_software_created_date($obj['approve_date']);
 		$data[$i]['status'] = $fun->it_scrap_hw_status($obj['status']);
 		$data[$i]['scrap_status'] = $obj['status'];
 		$data[$i]['status_cls'] = $fun->approval_status_cls($obj['status']);
@@ -157,9 +157,9 @@ try{
 		include('classes/class.excel.php');
 		$excelObj = new libExcel();
 		// function to print the excel header
-      $excelObj->printHeader($header = array('Title','Brand','Model Id','Inventory No','Location','Asset Description','Created Date') ,$col = array('A','B','C','D','E','F','G'));  
+      $excelObj->printHeader($header = array('Hardware Type','Type','Brand','Model Id','Inventory No','Location','Asset Description','Approval Date') ,$col = array('A','B','C','D','E','F','G','H'));  
 		// function to print the excel data
-		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G'), $field = array('type','brand','model_id','inventory_no','location','asset_desc','scrap_created'),'Approve Scrap Hardware_'.$current_date);
+		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H'), $field = array('type','hw_type','brand','model_id','inventory_no','location','asset_desc','approve_date'),'Approve Scrap Hardware_'.$current_date);
 		die;
 	}
 

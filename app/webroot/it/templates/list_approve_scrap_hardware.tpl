@@ -47,37 +47,37 @@
 				 <input name="keyword" value="{$keyword}" id="keyword" autocomplete="off" placeholder="Search here..." type="text"/>
 			    {html_options name='hw_type' class="input-medium" placeholder="" style="clear:left" id="HrEmployeeRecStatus" options=$hw_type_data selected=$hw_type}
 			     {html_options name='type' class="input-medium" placeholder="" style="clear:left" id="HrEmployeeRecStatus" options=$type_data selected=$type}
-				<input name="f_date" value="{$f_date}" class="input-small datepick" placeholder="From Date" type="text" id="HrEmployeeDob"/> 
-	          <input name="t_date" value="{$t_date}" class="input-small datepick" placeholder="To Date" type="text" id="HrEmployeeDob"/> 
+				<input name="f_date" value="{$f_date}" class="input-small datepick" placeholder="Approval From" type="text" id="HrEmployeeDob"/> 
+	          <input name="t_date" value="{$t_date}" class="input-small datepick" placeholder="Approval To" type="text" id="HrEmployeeDob"/> 
 		       <input type="submit" value="Search" class="btn btn-primary" style="margin-bottom:9px;margin-left:4px;">
              <a href="list_approve_scrap_hardware.php"><button style="margin-bottom:9px;margin-left:4px;" type="button" val="list_approve_scrap_hardware.php" class="jsRedirect btn btn-primary"><i class="icon-refresh"></i> Reset</button></a>
              {if !$ALERT_MSG} 
-             <a href="list_approve_scrap_hardware.php?action=export&keyword={$smarty.post.keyword}&hw_type={$smarty.post.hw_type}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}"><button type="button" val="list_scrap_hardware.php?action=export&keyword={$smarty.post.keyword}&hw_type={$smarty.post.hw_type}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}" class="jsRedirect btn btn-primary" style="float:right;margin-right:20px;"><i class="icon-reply"></i> Export</button></a>			
+             <a href="list_approve_scrap_hardware.php?action=export&keyword={$smarty.post.keyword}&type={$smarty.post.type}&hw_type={$smarty.post.hw_type}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}"><button type="button" val="list_scrap_hardware.php?action=export&keyword={$smarty.post.keyword}&type={$smarty.post.type}&hw_type={$smarty.post.hw_type}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}" class="jsRedirect btn btn-primary" style="float:right;margin-right:20px;"><i class="icon-reply"></i> Export</button></a>			
             {/if}
             </div>			
 				<table class="table table-hover table-nomargin table-bordered usertable dataTable">
 					<thead>
 						<tr>	
 							<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_type}">Hardware Type</a></th>
+								<a href="list_approve_scrap_hardware.php?field=type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&type={$type}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_type}">Hardware Type</a></th>
 							<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=brand&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_brand}">Brand</a></th>		
+								<a href="list_approve_scrap_hardware.php?field=brand&order={$order}&page={$smarty.get.page}&keyword={$keyword}&type={$type}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_brand}">Brand</a></th>		
 							<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=model_id&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_model_id}">Model Id</a></th>
+								<a href="list_approve_scrap_hardware.php?field=model_id&order={$order}&page={$smarty.get.page}&keyword={$keyword}&type={$type}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_model_id}">Model Id</a></th>
 							<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=inventory_no&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_inventory_no}">Inventory No</a></th>
+								<a href="list_approve_scrap_hardware.php?field=inventory_no&order={$order}&page={$smarty.get.page}&keyword={$keyword}&type={$type}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_inventory_no}">Inventory No</a></th>
 							<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=location&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_location}">Location</a></th>
+								<a href="list_approve_scrap_hardware.php?field=location&order={$order}&page={$smarty.get.page}&keyword={$keyword}&type={$type}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_location}">Location</a></th>
 							<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=asset_desc&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Asset Description</a></th>
+								<a href="list_approve_scrap_hardware.php?field=asset_desc&order={$order}&page={$smarty.get.page}&keyword={$keyword}&type={$type}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_asset_desc}">Asset Description</a></th>
 							
 								<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=status&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_status}">Status</a></th>
+								<a href="list_approve_scrap_hardware.php?field=status&order={$order}&page={$smarty.get.page}&keyword={$keyword}&type={$type}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_status}">Status</a></th>
 								
 								<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=scrap_created&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_scrap_created}">Created Date</a></th>
+								<a href="list_approve_scrap_hardware.php?field=approve_date&order={$order}&page={$smarty.get.page}&keyword={$keyword}&type={$type}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_approve_date}">Approval Date</a></th>
 									<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=created_by&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created_by}">Created By</a></th>
+								<a href="list_approve_scrap_hardware.php?field=created_by&order={$order}&page={$smarty.get.page}&keyword={$keyword}&type={$type}&hw_type={$hw_type}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_created_by}">Created By</a></th>
 							<th width="100">Options</th>
 				      </tr>
 				  </thead>
@@ -101,7 +101,7 @@
 						</span><span style="color:#ff0000;font-size:11px;">{$item.status_msg}</span>
 						{/if}
 						</td>
-						<td>{$item.scrap_created}</td>
+						<td>{$item.approve_date}</td>
 						<td>{$item.created_by}</td>
 					   <!-- td class='hidden-480'>
 						<a href="view_approve_scrap_hardware.php?id={$item.id}" class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>

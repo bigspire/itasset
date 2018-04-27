@@ -44,8 +44,10 @@ try{
 		// calling mysql fetch_result function
 		while($obj = $mysql->display_result($result)){  
 			$data[] = $obj;
+			$data[$i]['approve_date'] = $fun->it_software_created_date($obj['approve_date']);
 			$data[$i]['created_date'] = $fun->it_software_created_date($obj['created_date']);
 			$data[$i]['paid_date'] = $fun->it_software_created_date($obj['paid_date']);
+			$data[$i]['paid_mode'] = $fun->it_software_paid_mode($obj['paid_mode']);
 			$data[$i]['purchase_date'] = $fun->it_software_created_date($obj['purchase_date']);
 			$data[$i]['validity_from'] = $fun->it_software_created_date($obj['validity_from']);
 			$data[$i]['validity_to'] = $fun->it_software_created_date($obj['validity_to']);

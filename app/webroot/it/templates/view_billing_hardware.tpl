@@ -58,7 +58,7 @@
 										<div class="control-group">
 											<label for="textfield" class="control-label">Amount  </label>
 											<div class="controls">
-											{$item.cost}
+											Rs. {$item.cost}
 													</div>
 										</div>
 

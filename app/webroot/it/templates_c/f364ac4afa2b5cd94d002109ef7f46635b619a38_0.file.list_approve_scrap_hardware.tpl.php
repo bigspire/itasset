@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-27 11:21:49
+/* Smarty version 3.1.29, created on 2018-04-27 12:44:31
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_approve_scrap_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ae2ba7598ce84_06208364',
+  'unifunc' => 'content_5ae2cdd79bd160_57205417',
   'file_dependency' => 
   array (
     'f364ac4afa2b5cd94d002109ef7f46635b619a38' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_approve_scrap_hardware.tpl',
-      1 => 1524808304,
+      1 => 1524813229,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ae2ba7598ce84_06208364 ($_smarty_tpl) {
+function content_5ae2cdd79bd160_57205417 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -83,17 +83,19 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 			     <?php echo smarty_function_html_options(array('name'=>'type','class'=>"input-medium",'placeholder'=>'','style'=>"clear:left",'id'=>"HrEmployeeRecStatus",'options'=>$_smarty_tpl->tpl_vars['type_data']->value,'selected'=>$_smarty_tpl->tpl_vars['type']->value),$_smarty_tpl);?>
 
 				<input name="f_date" value="<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
-" class="input-small datepick" placeholder="From Date" type="text" id="HrEmployeeDob"/> 
+" class="input-small datepick" placeholder="Approval From" type="text" id="HrEmployeeDob"/> 
 	          <input name="t_date" value="<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="input-small datepick" placeholder="To Date" type="text" id="HrEmployeeDob"/> 
+" class="input-small datepick" placeholder="Approval To" type="text" id="HrEmployeeDob"/> 
 		       <input type="submit" value="Search" class="btn btn-primary" style="margin-bottom:9px;margin-left:4px;">
              <a href="list_approve_scrap_hardware.php"><button style="margin-bottom:9px;margin-left:4px;" type="button" val="list_approve_scrap_hardware.php" class="jsRedirect btn btn-primary"><i class="icon-refresh"></i> Reset</button></a>
              <?php if (!$_smarty_tpl->tpl_vars['ALERT_MSG']->value) {?> 
              <a href="list_approve_scrap_hardware.php?action=export&keyword=<?php echo $_POST['keyword'];?>
+&type=<?php echo $_POST['type'];?>
 &hw_type=<?php echo $_POST['hw_type'];?>
 &f_date=<?php echo $_POST['f_date'];?>
 &t_date=<?php echo $_POST['t_date'];?>
 "><button type="button" val="list_scrap_hardware.php?action=export&keyword=<?php echo $_POST['keyword'];?>
+&type=<?php echo $_POST['type'];?>
 &hw_type=<?php echo $_POST['hw_type'];?>
 &f_date=<?php echo $_POST['f_date'];?>
 &t_date=<?php echo $_POST['t_date'];?>
@@ -107,6 +109,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 								<a href="list_approve_scrap_hardware.php?field=type&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&type=<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
@@ -116,6 +119,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 								<a href="list_approve_scrap_hardware.php?field=brand&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&type=<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
@@ -125,6 +129,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 								<a href="list_approve_scrap_hardware.php?field=model_id&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&type=<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
@@ -134,6 +139,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 								<a href="list_approve_scrap_hardware.php?field=inventory_no&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&type=<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
@@ -143,6 +149,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 								<a href="list_approve_scrap_hardware.php?field=location&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&type=<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
@@ -152,6 +159,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 								<a href="list_approve_scrap_hardware.php?field=asset_desc&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&type=<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
@@ -162,6 +170,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 								<a href="list_approve_scrap_hardware.php?field=status&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&type=<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
@@ -169,18 +178,20 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 ">Status</a></th>
 								
 								<th width="200">
-								<a href="list_approve_scrap_hardware.php?field=scrap_created&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
+								<a href="list_approve_scrap_hardware.php?field=approve_date&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&type=<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
-" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_scrap_created']->value;?>
-">Created Date</a></th>
+" class="<?php echo $_smarty_tpl->tpl_vars['sort_field_approve_date']->value;?>
+">Approval Date</a></th>
 									<th width="200">
 								<a href="list_approve_scrap_hardware.php?field=created_by&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+&type=<?php echo $_smarty_tpl->tpl_vars['type']->value;?>
 &hw_type=<?php echo $_smarty_tpl->tpl_vars['hw_type']->value;?>
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
@@ -233,7 +244,7 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 </span>
 						<?php }?>
 						</td>
-						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['scrap_created'];?>
+						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['approve_date'];?>
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['created_by'];?>
 </td>

@@ -46,7 +46,7 @@ class mailContent extends fun{
               	<td width="100">Type</td>
               	<td style="color:#2a2a2a;">{$type}</td>  
 				<td width="100">Amount </td>
-              	<td style="color:#2a2a2a;">{$form_data['cost']}</td>  
+              	<td style="color:#2a2a2a;">Rs. {$form_data['cost']}</td>  
             </tr>
 			<tr style="background:#f5f4f4;">
               	<td width="100">New Hardware Details </td>
@@ -118,7 +118,7 @@ EOD;
               	<td width="100">Type </td>
               	<td style="color:#2a2a2a;">{$hardware_type}</td>  
 				<td width="100">Amount </td>
-              	<td style="color:#2a2a2a;">{$form_data['amount']}</td> 
+              	<td style="color:#2a2a2a;">Rs. {$form_data['amount']}</td> 
             </tr>
 			<tr style="background:#f5f4f4;">
               	<td width="100">Payment Type </td>

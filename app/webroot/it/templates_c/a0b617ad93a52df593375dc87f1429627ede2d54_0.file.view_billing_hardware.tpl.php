@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-20 15:58:42
+/* Smarty version 3.1.29, created on 2018-04-27 12:11:31
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\view_billing_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ad9c0dac362b9_90891103',
+  'unifunc' => 'content_5ae2c61b41ead1_41872085',
   'file_dependency' => 
   array (
     'a0b617ad93a52df593375dc87f1429627ede2d54' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\view_billing_hardware.tpl',
-      1 => 1524220121,
+      1 => 1524811270,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ad9c0dac362b9_90891103 ($_smarty_tpl) {
+function content_5ae2c61b41ead1_41872085 ($_smarty_tpl) {
 ?>
 
 
@@ -102,7 +102,7 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 										<div class="control-group">
 											<label for="textfield" class="control-label">Amount  </label>
 											<div class="controls">
-											<?php echo $_smarty_tpl->tpl_vars['item']->value['cost'];?>
+											Rs. <?php echo $_smarty_tpl->tpl_vars['item']->value['cost'];?>
 
 													</div>
 										</div>

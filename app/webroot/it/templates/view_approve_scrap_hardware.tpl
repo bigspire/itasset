@@ -59,7 +59,12 @@
 												{$item.scrap_date}	
 											</div>
 										</div>
-										
+										<div class="control-group">
+											<label for="textfield" class="control-label">Approval Date </label>
+											<div class="controls">
+												{$item.approve_date}	
+											</div>
+										</div>
 									<div class="control-group">
 											<label for="textfield" class="control-label">Status </label>
 											<div class="controls">
@@ -123,7 +128,7 @@
 												{$item.scrap_date}	
 											</div>
 										</div>
-										
+									
 									<div class="control-group">
 											<label for="textfield" class="control-label">Status </label>
 											<div class="controls">
@@ -199,7 +204,7 @@
 												{$item.description}
 										</div>
 										</div>
-										<div class="control-group">
+										<!--div class="control-group">
 											<label for="textfield" class="control-label">Status </label>
 											<div class="controls">
                                   {if $item.status}
@@ -208,7 +213,7 @@
                                   Inactive
                                   {/if}
 											</div>
-										</div>
+										</div-->
 									</div>
 									
 								
@@ -301,7 +306,7 @@
 										<div class="control-group">
 											<label for="textfield" class="control-label">Amount </label>
 											<div class="controls">
-										{$item.currency} {$item.amount} 
+										Rs. {* $item.currency *} {$item.amount} 
 													</div>
 										</div>
 										
@@ -382,7 +387,20 @@
 												{$item.vendor_person}	
 											</div>
 										</div>
-									</div>	
+										
+											<div class="control-group">
+											<label for="textfield" class="control-label">City </label>
+											<div class="controls">
+												{$item.vendor_city}
+											</div>
+										</div>	
+									<div class="control-group">
+											<label for="textfield" class="control-label">Address </label>
+											<div class="controls">
+													{$item.vendor_address}																							
+											</div>
+										</div>
+									</div>	</div>
 </div>										
 <div class="box">
 							

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-21 15:18:34
+/* Smarty version 3.1.29, created on 2018-04-27 12:39:36
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_billing.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5adb08f259cee9_48814956',
+  'unifunc' => 'content_5ae2ccb050a491_87714403',
   'file_dependency' => 
   array (
     'd8a63d00289983df6f87731a049337bc9705e315' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_billing.tpl',
-      1 => 1524304104,
+      1 => 1524811877,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5adb08f259cee9_48814956 ($_smarty_tpl) {
+function content_5ae2ccb050a491_87714403 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -136,7 +136,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_type']->value;?>
 ">Type</a></th>
 								
-							<th width="80">
+							<!-- th width="80">
 										<a href="list_billing.php?field=hw_type&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
@@ -145,7 +145,7 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &f_date=<?php echo $_smarty_tpl->tpl_vars['f_date']->value;?>
 &t_date=<?php echo $_smarty_tpl->tpl_vars['t_date']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_hw_type']->value;?>
-">Billing Type</a></th>
+">Billing Type</a></th-->
 										<th width="80">
 											<a href="list_billing.php?field=brand&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
@@ -241,18 +241,21 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 						
 							 <?php if ($_smarty_tpl->tpl_vars['item']->value['type']) {?>		
 								<tr>
-									
 									 <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['type']);?>
-</td>
-									 <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['hw_type']);?>
-</td>
+<br>
+									  <span class='label label-orange'><a href='#' rel='tooltip'>
+									 <?php echo $_smarty_tpl->tpl_vars['item']->value['hw_type'];?>
+ </span>									 
+									 </a></td>
+									 <!-- td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['hw_type']);?>
+</td-->
 		        					 <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['brand']);?>
 </td> 
 				                <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['inventory_no']);?>
 </td>
 		                      <td><?php echo ucfirst($_smarty_tpl->tpl_vars['item']->value['location']);?>
 </td> 
-							  <td><?php echo $_smarty_tpl->tpl_vars['item']->value['cost'];?>
+							  <td>Rs. <?php echo $_smarty_tpl->tpl_vars['item']->value['cost'];?>
 </td> 
 		                      <td><?php echo $_smarty_tpl->tpl_vars['item']->value['billing_date'];?>
 </td> 

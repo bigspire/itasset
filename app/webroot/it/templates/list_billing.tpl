@@ -79,8 +79,8 @@
 						<th width="80">
 										<a href="list_billing.php?field=type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_type}">Type</a></th>
 								
-							<th width="80">
-										<a href="list_billing.php?field=hw_type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_hw_type}">Billing Type</a></th>
+							<!-- th width="80">
+										<a href="list_billing.php?field=hw_type&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_hw_type}">Billing Type</a></th-->
 										<th width="80">
 											<a href="list_billing.php?field=brand&order={$order}&page={$smarty.get.page}&keyword={$keyword}&hw_type={$hw_type}&bill_types={$bill_types}&f_date={$f_date}&t_date={$t_date}" class="{$sort_field_brand}">Brand</a></th>		
 										<th width="80">
@@ -107,13 +107,15 @@
 						
 							 {if $item.type}		
 								<tr>
-									
-									 <td>{ucfirst($item.type)}</td>
-									 <td>{ucfirst($item.hw_type)}</td>
+									 <td>{ucfirst($item.type)}<br>
+									  <span class='label label-orange'><a href='#' rel='tooltip'>
+									 {$item.hw_type} </span>									 
+									 </a></td>
+									 <!-- td>{ucfirst($item.hw_type)}</td-->
 		        					 <td>{ucfirst($item.brand)}</td> 
 				                <td>{ucfirst($item.inventory_no)}</td>
 		                      <td>{ucfirst($item.location)}</td> 
-							  <td>{$item.cost}</td> 
+							  <td>Rs. {$item.cost}</td> 
 		                      <td>{$item.billing_date}</td> 
 		                      <td>{ucfirst($item.vendor_company)}</td> 
 		                      <td>{$item.created_date}</td>
