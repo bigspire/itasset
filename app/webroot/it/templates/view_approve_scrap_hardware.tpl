@@ -324,7 +324,7 @@
 	                    <div class="control-group">
 											<label for="password" class="control-label">Attach Bill</label> </label>
 											<div class="controls">
-                      				<a href = "view_scrap_hardware.php?id={$smarty.get.id}&action=download&file={$item.bill}">{$item.bill}</a>
+                      				<a href = "view_approve_scrap_hardware.php?id={$smarty.get.id}&action=download&file={$item.bill}">{$item.bill}</a>
 											</div>
 					             	</div>
 	                   																			

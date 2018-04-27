@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-27 12:09:36
+/* Smarty version 3.1.29, created on 2018-04-27 13:27:10
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\view_approve_scrap_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ae2c5a817c818_08281328',
+  'unifunc' => 'content_5ae2d7d6123d86_63571047',
   'file_dependency' => 
   array (
     'af6d2efd7976ff422316b6c410279ed25b311311' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\view_approve_scrap_hardware.tpl',
-      1 => 1524811173,
+      1 => 1524815826,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ae2c5a817c818_08281328 ($_smarty_tpl) {
+function content_5ae2d7d6123d86_63571047 ($_smarty_tpl) {
 ?>
 
 <?php $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:include/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -397,7 +397,7 @@ echo $_smarty_tpl->tpl_vars['item']->value['validity_from'];?>
 	                    <div class="control-group">
 											<label for="password" class="control-label">Attach Bill</label> </label>
 											<div class="controls">
-                      				<a href = "view_scrap_hardware.php?id=<?php echo $_GET['id'];?>
+                      				<a href = "view_approve_scrap_hardware.php?id=<?php echo $_GET['id'];?>
 &action=download&file=<?php echo $_smarty_tpl->tpl_vars['item']->value['bill'];?>
 "><?php echo $_smarty_tpl->tpl_vars['item']->value['bill'];?>
 </a>
