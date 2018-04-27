@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-25 11:37:06
+/* Smarty version 3.1.29, created on 2018-04-27 11:21:49
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_approve_scrap_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ae01b0a1a9190_86606740',
+  'unifunc' => 'content_5ae2ba7598ce84_06208364',
   'file_dependency' => 
   array (
     'f364ac4afa2b5cd94d002109ef7f46635b619a38' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_approve_scrap_hardware.tpl',
-      1 => 1524636414,
+      1 => 1524808304,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ae01b0a1a9190_86606740 ($_smarty_tpl) {
+function content_5ae2ba7598ce84_06208364 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -207,7 +207,11 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 					<?php if ($_smarty_tpl->tpl_vars['item']->value['type']) {?>	
 					<tr>
 						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['type'];?>
-</td> 
+<br>
+						<span class='label label-orange'><a href='#' rel='tooltip'>
+									 <?php echo $_smarty_tpl->tpl_vars['item']->value['hw_type'];?>
+ </span>
+						</td> 
 						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['brand'];?>
 </td>
 						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['model_id'];?>
@@ -237,11 +241,18 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 						<a href="view_approve_scrap_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 " class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
 					   </td-->
+
+					   <?php if ($_smarty_tpl->tpl_vars['item']->value['scrap_status'] == 'W' && $_smarty_tpl->tpl_vars['roleid']->value == '18') {?>
 							<td style="text-align:center">
 								<a href="view_approve_scrap_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
 " rel="tooltip" class="btn  btn-mini" title="Approve Hardware"><i class="icon-edit"></i></a>
 							</td>
-
+							<?php } else { ?>
+							<td style="text-align:center">
+								<a href="view_approve_scrap_hardware.php?id=<?php echo $_smarty_tpl->tpl_vars['item']->value['id'];?>
+" rel="tooltip" class="btn  btn-mini" title="View Approve Hardware"><i class="icon-search"></i></a>
+							</td>
+					   <?php }?>
 					</tr>
 					<?php }?>
 				<?php

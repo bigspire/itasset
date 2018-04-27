@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-04-26 17:28:44
+/* Smarty version 3.1.29, created on 2018-04-27 09:49:27
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5ae1bef4b3adf0_38706704',
+  'unifunc' => 'content_5ae2a4cf868706_78835280',
   'file_dependency' => 
   array (
     '368d71be8341817b155ac32d10bab46c9d264be9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_hardware.tpl',
-      1 => 1524743917,
+      1 => 1524802765,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5ae1bef4b3adf0_38706704 ($_smarty_tpl) {
+function content_5ae2a4cf868706_78835280 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -122,11 +122,13 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 			 
              <?php if (!$_smarty_tpl->tpl_vars['ALERT_MSG']->value) {?> 
              <a href="list_hardware.php?action=export&keyword=<?php echo $_POST['keyword'];?>
+&rental_type=<?php echo $_POST['rental_type'];?>
 &hw_type=<?php echo $_POST['hw_type'];?>
 &hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
 &f_date=<?php echo $_POST['f_date'];?>
 &t_date=<?php echo $_POST['t_date'];?>
 "><button type="button" val="list_hardware.php?action=export&keyword=<?php echo $_POST['keyword'];?>
+&rental_type=<?php echo $_POST['rental_type'];?>
 &hw_type=<?php echo $_POST['hw_type'];?>
 &hw_status=<?php echo $_smarty_tpl->tpl_vars['hw_status']->value;?>
 &f_date=<?php echo $_POST['f_date'];?>

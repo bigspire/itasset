@@ -147,9 +147,9 @@ try{
 		
 	// create,update,delete message validation
 	if($_GET['status'] == 'add'){
-  		$success_msg = 'Asset created successfully';
+  		$success_msg = 'Asset assigned successfully';
   	}else if($_GET['status'] == 'edit'){
-  		$success_msg = 'Asset updated successfully';
+  		$success_msg = 'Asset updated and re-assigned successfully';
 	}else if($_GET['status'] == 'deleted'){
 		$success_msg = 'Asset '.   $_GET['status'] .  ' successfully';
 	}else if($_GET['status'] == 'cant_update'){

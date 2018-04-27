@@ -73,8 +73,8 @@
 											<a href="list_login.php?field=username&order={$order}&page={$smarty.get.page}&keyword={$keyword}&l_status={$l_status}" class="{$sort_field_username}">Username</a></th>
 										<th width="60">
 											<a href="list_login.php?field=password&order={$order}&page={$smarty.get.page}&keyword={$keyword}&l_status={$l_status}" class="{$sort_field_password}">Password</a></th>
-										<th width="60">
-											<a href="list_login.php?field=server&order={$order}&page={$smarty.get.page}&keyword={$keyword}&l_status={$l_status}" class="{$sort_field_server}">URL</a></th>
+										<!-- th width="60">
+											<a href="list_login.php?field=server&order={$order}&page={$smarty.get.page}&keyword={$keyword}&l_status={$l_status}" class="{$sort_field_server}">URL</a></th-->
 										<th width="60">
 											<a href="list_login.php?field=created&order={$order}&page={$smarty.get.page}&keyword={$keyword}&l_status={$l_status}" class="{$sort_field_created}">Created</a></th>										
 										<th width="60">
@@ -91,7 +91,7 @@
 											<td>{ucfirst($item.title)}</td>
 											<td>{$item.user_name}</td>
 											<td>{$item.password}</td>
-											<td>{$item.host}</td>
+											<!-- td>{$item.host}</td-->
 							            <td>{$item.created_date}</td>
 											<td>{$item.modified_date}</td>
 											<td style="text-align:center"><span class='label label-{$item.status_cls}'><a href='#' rel='tooltip' data-original-title = {$item.status}>{$item.status}</a></span></td>

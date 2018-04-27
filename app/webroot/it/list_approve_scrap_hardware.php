@@ -67,9 +67,9 @@ try{
 	$count = $data_num['total'];
 	if($count == 0){
 		if($keyword){
-			$alert_msg = 'No scrap hardware "' .$keyword. '" is found in our database';
+			$alert_msg = 'No hardware "'.$keyword.'" is found in our database';
 		}else{
-			$alert_msg = 'No hardware details for approval found in our database';
+			$alert_msg = 'No hardware details found in our database';
 		}
 	}
 	$page = $_GET['page'] ?  $_GET['page'] : 1;
@@ -142,8 +142,10 @@ try{
  		$data[] = $obj;
  		$data[$i]['scrap_created'] = $fun->it_software_created_date($obj['scrap_created']);
 		$data[$i]['status'] = $fun->it_scrap_hw_status($obj['status']);
+		$data[$i]['scrap_status'] = $obj['status'];
 		$data[$i]['status_cls'] = $fun->approval_status_cls($obj['status']);
 		$data[$i]['status_msg'] = $fun->it_scrap_hw($obj['hw_type']);
+		$data[$i]['hw_type'] = $fun->it_scrap_hw_type($obj['hw_type']);
  		$i++;
  		$pno[]=$paging->print_no();
  		$smarty->assign('pno',$pno);
@@ -193,6 +195,7 @@ $smarty->assign('f_date', $f_date);
 $smarty->assign('t_date', $t_date);	
 $smarty->assign('ALERT_MSG', $alert_msg);
 $smarty->assign('SUCCESS_MSG', $success_msg);
+$smarty->assign('roleid', $roleid); 
 // assign page title
 $smarty->assign('page_title' , 'Approve Hardware - IT');  
 // assigning active class status to smarty menu.tpl

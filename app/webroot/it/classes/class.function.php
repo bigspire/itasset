@@ -15,6 +15,23 @@ class fun{
     	}
     }
 	
+	// rental types value to name conversion	
+	public function rental_type_validation($rental){
+		if($rental == 'D'){
+			$st = 'Daily';
+		}else if($rental == 'W'){
+	 		$st = 'Weekly';
+		}else if($rental == 'M'){
+	 		$st = 'Monthly';
+		}else if($rental == 'Y'){
+	 		$st = 'Yearly';
+		}else if($rental == 'H'){
+	 		$st = 'Half Yearly';
+		}
+		return $st;
+	}
+
+	
 	// letter and space validation
 	public function string_validation($string){
 		if(!preg_match('/^[a-zA-Z ]*$/',$string)){           

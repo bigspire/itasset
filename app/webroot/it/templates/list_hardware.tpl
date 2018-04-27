@@ -82,7 +82,7 @@
 			 
 			 
              {if !$ALERT_MSG} 
-             <a href="list_hardware.php?action=export&keyword={$smarty.post.keyword}&hw_type={$smarty.post.hw_type}&hw_status={$hw_status}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}"><button type="button" val="list_hardware.php?action=export&keyword={$smarty.post.keyword}&hw_type={$smarty.post.hw_type}&hw_status={$hw_status}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}" class="jsRedirect btn btn-primary" style="float:right;margin-right:20px;"><i class="icon-reply"></i> Export</button></a>	
+             <a href="list_hardware.php?action=export&keyword={$smarty.post.keyword}&rental_type={$smarty.post.rental_type}&hw_type={$smarty.post.hw_type}&hw_status={$hw_status}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}"><button type="button" val="list_hardware.php?action=export&keyword={$smarty.post.keyword}&rental_type={$smarty.post.rental_type}&hw_type={$smarty.post.hw_type}&hw_status={$hw_status}&f_date={$smarty.post.f_date}&t_date={$smarty.post.t_date}" class="jsRedirect btn btn-primary" style="float:right;margin-right:20px;"><i class="icon-reply"></i> Export</button></a>	
             {/if}
             </div>			
 				<table class="table table-hover table-nomargin table-bordered usertable dataTable">

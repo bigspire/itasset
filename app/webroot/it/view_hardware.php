@@ -72,6 +72,7 @@ try{
 	}
 	$row = $mysql->display_result($result);
 	$smarty->assign('currency' ,$fun->currency_type($row['currency_type']));
+	$smarty->assign('rental_type_details' ,$fun->rental_type_validation($row['rental_type']));
 	//$smarty->assign('rows',$row);
 	// assign the db values into session
 	foreach($row as $key => $record){

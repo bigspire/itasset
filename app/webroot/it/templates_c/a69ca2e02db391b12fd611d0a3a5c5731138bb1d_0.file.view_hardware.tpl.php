@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-23 17:50:21
+/* Smarty version 3.1.29, created on 2018-04-27 11:11:18
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\view_hardware.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a900705d8cfc4_30641923',
+  'unifunc' => 'content_5ae2b7fe8bcf80_44980065',
   'file_dependency' => 
   array (
     'a69ca2e02db391b12fd611d0a3a5c5731138bb1d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\view_hardware.tpl',
-      1 => 1519292829,
+      1 => 1524807676,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a900705d8cfc4_30641923 ($_smarty_tpl) {
+function content_5ae2b7fe8bcf80_44980065 ($_smarty_tpl) {
 ?>
 
 
@@ -249,7 +249,7 @@ $_smarty_tpl->tpl_vars['key'] = $__foreach_item_0_saved_key;
 													</div>
 										</div>
 										
-										
+								<?php if ($_smarty_tpl->tpl_vars['is_rental']->value != 'Y') {?>			
 																					
 									<div class="control-group">
 											<label for="textfield" class="control-label">Paid By </label>
@@ -262,20 +262,27 @@ $_smarty_tpl->tpl_vars['key'] = $__foreach_item_0_saved_key;
                        								
 										
 	                    <div class="control-group">
-											<label for="password" class="control-label">Attach Bill</label> </label>
+											<label for="password" class="control-label">Bill No</label> </label>
 											<div class="controls">
-                      				<a href = "view_hardware.php?id=<?php echo $_GET['id'];?>
-&action=download&file=<?php echo $_smarty_tpl->tpl_vars['item']->value['bill'];?>
-"><?php echo $_smarty_tpl->tpl_vars['bill']->value;?>
-</a>
+											<?php echo $_smarty_tpl->tpl_vars['bill_no']->value;?>
+
 											</div>
 					             	</div>
-	                   																			
+	                   				<?php } else { ?>	
+								
+								<div class="control-group">
+											<label for="textfield" class="control-label">Rental Type </label>
+											<div class="controls">
+											<?php echo $_smarty_tpl->tpl_vars['rental_type_details']->value;?>
+
+												</div>
+										</div>	
+									<?php }?>																
 									</div>
 									
 								
 									<div class="span6">									
-
+<?php if ($_smarty_tpl->tpl_vars['is_rental']->value != 'Y') {?>	
 	                      <div class="control-group">
 											<label for="password" class="control-label">Purchase Date  </label> </label>
 											<div class="controls">
@@ -290,8 +297,29 @@ $_smarty_tpl->tpl_vars['key'] = $__foreach_item_0_saved_key;
 
 											</div>
 										</div>
+										  <div class="control-group">
+											<label for="password" class="control-label">Attach Bill</label> </label>
+											<div class="controls">
+                      				<a href = "view_hardware.php?id=<?php echo $_GET['id'];?>
+&action=download&file=<?php echo $_smarty_tpl->tpl_vars['item']->value['bill'];?>
+"><?php echo $_smarty_tpl->tpl_vars['bill']->value;?>
+</a>
+											</div>
+					             	</div>
+										<?php } else { ?>
+						<div class="control-group">
+											<label for="password" class="control-label">Rented Date</label> </label>
+											<div class="controls">
+											<?php echo $_smarty_tpl->tpl_vars['purchase_date']->value;?>
+
+											</div>
+										</div>
+						
+						
+						<?php }?>
 									</div>
-					
+									
+								
 							
 								
 							</div>

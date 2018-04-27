@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-23 11:58:20
+/* Smarty version 3.1.29, created on 2018-04-27 11:31:46
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\list_login.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a8fb484513361_33800292',
+  'unifunc' => 'content_5ae2bccace84c2_05845876',
   'file_dependency' => 
   array (
     '8868d58a00459eff11ac682230bcb3e7c7f25166' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\list_login.tpl',
-      1 => 1519292829,
+      1 => 1524808888,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a8fb484513361_33800292 ($_smarty_tpl) {
+function content_5ae2bccace84c2_05845876 ($_smarty_tpl) {
 if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\vendor\\smarty-3.1.29\\libs\\plugins\\function.html_options.php';
 ?>
 
@@ -135,13 +135,13 @@ if (!is_callable('smarty_function_html_options')) require_once 'C:\\xampp\\htdoc
 &l_status=<?php echo $_smarty_tpl->tpl_vars['l_status']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_password']->value;?>
 ">Password</a></th>
-										<th width="60">
+										<!-- th width="60">
 											<a href="list_login.php?field=server&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
 &keyword=<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
 &l_status=<?php echo $_smarty_tpl->tpl_vars['l_status']->value;?>
 " class="<?php echo $_smarty_tpl->tpl_vars['sort_field_server']->value;?>
-">URL</a></th>
+">URL</a></th-->
 										<th width="60">
 											<a href="list_login.php?field=created&order=<?php echo $_smarty_tpl->tpl_vars['order']->value;?>
 &page=<?php echo $_GET['page'];?>
@@ -185,8 +185,8 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 </td>
 											<td><?php echo $_smarty_tpl->tpl_vars['item']->value['password'];?>
 </td>
-											<td><?php echo $_smarty_tpl->tpl_vars['item']->value['host'];?>
-</td>
+											<!-- td><?php echo $_smarty_tpl->tpl_vars['item']->value['host'];?>
+</td-->
 							            <td><?php echo $_smarty_tpl->tpl_vars['item']->value['created_date'];?>
 </td>
 											<td><?php echo $_smarty_tpl->tpl_vars['item']->value['modified_date'];?>

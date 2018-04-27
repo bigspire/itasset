@@ -85,7 +85,10 @@
 				 {foreach from=$data item=item key=key}		
 					{if $item.type}	
 					<tr>
-						<td>{$item.type}</td> 
+						<td>{$item.type}<br>
+						<span class='label label-orange'><a href='#' rel='tooltip'>
+									 {$item.hw_type} </span>
+						</td> 
 						<td>{$item.brand}</td>
 						<td>{$item.model_id}</td>
 						<td>{$item.inventory_no}</td>
@@ -103,10 +106,16 @@
 					   <!-- td class='hidden-480'>
 						<a href="view_approve_scrap_hardware.php?id={$item.id}" class="btn" rel="tooltip" title="View"><i class="icon-search"></i></a>
 					   </td-->
+
+					   {if $item.scrap_status eq 'W' && $roleid eq '18'}
 							<td style="text-align:center">
 								<a href="view_approve_scrap_hardware.php?id={$item.id}" rel="tooltip" class="btn  btn-mini" title="Approve Hardware"><i class="icon-edit"></i></a>
 							</td>
-
+							{else}
+							<td style="text-align:center">
+								<a href="view_approve_scrap_hardware.php?id={$item.id}" rel="tooltip" class="btn  btn-mini" title="View Approve Hardware"><i class="icon-search"></i></a>
+							</td>
+					   {/if}
 					</tr>
 					{/if}
 				{/foreach}

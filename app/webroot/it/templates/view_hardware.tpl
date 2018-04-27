@@ -178,7 +178,7 @@
 													</div>
 										</div>
 										
-										
+								{if $is_rental neq 'Y'}			
 																					
 									<div class="control-group">
 											<label for="textfield" class="control-label">Paid By </label>
@@ -190,17 +190,25 @@
                        								
 										
 	                    <div class="control-group">
-											<label for="password" class="control-label">Attach Bill</label> </label>
+											<label for="password" class="control-label">Bill No</label> </label>
 											<div class="controls">
-                      				<a href = "view_hardware.php?id={$smarty.get.id}&action=download&file={$item.bill}">{$bill}</a>
+											{$bill_no}
 											</div>
 					             	</div>
-	                   																			
+	                   				{else}	
+								
+								<div class="control-group">
+											<label for="textfield" class="control-label">Rental Type </label>
+											<div class="controls">
+											{$rental_type_details}
+												</div>
+										</div>	
+									{/if}																
 									</div>
 									
 								
 									<div class="span6">									
-
+{if $is_rental neq 'Y'}	
 	                      <div class="control-group">
 											<label for="password" class="control-label">Purchase Date  </label> </label>
 											<div class="controls">
@@ -213,8 +221,25 @@
 											{$paid_date}
 											</div>
 										</div>
+										  <div class="control-group">
+											<label for="password" class="control-label">Attach Bill</label> </label>
+											<div class="controls">
+                      				<a href = "view_hardware.php?id={$smarty.get.id}&action=download&file={$item.bill}">{$bill}</a>
+											</div>
+					             	</div>
+										{else}
+						<div class="control-group">
+											<label for="password" class="control-label">Rented Date</label> </label>
+											<div class="controls">
+											{$purchase_date}
+											</div>
+										</div>
+						
+						
+						{/if}
 									</div>
-					
+									
+								
 							
 								
 							</div>
