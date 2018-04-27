@@ -25,12 +25,13 @@ include 'include/get_modules.php';
 if($roleid != '21'){
 	header('Location:'.IT_DIR.'home/');
 } 
+*/
 
 // redirecting to dashboard if the user don't have the permission to this module
-if($_SESSION['dashboard'] == 'empty'){
+if(empty($_SESSION['it_module'])){
 	header('Location:../home/?access=Access denied!');
 }
-*/
+
 // getting the url variable to check access denied or not
 $access_permission = $_GET['access'];
 $smarty->assign('access',$access_permission);

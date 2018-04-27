@@ -36,6 +36,7 @@ $query = "call it_get_user_modules('".$roleid."')";
 		while($row = $mysql->display_result($result)){
 			$modules[$row['app_modules_id']] = preg_replace("/[-\s]/","",$row['module_name']); 
 			$_SESSION[preg_replace("/[-\s]/","",$row['module_name'])] = 'present';
+			$_SESSION['it_module'] = '1';
 		}
 		$mysql->clear_result($result);
 		// call the next result
