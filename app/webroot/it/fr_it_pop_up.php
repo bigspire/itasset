@@ -152,7 +152,9 @@ if($_POST["hdnSubmit"] == '1'){
 		// save the assigned s/w accept status in it assign table
 		foreach($field_sw_data as $key_data => $it_data){
 			$accept = $field_sw_reason[$key_data] == '' ? 'Y' : 'N';
-			$query = "CALL it_update_assign_asset('".$it_data."', '".$field_sw_reason[$key_data]."', '".$date."',  '".$accept."', '".$user_id."')";
+			$delete = $accept == 'Y' ? 'N' : 'Y';
+			$query = "CALL it_update_assign_asset('".$it_data."', '".$field_sw_reason[$key_data]."', '".$date."',  '".$accept."', '".$user_id."',
+			'".$delete."')";
 			// Calling the function that makes the insert
 			try{
 				// calling mysql exe_query function
@@ -183,9 +185,10 @@ if($_POST["hdnSubmit"] == '1'){
 		}
 		// save the assigned h/w accept status in it assign table
 		foreach($field_hw_data as $key_data2 => $it_data2){
-			
 			$accept = $field_hw_reason[$key_data2] == '' ? 'Y' : 'N';
-			$query = "CALL it_update_assign_asset('".$it_data2."', '".$field_hw_reason[$key_data2]."', '".$date."',  '".$accept."', '".$user_id."')";
+			$delete = $accept == 'Y' ? 'N' : 'Y';
+			$query = "CALL it_update_assign_asset('".$it_data2."', '".$field_hw_reason[$key_data2]."', '".$date."',  '".$accept."', '".$user_id."',
+			'".$delete."')";
 			// Calling the function that makes the insert
 			try{
 				// calling mysql exe_query function
@@ -272,8 +275,8 @@ if($_POST["hdnSubmit"] == '1'){
 			$mail_data .= '</tr>'; 	
 			if($item_hw_accept[$mail_key] == 'N'){
 				$mail_data .= '<tr style="background:#f5f4f4;">';
-				$mail_data .= '<td width="100" colspan="3">Reject Reason</td>';
-				$mail_data .= '<td style="color:#2a2a2a;">'.$item_hw_reason[$mail_key].'</td>';
+				$mail_data .= '<td width="100">Reject Reason</td>';
+				$mail_data .= '<td style="color:#2a2a2a;" colspan="3">'.$item_hw_reason[$mail_key].'</td>';
 				$mail_data .= '</tr>'; 	
 			}            
 		}
@@ -295,8 +298,8 @@ if($_POST["hdnSubmit"] == '1'){
 			$mail_data .= '</tr>';				
 			if($item_sw_accept[$mail_key2] == 'N'){
 				$mail_data .= '<tr style="background:#f5f4f4;">';
-				$mail_data .= '<td width="100" colspan="3">Reject Reason</td>';
-				$mail_data .= '<td style="color:#2a2a2a;">'.$item_sw_reason[$mail_key2].'</td>';
+				$mail_data .= '<td width="100">Reject Reason</td>';
+				$mail_data .= '<td style="color:#2a2a2a;"  colspan="3">'.$item_sw_reason[$mail_key2].'</td>';
 				$mail_data .= '</tr>'; 
 			}			
 		}			
