@@ -169,7 +169,9 @@
     <div class="control-group">
 		<label for="textfield" class="control-label">Asset Description <span class="red_star">* </span></label>
 		<div class="controls field">
-		<input name="asset_desc_#index#" class="input-xlarge checkUnique_asset" placeholder="" type="text" id="asset_desc_#index#" value="{$smarty.session['h'][$foo].asset_desc}"/> 
+		<input name="asset_desc_#index#" class="input-xlarge" placeholder="" type="text" id="asset_desc_#index#" value="{$smarty.session['h'][$foo].asset_desc}"/> 
+		
+		<!-- input name="asset_desc_#index#" class="input-xlarge checkUnique_asset" placeholder="" type="text" id="asset_desc_#index#" value="{$smarty.session['h'][$foo].asset_desc}"/--> 
 		<div class="errorMsg error" id="asset_descErr_#index#">{$smarty.session['h'][$foo]['asset_descErr']} </div>		
 		</div>
 	</div>
