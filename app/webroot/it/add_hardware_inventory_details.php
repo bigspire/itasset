@@ -37,6 +37,7 @@ if(!empty($_POST)){
 		$actualfield = array('inventory no', 'asset description', 'location', 'location');
   		$fields = array('inventory_no' => 'inventory_noErr', 'asset_desc' => 'asset_descErr',
       'state_id' => 'stateErr', 'district_id' => 'stateErr');
+	  
 		$j = 0;
 	   foreach($fields as $field => $er_var){
 			if($_POST[$field.'_'.$i] == ''){
@@ -84,7 +85,7 @@ if(!empty($_POST)){
 				$_SESSION['h'][$i]['inventory_noErr'] = $msg;
 		}
 		
-		// query to check whether asset description no is exist or not.  
+		/* // query to check whether asset description no is exist or not.  
 		$query = "CALL it_check_asset_description_exist('0','".$_POST['asset_desc_'.$i]."')";
 		try{
 			// calling mysql exe_query function
@@ -103,7 +104,7 @@ if(!empty($_POST)){
 		if($row['total'] != '0'){
 				$msg = "Asset description already exists";
 				$_SESSION['h'][$i]['asset_descErr'] = $msg;
-		}
+		} */
 	
 	   /*
 		if($_POST['inventory_no_'.$i] == $_POST['inventory_no_'.$i]){

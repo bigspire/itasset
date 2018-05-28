@@ -124,6 +124,7 @@ if(!empty($_POST)){
 				$_SESSION['h'][$i]['inventory_noErr'] = $msg;
 		}
 		
+		/*
 		// query to check whether asset description no is exist or not.  
 		$query = "CALL it_check_asset_description_exist('".$inv_exist_id."','".$_POST['asset_desc_'.$i]."')";
 		try{
@@ -144,6 +145,8 @@ if(!empty($_POST)){
 				$msg = "Asset description already exists";
 				$_SESSION['h'][$i]['asset_descErr'] = $msg;
 		}
+		*/
+		
 		// status field validation
 		//$_SESSION['h'][$i]['status'] = isset($_POST['status_'.$i]) ? $_POST['status_'.$i] : ($_GET['status_'.$i] != '' ? $_GET['status_'.$i] : '1');
 	}
