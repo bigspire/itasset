@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-02-23 16:25:25
+/* Smarty version 3.1.29, created on 2018-05-28 12:41:21
   from "C:\xampp\htdocs\2017\itassetsvn\itasset\app\webroot\it\templates\add_hardware_confirmation.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5a8ff31d87f910_36515571',
+  'unifunc' => 'content_5b0bab9926a078_88314317',
   'file_dependency' => 
   array (
     'd3344c47816ad14ebfa748d9753c7a90b56b8d97' => 
     array (
       0 => 'C:\\xampp\\htdocs\\2017\\itassetsvn\\itasset\\app\\webroot\\it\\templates\\add_hardware_confirmation.tpl',
-      1 => 1519292828,
+      1 => 1523876664,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:include/footer_js.tpl' => 1,
   ),
 ),false)) {
-function content_5a8ff31d87f910_36515571 ($_smarty_tpl) {
+function content_5b0bab9926a078_88314317 ($_smarty_tpl) {
 ?>
 
    
@@ -332,7 +332,7 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
 													</div>
 										</div>
 										
-										
+								<?php if ($_SESSION['h']['add_hardware_type'] == 'New') {?>		
 																					
 									<div class="control-group">
 											<label for="textfield" class="control-label">Paid By </label>
@@ -349,11 +349,24 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
 
 												</div>
 						</div>
-										
+						
+						<?php } else { ?>
+						
+							<div class="control-group">
+											<label for="textfield" class="control-label">Rental Type </label>
+											<div class="controls">
+											<?php echo $_SESSION['h']['rental_type_detail'];?>
+
+												</div>
+										</div>	
+							<?php }?>
+								
 									</div>
 									
 								
-									<div class="span6">									
+									<div class="span6">		
+
+<?php if ($_SESSION['h']['add_hardware_type'] == 'New') {?>									
 		<div class="control-group">
 											<label for="password" class="control-label">Purchase Date</label> </label>
 											<div class="controls">
@@ -376,7 +389,19 @@ $_smarty_tpl->tpl_vars['foo']->first = $_smarty_tpl->tpl_vars['foo']->iteration 
 "><?php echo $_SESSION['h']['billfile'];?>
 </a>  
 											</div>
-						</div>									
+						</div>	
+		<?php } else { ?>
+						
+							<div class="control-group">
+											<label for="textfield" class="control-label">Rented Date </label>
+											<div class="controls">
+											<?php echo $_SESSION['h']['purchasedate'];?>
+
+												</div>
+										</div>	
+							
+
+<?php }?>						
 									</div>
 					
 							

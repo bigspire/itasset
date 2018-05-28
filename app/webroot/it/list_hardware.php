@@ -179,9 +179,9 @@ try{
 		include('classes/class.excel.php');
 		$excelObj = new libExcel();
 		// function to print the excel header
-      $excelObj->printHeader($header = array('Type','Is Rental','Brand','Model Id','Inventory No','Location','Asset Description','Validity','Vendor','Created Date','Modified Date','Status') ,$col = array('A','B','C','D','E','F','G','H','I','J','K','L'));  
+      $excelObj->printHeader($header = array('Type','Is Rental','Brand','Model Id','Inventory No','Location','Asset Description','Validity','Vendor','Created Date','Modified Date','Status','Description') ,$col = array('A','B','C','D','E','F','G','H','I','J','K','L','M'));  
 		// function to print the excel data
-		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J','K','L'), $field = array('type','is_rental_status','brand','model_id','inventory_no','location','asset_desc','validity_to','vendor_name','created_date','modified_date','status'),'Hardwares_'.$current_date);
+		$excelObj->printCell($data, $count,$col = array('A','B','C','D','E','F','G','H','I','J','K','L','M'), $field = array('type','is_rental_status','brand','model_id','inventory_no','location','asset_desc','validity_to','vendor_name','created_date','modified_date','status','description'),'Hardwares_'.$current_date);
 	}
 	// assign software status into array 
 	$type = array('' => 'All Status', '1' => 'Active', '0' => 'Inactive');
