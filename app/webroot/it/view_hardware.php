@@ -86,7 +86,7 @@ try{
 
 // to download files
 if($_GET['action'] == 'download'){
-	$path = 'uploads/hardware/'.$_GET['file'];
+	$path = 'uploads/hardware/'.$row['bill'];
 	$fun->download_file($path);
 }
 
